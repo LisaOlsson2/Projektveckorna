@@ -10,7 +10,7 @@ public class TempMovement : MonoBehaviour
     readonly float dashDuration = 0.3f;
     readonly float dashForce = 500;
     readonly float jumpForce = 250;
-    readonly float speed = 4;
+    readonly float speed = 5;
 
     readonly float rightBorder = 10;
     readonly float leftBorder = -20;
@@ -18,16 +18,15 @@ public class TempMovement : MonoBehaviour
     readonly float halfCamWorldspace = 8;
 
     bool grounded;
+    float camDistanceX;
 
     Rigidbody2D rb;
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -56,10 +55,11 @@ public class TempMovement : MonoBehaviour
             transform.position += new Vector3(-speed, 0, 0) * Time.deltaTime;
         }
 
-        cam.transform.position = new Vector3(cam.transform.position.x, transform.position.y, cam.transform.position.z);
-        if (transform.position.x < rightBorder - halfCamWorldspace && transform.position.x > leftBorder + halfCamWorldspace)
+        camDistanceX = transform.position.x - cam.transform.position.x;
+        cam.transform.position += new Vector3(0, transform.position.y - cam.transform.position.y, 0) * speed * Time.deltaTime;
+        if ((cam.transform.position.x < rightBorder - halfCamWorldspace && cam.transform.position.x > leftBorder + halfCamWorldspace) || (transform.position.x > leftBorder + halfCamWorldspace && transform.position.x < rightBorder - halfCamWorldspace))
         {
-            cam.transform.position = new Vector3(transform.position.x, cam.transform.position.y, cam.transform.position.z);
+            cam.transform.position += new Vector3(camDistanceX, 0, 0) * speed * Time.deltaTime;
         }
     }
 
