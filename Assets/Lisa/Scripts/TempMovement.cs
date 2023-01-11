@@ -14,7 +14,7 @@ public class TempMovement : MonoBehaviour
     readonly float jumpForce = 250;
     readonly float speed = 2;
     readonly float stamina = 4;
-    readonly float sprintInputDelay = 0.5f;
+    readonly float sprintInputDelay = 0.2f;
     readonly int sprint = 7;
 
     readonly float rightBorder = 10;
@@ -45,7 +45,7 @@ public class TempMovement : MonoBehaviour
 
         slider.value = Mathf.Abs(staminaTimer);
 
-        if (speedMultiplier == sprint)
+        if (Mathf.Abs(speedMultiplier) == sprint)
         {
             staminaTimer -= Time.deltaTime;
 
@@ -53,7 +53,7 @@ public class TempMovement : MonoBehaviour
             {
                 slider.fillRect.GetComponent<Image>().color = Color.red;
                 sprintTimer = 0;
-                speedMultiplier = 1;
+                speedMultiplier = Mathf.Abs(speedMultiplier)/speedMultiplier;
                 staminaTimer = -4;
             }
         }
@@ -68,19 +68,27 @@ public class TempMovement : MonoBehaviour
 
         if (staminaTimer > 0)
         {
-            if (speedMultiplier == 2 && sprintTimer < sprintInputDelay)
+            if (Mathf.Abs(speedMultiplier) == 2 && sprintTimer < sprintInputDelay)
             {
                 sprintTimer += Time.deltaTime;
-                if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
+                if (Input.GetKeyDown(KeyCode.A))
+                {
+                    speedMultiplier = -sprint;
+                }
+                if (Input.GetKeyDown(KeyCode.D))
                 {
                     speedMultiplier = sprint;
                 }
             }
             else
             {
-                if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.A))
+                if (Input.GetKeyDown(KeyCode.D))
                 {
                     speedMultiplier = 2;
+                }
+                if (Input.GetKeyDown(KeyCode.A))
+                {
+                    speedMultiplier = -2;
                 }
                 if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.A))
                 {
@@ -88,43 +96,33 @@ public class TempMovement : MonoBehaviour
                     {
                         sprintTimer = 0;
                     }
-                    speedMultiplier = 1;
+                    speedMultiplier = Mathf.Abs(speedMultiplier)/speedMultiplier;
                 }
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
+        }
+
 
         if (Input.GetKeyDown(KeyCode.W) && grounded)
         {
             rb.AddForce(transform.up * jumpForce);
         }
 
-        if (transform.position.x < rightBorder)
+        if ((transform.position.x > leftBorder && Input.GetKey(KeyCode.A)) || (transform.position.x < rightBorder && Input.GetKey(KeyCode.D)))
         {
-            if (Input.GetKey(KeyCode.D))
+            transform.position += new Vector3(speed * speedMultiplier, 0, 0) * Time.deltaTime;
+
+            if (Input.GetKeyDown(KeyCode.Space) && staminaTimer > 0)
             {
-                transform.position += new Vector3(speed * speedMultiplier, 0, 0) * Time.deltaTime;
-
-                if (Input.GetKeyDown(KeyCode.Space) && staminaTimer > 0)
-                {
-                    StartCoroutine(Dash(1));
-                }
-            }
-        }
-        else
-        {
-            rb.velocity = new Vector3(0, rb.velocity.y, 0);
-        }
-
-        if (transform.position.x > leftBorder)
-        {
-            if (Input.GetKey(KeyCode.A))
-            {
-                transform.position += new Vector3(-speed * speedMultiplier, 0, 0) * Time.deltaTime;
-
-                if (Input.GetKeyDown(KeyCode.Space) && staminaTimer > 0)
-                {
-                    StartCoroutine(Dash(-1));
-                }
+                StartCoroutine(Dash(speedMultiplier));
             }
         }
         else
@@ -145,7 +143,7 @@ public class TempMovement : MonoBehaviour
         staminaTimer -= 1;
         rb.gravityScale = 0;
         rb.velocity = Vector3.zero;
-        rb.AddForce(new Vector3(dashForce * direction, 0, 0));
+        rb.AddForce(new Vector3(dashForce * (Mathf.Abs(direction) / direction), 0, 0));
         yield return new WaitForSeconds(dashDuration);
         rb.gravityScale = 1;
         rb.velocity = Vector3.zero;

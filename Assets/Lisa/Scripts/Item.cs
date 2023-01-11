@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// Lisa
 public class Item : MonoBehaviour
 {
+    Inventory inventory;
     ItKnows reference;
 
     bool interactable;
@@ -13,21 +15,25 @@ public class Item : MonoBehaviour
 
     readonly float distance = 150;
 
-    static List<GameObject> inventory = new List<GameObject>();
-
     void Start()
     {
         reference = FindObjectOfType<ItKnows>();
+        inventory = FindObjectOfType<Inventory>();
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Z) && interactable)
         {
+            if (inventory.inventory.Count == 0)
+            {
+                Instantiate(reference.thingy, reference.canvas);
+            }
             item = Instantiate(reference.emptyKinda, reference.canvas);
-            item.GetComponent<Image>().sprite = GetComponent<SpriteRenderer>().sprite;
-            item.GetComponent<RectTransform>().anchoredPosition += new Vector2(distance * inventory.Count, 0);
-            inventory.Add(item);
+            inventory.inventory.Add(GetComponent<SpriteRenderer>().sprite);
+            item.GetComponent<Image>().sprite = inventory.inventory[inventory.inventory.Count - 1];
+            item.GetComponent<RectTransform>().anchoredPosition += new Vector2(distance * inventory.inventoryUI.Count, 0);
+            inventory.inventoryUI.Add(item);
             Destroy(gameObject);
         }
     }
