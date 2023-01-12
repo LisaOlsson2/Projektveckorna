@@ -21,7 +21,7 @@ public class Gråsuggspawner : MonoBehaviour
         if (timer > 1)
         {
             int rng = Random.Range(0, prefabs.Length);
-            Instantiate(prefabs[rng], new Vector3(Random.Range(-11, 12), 9, 0), prefabs[rng].transform.rotation);
+            Instantiate(prefabs[rng], new Vector3(Random.Range(6, 14), -5, 0), prefabs[rng].transform.rotation);
             timer = 0;
         }
     }
