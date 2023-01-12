@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 256381560}
   - component: {fileID: 256381559}
   m_Layer: 0
-  m_Name: Square (3)
+  m_Name: item
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e467135d2cf5bc4e8c1d02e229f37db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reference: {fileID: 0}
 --- !u!61 &256381560
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -243,7 +244,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &301713061
 GameObject:
@@ -309,7 +310,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &387996839
 GameObject:
@@ -415,7 +416,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &647494164
 MonoBehaviour:
@@ -532,7 +533,7 @@ GameObject:
   - component: {fileID: 856877563}
   - component: {fileID: 856877564}
   m_Layer: 0
-  m_Name: sprite_0
+  m_Name: stick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -641,6 +642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e467135d2cf5bc4e8c1d02e229f37db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reference: {fileID: 0}
 --- !u!1 &913407436
 GameObject:
   m_ObjectHideFlags: 0
@@ -729,7 +731,7 @@ GameObject:
   - component: {fileID: 933958821}
   - component: {fileID: 933958822}
   m_Layer: 0
-  m_Name: Square (2)
+  m_Name: item
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -798,7 +800,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &933958821
 BoxCollider2D:
@@ -838,6 +840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e467135d2cf5bc4e8c1d02e229f37db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reference: {fileID: 0}
 --- !u!1 &1112828648
 GameObject:
   m_ObjectHideFlags: 0
@@ -932,7 +935,7 @@ RectTransform:
   - {fileID: 687742735}
   - {fileID: 913407439}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -950,9 +953,9 @@ GameObject:
   - component: {fileID: 1598241331}
   - component: {fileID: 1598241330}
   - component: {fileID: 1598241332}
-  m_Layer: 6
-  m_Name: Square (1)
-  m_TagString: Untagged
+  m_Layer: 0
+  m_Name: Ground
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1020,7 +1023,7 @@ Transform:
   m_LocalScale: {x: 102.5, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1598241332
 BoxCollider2D:
@@ -1235,7 +1238,7 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1905663504
 MonoBehaviour:
@@ -1249,6 +1252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aafc523a630fa44f95640c139c0ae4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reference: {fileID: 0}
   cam: {fileID: 1728503746}
   slider: {fileID: 687742736}
 --- !u!50 &1905663505
@@ -1310,6 +1314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eff2b30f5ec8444f8db8b9904bf773f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reference: {fileID: 0}
   square: {fileID: 913407439}
   inventory: []
   inventoryUI: []
@@ -1325,7 +1330,7 @@ GameObject:
   - component: {fileID: 1944056001}
   - component: {fileID: 1944056003}
   m_Layer: 0
-  m_Name: Square (4)
+  m_Name: crafting ghost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1394,7 +1399,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1944056003
 MonoBehaviour:

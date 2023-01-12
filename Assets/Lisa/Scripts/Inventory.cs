@@ -4,20 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 
 // Lisa
-public class Inventory : MonoBehaviour
+public class Inventory : BaseMostThings
 {
-    ItKnows reference;
-
     public RectTransform square;
 
     public List<Sprite> inventory = new List<Sprite>();
     public List<GameObject> inventoryUI = new List<GameObject>();
-
-
-    void Start()
-    {
-        reference = FindObjectOfType<ItKnows>();
-    }
 
     void Update()
     {

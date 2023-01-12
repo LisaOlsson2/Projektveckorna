@@ -4,18 +4,17 @@ using UnityEngine;
 using UnityEngine.UI;
 
 // Lisa
-public class Item : MonoBehaviour
+public class Item : BaseMostThings
 {
     Inventory inventory;
-    ItKnows reference;
 
     bool interactable;
 
     GameObject item;
 
-    void Start()
+    public override void Start()
     {
-        reference = FindObjectOfType<ItKnows>();
+        base.Start();
         inventory = FindObjectOfType<Inventory>();
     }
 
