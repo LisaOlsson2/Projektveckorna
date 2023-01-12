@@ -76,6 +76,16 @@ public class TempMovement : MonoBehaviour
 
         if (staminaTimer > 0)
         {
+            if (Input.GetKey(KeyCode.A) && speedMultiplier == -1)
+            {
+                speedMultiplier = -2;
+            }
+
+            if (Input.GetKey(KeyCode.D) && speedMultiplier == 1)
+            {
+                speedMultiplier = 2;
+            }
+
             if (Mathf.Abs(speedMultiplier) == 2 && sprintTimer < sprintInputDelay)
             {
                 sprintTimer += Time.deltaTime;
@@ -123,6 +133,17 @@ public class TempMovement : MonoBehaviour
                         speedMultiplier = Mathf.Abs(speedMultiplier) / speedMultiplier;
                     }
                 }
+            }
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                speedMultiplier = -1;
+            }
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                speedMultiplier = 1;
             }
         }
 
