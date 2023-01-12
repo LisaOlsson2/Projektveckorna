@@ -13,8 +13,6 @@ public class Item : MonoBehaviour
 
     GameObject item;
 
-    readonly float distance = 150;
-
     void Start()
     {
         reference = FindObjectOfType<ItKnows>();
@@ -27,13 +25,22 @@ public class Item : MonoBehaviour
         {
             if (inventory.inventory.Count == 0)
             {
-                Instantiate(reference.thingy, reference.canvas);
+                inventory.square.gameObject.SetActive(true);
             }
-            item = Instantiate(reference.emptyKinda, reference.canvas);
-            inventory.inventory.Add(GetComponent<SpriteRenderer>().sprite);
-            item.GetComponent<Image>().sprite = inventory.inventory[inventory.inventory.Count - 1];
-            item.GetComponent<RectTransform>().anchoredPosition += new Vector2(distance * inventory.inventoryUI.Count, 0);
-            inventory.inventoryUI.Add(item);
+
+            if (inventory.FindSprite(GetComponent<SpriteRenderer>().sprite) == inventory.inventory.Count)
+            {
+                item = Instantiate(reference.emptyKinda, reference.canvas);
+                inventory.inventory.Add(GetComponent<SpriteRenderer>().sprite);
+                item.GetComponent<Image>().sprite = inventory.inventory[inventory.inventory.Count - 1];
+                item.GetComponent<RectTransform>().anchoredPosition += new Vector2(0, reference.distanceInventory * inventory.inventoryUI.Count);
+                inventory.inventoryUI.Add(item);
+            }
+            else
+            {
+                inventory.inventoryUI[inventory.FindSprite(GetComponent<SpriteRenderer>().sprite)].transform.GetChild(0).GetComponent<Text>().text = "" + (int.Parse(inventory.inventoryUI[inventory.FindSprite(GetComponent<SpriteRenderer>().sprite)].transform.GetChild(0).GetComponent<Text>().text) + 1);
+            }
+
             Destroy(gameObject);
         }
     }

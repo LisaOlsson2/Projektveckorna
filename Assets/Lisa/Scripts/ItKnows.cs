@@ -7,7 +7,8 @@ public class ItKnows : MonoBehaviour
 {
     public Transform canvas;
 
-    public GameObject thingy;
     public GameObject emptyKinda;
+
+    public readonly int distanceInventory = 100;
 
 }
