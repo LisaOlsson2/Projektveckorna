@@ -3,61 +3,60 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Lisa
-public class Crafting : MonoBehaviour
+public class Crafting : Interactive
 {
-    Inventory inventory;
-    SpriteRenderer spriteRenderer;
+    // 0.2 = not close
+    // 0.4 = close no item
+    // 0.6 = close item
+    // 0.8 = close item selected
+    // 1 = built
 
-    readonly float distanceToCraft = 2; // i'll make it an ontrigger box collider later so it won't be checking every frame
-    int checkedInventory; // 0 = not checked, 1 = doesn't have the item, 2 = has the item
     int place;
-
-    void Start()
-    {
-        inventory = FindObjectOfType<Inventory>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-    }
 
     void Update()
     {
-        if (Mathf.Abs(inventory.transform.position.x - transform.position.x) < distanceToCraft)
+        if (interactable)
         {
-            if (checkedInventory == 0)
+            if (inventory.square.transform.position.y == inventory.inventoryUI[place].transform.position.y)
             {
-                if (inventory.FindSprite(spriteRenderer.sprite) < inventory.inventory.Count)
+                spriteRenderer.color = new Vector4(1, 1, 1, 0.8f);
+
+                if (Input.GetKeyDown(KeyCode.Z))
                 {
-                    place = inventory.FindSprite(spriteRenderer.sprite);
-                    checkedInventory = 2;
-                }
-                else
-                {
-                    checkedInventory = 1;
+                    inventory.UseItem(place);
+                    spriteRenderer.color = new Vector4(1, 1, 1, 1);
+                    BoxCollider2D boxCollider = GetComponent<BoxCollider2D>();
+                    boxCollider.size = Vector2.one;
+                    boxCollider.isTrigger = false;
+                    Destroy(this);
                 }
             }
-            
-            if (checkedInventory == 2)
+            else
             {
-                if (inventory.square.transform.position.y == inventory.inventoryUI[place].transform.position.y)
-                {
-                    spriteRenderer.color = new Vector4(1, 1, 1, 0.7f);
-                    if (Input.GetKeyDown(KeyCode.Z))
-                    {
-                        inventory.UseItem(spriteRenderer.sprite, place);
-                        spriteRenderer.color = new Vector4(1, 1, 1, 1);
-                        gameObject.AddComponent<BoxCollider2D>();
-                        Destroy(this);
-                    }
-                }
-                else
-                {
-                    spriteRenderer.color = new Vector4(1, 1, 1, 0.5f);
-                }
+                spriteRenderer.color = new Vector4(1, 1, 1, 0.6f);
             }
+        }
+    }
+
+    public override void OnTriggerEnter2D(Collider2D collision)
+    {
+        base.OnTriggerEnter2D(collision);
+
+        if (inventory.FindSprite(spriteRenderer.sprite) < inventory.inventory.Count)
+        {
+            place = inventory.FindSprite(spriteRenderer.sprite);
         }
         else
         {
-            checkedInventory = 0;
-            spriteRenderer.color = new Vector4(1, 1, 1, 0.2f);
+            spriteRenderer.color = new Vector4(1, 1, 1, 0.4f);
+            interactable = false;
         }
+    }
+
+    public override void OnTriggerExit2D(Collider2D collision)
+    {
+        base.OnTriggerExit2D(collision);
+
+        spriteRenderer.color = new Vector4(1, 1, 1, 0.2f);
     }
 }
