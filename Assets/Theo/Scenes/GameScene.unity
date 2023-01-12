@@ -558,7 +558,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -682,7 +682,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 99537659}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 524060828}
+        m_TargetAssemblyTypeName: ButtonColorScript, Assembly-CSharp
+        m_MethodName: ChangeSFXColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &99537659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -736,7 +748,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &163055837
 Transform:
   m_ObjectHideFlags: 0
@@ -864,8 +876,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1167754079}
-        m_TargetAssemblyTypeName: TimeManager, Assembly-CSharp
-        m_MethodName: unPauseGame
+        m_TargetAssemblyTypeName: GameManagerScript, Assembly-CSharp
+        m_MethodName: UnPauseGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1015,6 +1027,7 @@ GameObject:
   - component: {fileID: 524060826}
   - component: {fileID: 524060825}
   - component: {fileID: 524060824}
+  - component: {fileID: 524060828}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1096,7 +1109,6 @@ RectTransform:
   m_Children:
   - {fileID: 1624589877}
   - {fileID: 1881514188}
-  - {fileID: 1401907516}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1105,6 +1117,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &524060828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524060823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19f548ca2c32f54597c84c1b7df0c96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NormalColor: {r: 0, g: 0.7372549, b: 0, a: 0.627451}
+  HighlightedColor: {r: 0, g: 0.7372549, b: 0, a: 0.78431374}
+  PressedColor: {r: 0.5294118, g: 0.5294118, b: 0.23921569, a: 1}
+  clickedNormalColor: {r: 0.84313726, g: 0, b: 0, a: 0.627451}
+  clickedHighlightedColor: {r: 0.84313726, g: 0, b: 0, a: 0.78431374}
+  clickedPressedColor: {r: 0.5294118, g: 0.5294118, b: 0.23921569, a: 1}
+  musicButton: {fileID: 1129493072}
+  sfxButton: {fileID: 99537658}
 --- !u!1 &786262499
 GameObject:
   m_ObjectHideFlags: 0
@@ -1354,7 +1386,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1129493073}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 524060828}
+        m_TargetAssemblyTypeName: ButtonColorScript, Assembly-CSharp
+        m_MethodName: ChangeMusicColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1129493073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1422,6 +1466,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c1fe36633ef9a04a9d649cbdff555df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 786262499}
+  settingsMenuIG: {fileID: 163055836}
+  background: {fileID: 1881514185}
+  escape: 27
   paused: 0
 --- !u!4 &1167754080
 Transform:
@@ -1910,11 +1958,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1401907513}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -400, y: -225.16556, z: 0}
-  m_LocalScale: {x: 1.3245033, y: 1.3245033, z: 1.3245033}
+  m_LocalPosition: {x: 0, y: -0.031463623, z: 0}
+  m_LocalScale: {x: 1.0016557, y: 1.0016557, z: 1.0016557}
   m_Children: []
-  m_Father: {fileID: 524060827}
-  m_RootOrder: 2
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1417302033
 GameObject:
@@ -2513,7 +2561,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1881514186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2680,8 +2728,8 @@ RectTransform:
   m_Father: {fileID: 1417302034}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
