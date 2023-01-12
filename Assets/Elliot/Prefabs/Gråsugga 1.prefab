@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 1349471916309215593}
   - component: {fileID: 1349471916309215595}
   - component: {fileID: 8388432420144422734}
+  - component: {fileID: 6472591473614425160}
   m_Layer: 6
   m_Name: "Gr\xE5sugga 1"
   m_TagString: Untagged
@@ -191,3 +192,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a76c2b41b957b34cbb2e97f3eab2b36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6472591473614425160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349471916309215588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f361e172f35bbc44a85c96c2569e8b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
+  playerHealth: {fileID: 0}
