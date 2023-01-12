@@ -50,7 +50,6 @@ public class TempMovement : MonoBehaviour
 
     void Update()
     {
-        print(speedMultiplier);
 
         slider.value = Mathf.Abs(staminaTimer);
 
@@ -177,10 +176,16 @@ public class TempMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        grounded = true;
+        if (collision.gameObject.layer == 6)
+        {
+            grounded = true;
+        }
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
-        grounded = false;
+        if (collision.gameObject.layer == 6)
+        {
+            grounded = false;
+        }
     }
 }
