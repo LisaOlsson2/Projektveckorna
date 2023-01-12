@@ -27,6 +27,7 @@ public class TempMovement : MonoBehaviour
     float staminaTimer;
     int speedMultiplier = 1;
     float sprintTimer;
+    KeyCode key;
 
     Rigidbody2D rb;
 
@@ -37,6 +38,14 @@ public class TempMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         slider.maxValue = stamina;
+    }
+
+    private void OnGUI()
+    {
+        if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
+        {
+            key = Event.current.keyCode;
+        }
     }
 
     void Update()
@@ -73,11 +82,25 @@ public class TempMovement : MonoBehaviour
                 sprintTimer += Time.deltaTime;
                 if (Input.GetKeyDown(KeyCode.A))
                 {
-                    speedMultiplier = -sprint;
+                    if (speedMultiplier == -2)
+                    {
+                        speedMultiplier = -sprint;
+                    }
+                    else
+                    {
+                        speedMultiplier = -2;
+                    }
                 }
                 if (Input.GetKeyDown(KeyCode.D))
                 {
-                    speedMultiplier = sprint;
+                    if (speedMultiplier == 2)
+                    {
+                        speedMultiplier = sprint;
+                    }
+                    else
+                    {
+                        speedMultiplier = 2;
+                    }
                 }
             }
             else
@@ -96,7 +119,10 @@ public class TempMovement : MonoBehaviour
                     {
                         sprintTimer = 0;
                     }
-                    speedMultiplier = Mathf.Abs(speedMultiplier)/speedMultiplier;
+                    if ((key == KeyCode.A && !Input.GetKey(KeyCode.D)) || (key == KeyCode.D && !Input.GetKey(KeyCode.A)))
+                    {
+                        speedMultiplier = Mathf.Abs(speedMultiplier) / speedMultiplier;
+                    }
                 }
             }
         }
