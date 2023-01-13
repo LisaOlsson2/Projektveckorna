@@ -19,18 +19,13 @@ public class Item : Interactive
 
             if (place == inventory.inventory.Count)
             {
-                GameObject item = Instantiate(reference.emptyKinda, reference.canvas);
+                valueKeeper.amounts.Add(0);
                 inventory.inventory.Add(spriteRenderer.sprite);
-                item.GetComponent<Image>().sprite = inventory.inventory[inventory.inventory.Count - 1];
-                item.GetComponent<RectTransform>().anchoredPosition += new Vector2(0, reference.distanceInventory * inventory.inventoryUI.Count);
-                inventory.inventoryUI.Add(item);
-            }
-            else
-            {
-                Text text = inventory.inventoryUI[place].transform.GetChild(0).GetComponent<Text>();
-                text.text = "" + (int.Parse(text.text) + 1);
+                valueKeeper.AddItem(place);
             }
 
+            valueKeeper.amounts[place]++;
+            inventory.inventoryUI[place].GetComponentInChildren<Text>().text = "" + valueKeeper.amounts[place];
             Destroy(gameObject);
         }
     }

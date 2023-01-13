@@ -17,7 +17,7 @@ public class Inventory : BaseMostThings
     {
         if (square.gameObject.activeSelf && ((Input.mouseScrollDelta.y > 0 && square.transform.position.y < inventoryUI[inventoryUI.Count - 1].transform.position.y) || (Input.mouseScrollDelta.y < 0 && square.transform.position.y > inventoryUI[0].transform.position.y)))
         {
-            square.anchoredPosition += Input.mouseScrollDelta * reference.distanceInventory;
+            square.anchoredPosition += Input.mouseScrollDelta * valueKeeper.distanceInventory;
         }
     }
 
@@ -37,11 +37,14 @@ public class Inventory : BaseMostThings
     {
         Text text = inventoryUI[place].transform.GetChild(0).GetComponent<Text>();
 
-        if (int.Parse(text.text) == 1)
+        text.text = "" + (int.Parse(text.text) - 1);
+        valueKeeper.amounts[place] = int.Parse(text.text);
+        if (int.Parse(text.text) == 0)
         {
             inventory.Remove(inventory[place]);
             Destroy(inventoryUI[place]);
             inventoryUI.Remove(inventoryUI[place]);
+            valueKeeper.amounts.Remove(0);
 
             if (inventory.Count == 0)
             {
@@ -63,10 +66,6 @@ public class Inventory : BaseMostThings
                     inventoryUI[place].transform.position = square.transform.position;
                 }
             }
-        }
-        else
-        {
-            text.text = "" + (int.Parse(text.text) - 1);
         }
     }
 }
