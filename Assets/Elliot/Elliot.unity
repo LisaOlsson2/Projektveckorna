@@ -303,11 +303,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1349471916309215590, guid: 608fed46aaa9f1448a47fbb25f5e89fb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 23.464108
+      value: -3.78
       objectReference: {fileID: 0}
     - target: {fileID: 1349471916309215590, guid: 608fed46aaa9f1448a47fbb25f5e89fb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.0284314
+      value: -1.28
       objectReference: {fileID: 0}
     - target: {fileID: 1349471916309215590, guid: 608fed46aaa9f1448a47fbb25f5e89fb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -340,6 +340,18 @@ PrefabInstance:
     - target: {fileID: 1349471916309215590, guid: 608fed46aaa9f1448a47fbb25f5e89fb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522391128660368669, guid: 608fed46aaa9f1448a47fbb25f5e89fb, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727503941394503350, guid: 608fed46aaa9f1448a47fbb25f5e89fb, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727503941394503350, guid: 608fed46aaa9f1448a47fbb25f5e89fb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 8388432420144422734, guid: 608fed46aaa9f1448a47fbb25f5e89fb, type: 3}
       propertyPath: m_Enabled
@@ -445,9 +457,9 @@ GameObject:
   - component: {fileID: 891490047}
   - component: {fileID: 891490046}
   - component: {fileID: 891490045}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -459,11 +471,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 891490044}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3eff2b30f5ec8444f8db8b9904bf773f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reference: {fileID: 0}
+  square: {fileID: 0}
   inventory: []
   inventoryUI: []
 --- !u!61 &891490046
@@ -525,6 +539,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aafc523a630fa44f95640c139c0ae4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reference: {fileID: 0}
   cam: {fileID: 567172249}
   slider: {fileID: 179044496}
 --- !u!95 &891490049
@@ -624,7 +639,7 @@ GameObject:
   - component: {fileID: 1089219482}
   m_Layer: 3
   m_Name: Platform
-  m_TagString: Platform
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1032,7 +1047,7 @@ GameObject:
   - component: {fileID: 1648902592}
   m_Layer: 3
   m_Name: Platform (1)
-  m_TagString: Platform
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
