@@ -14,21 +14,19 @@ public class PlayerEnterAreaDetector : MonoBehaviour
     [SerializeField]
     private string detectionTag = "Player";
 
+    [SerializeField]
     Patroling patroling;
 
-
-    private void Start()
-    {
-        GetComponent<Patroling>();
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag(detectionTag))
         {
-            patroling.moving = false;
             playerInArea = true;
             Player = collision.gameObject.transform;
             Debug.Log("enter");
+            patroling.moving = false;
+            Debug.Log("NotMoving");
+            patroling.startRollTimer = true;
         }
     }
 
@@ -36,10 +34,11 @@ public class PlayerEnterAreaDetector : MonoBehaviour
     {
         if (collision.CompareTag(detectionTag))
         {
-            patroling.moving = true;
             playerInArea = false;
             Player = null;
             Debug.Log("Exit");
+            patroling.moving = true;
+            Debug.Log("Moving");
         }
     }
 }
