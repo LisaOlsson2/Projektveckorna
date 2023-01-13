@@ -24,11 +24,7 @@ public class Crafting : Interactive
                 if (Input.GetKeyDown(KeyCode.Z))
                 {
                     inventory.UseItem(place);
-                    spriteRenderer.color = new Vector4(1, 1, 1, 1);
-                    BoxCollider2D boxCollider = GetComponent<BoxCollider2D>();
-                    boxCollider.size = Vector2.one;
-                    boxCollider.isTrigger = false;
-                    Destroy(this);
+                    Craft();
                 }
             }
             else
@@ -36,6 +32,15 @@ public class Crafting : Interactive
                 spriteRenderer.color = new Vector4(1, 1, 1, 0.6f);
             }
         }
+    }
+
+    public void Craft()
+    {
+        spriteRenderer.color = Vector4.one;
+        BoxCollider2D boxCollider = GetComponent<BoxCollider2D>();
+        boxCollider.size = Vector2.one;
+        boxCollider.isTrigger = false;
+        Destroy(this);
     }
 
     public override void OnTriggerEnter2D(Collider2D collision)

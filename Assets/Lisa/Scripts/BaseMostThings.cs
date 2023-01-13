@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class BaseMostThings : MonoBehaviour
 {
-    public ItKnows reference;
+    public ItKnows valueKeeper;
     public virtual void Start()
     {
-        reference = FindObjectOfType<ItKnows>();
+        valueKeeper = FindObjectOfType<ItKnows>();
     }
 }
