@@ -15,20 +15,16 @@ public class GameManagerScript : MonoBehaviour
     GameObject background;
 
     public bool paused;
-    void Start()
-    {
-
-    }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !background.activeSelf && !pauseMenu.activeSelf)
+        if (Input.GetKeyDown(KeyCode.Escape) && !background.activeSelf && !pauseMenu.activeSelf)    //om man trycker på escape och ifall bakgrunden och pausmenyn är inaktiv 
         {
             PauseGame();
-            background.SetActive(true);
-            pauseMenu.SetActive(true);
+            background.SetActive(true);     //sätter på bakgrunden
+            pauseMenu.SetActive(true);      //sätter op pausmenyn
         }
-        else if (Input.GetKeyDown(KeyCode.Escape) && background.activeSelf && pauseMenu.activeSelf)
+        else if (Input.GetKeyDown(KeyCode.Escape) && background.activeSelf && pauseMenu.activeSelf)     //om man trycker på escape och ifall bakgrunden och pausmenyn är aktiv
         {
             UnPauseGame();
             background.SetActive(false);
@@ -43,12 +39,12 @@ public class GameManagerScript : MonoBehaviour
 
         if (paused)
         {
-            Time.timeScale = 0;     
+            Time.timeScale = 0;     //pausar tiden
             Debug.Log("time scale 0");
         }
         else
         {
-            Time.timeScale = 1;
+            Time.timeScale = 1;     //startar tiden
             Debug.Log("time scale 1");
         }
     }

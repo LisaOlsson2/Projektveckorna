@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class StartSceneManager : MonoBehaviour
-{
+{   //Theo
 
     [SerializeField]
     GameObject settingsMenu;
@@ -13,10 +13,10 @@ public class StartSceneManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && settingsMenu.activeSelf)
+        if (Input.GetKeyDown(KeyCode.Escape) && settingsMenu.activeSelf)    //när man trycker escape och settings menyn är aktiv
         {
-            settingsMenu.SetActive(false);
-            startMenu.SetActive(true);
+            settingsMenu.SetActive(false);  //stänger settings menyn
+            startMenu.SetActive(true);  //sätter på startmenyn
         }
     }
 }

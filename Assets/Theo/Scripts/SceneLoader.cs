@@ -7,11 +7,11 @@ public class SceneLoader : MonoBehaviour
 {   //Theo
     public void LoadGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);   //laddar scenen efter den som är aktiv
     }
     public void QuitGame()
     {
-        Application.Quit();
+        Application.Quit();     //stänger spelet
         Debug.Log("Quit!");
     }
 }
