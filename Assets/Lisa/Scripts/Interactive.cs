@@ -8,9 +8,6 @@ public class Interactive : BaseMostThings
     public SpriteRenderer spriteRenderer;
     public bool interactable;
 
-    public readonly KeyCode pickUp = KeyCode.Mouse1;
-    public readonly KeyCode use = KeyCode.Mouse0;
-
     // Start is called before the first frame update
     public override void Start()
     {

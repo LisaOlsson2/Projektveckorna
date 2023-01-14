@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 // Lisa
-public class TempMovement : PlayerBase
+public class PlayerMovement : PlayerBase
 {
     readonly KeyCode jump = KeyCode.W;
     readonly KeyCode dash = KeyCode.Space;
@@ -85,30 +85,11 @@ public class TempMovement : PlayerBase
 
         if ((Input.GetKeyDown(left) && !Input.GetKey(right)) || (Input.GetKeyUp(right) && Input.GetKey(left)))
         {
-            if ((!Input.GetKey(sprint) || staminaTimer < 0))
-            {
-                ChangeAnimation("Walk");
-            }
-            else if (Input.GetKey(sprint) && staminaTimer > 0)
-            {
-                ChangeAnimation("Run");
-            }
-
-            transform.localRotation = Quaternion.Euler(0, 180, 0);
-            speedMultiplier = -Mathf.Abs(speedMultiplier);
+            StartLeftOrRight("left");
         }
         if ((Input.GetKeyDown(right) && !Input.GetKey(left))|| (Input.GetKeyUp(left) && Input.GetKey(right)))
         {
-            if ((!Input.GetKey(sprint) || staminaTimer < 0))
-            {
-                ChangeAnimation("Walk");
-            }
-            else if (Input.GetKey(sprint) && staminaTimer > 0)
-            {
-                ChangeAnimation("Run");
-            }
-            transform.localRotation = Quaternion.Euler(0, 0, 0);
-            speedMultiplier = Mathf.Abs(speedMultiplier);
+            StartLeftOrRight("right");
         }
 
         if ((Input.GetKeyUp(right) && !Input.GetKey(left)) || (Input.GetKeyUp(left) && !Input.GetKey(right)) || (Input.GetKeyDown(right) && Input.GetKey(left)) || (Input.GetKeyDown(left) && Input.GetKey(right)))
@@ -177,6 +158,31 @@ public class TempMovement : PlayerBase
         {
             grounded = true;
             SetWalkOrIdleOrSprint();
+        }
+    }
+
+
+    void StartLeftOrRight(string direction)
+    {
+
+        if ((!Input.GetKey(sprint) || staminaTimer < 0))
+        {
+            ChangeAnimation("Walk");
+        }
+        else if (Input.GetKey(sprint) && staminaTimer > 0)
+        {
+            ChangeAnimation("Run");
+        }
+
+        if (direction == "left")
+        {
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
+            speedMultiplier = -Mathf.Abs(speedMultiplier);
+        }
+        else
+        {
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
+            speedMultiplier = Mathf.Abs(speedMultiplier);
         }
     }
 

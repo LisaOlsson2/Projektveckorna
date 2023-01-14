@@ -17,11 +17,13 @@ public class PlayerBase : BaseMostThings
     public static bool grounded;
     public static PolygonCollider2D[] colliders;
     public static int currentCollider;
+    public static bool attacking;
 
     public override void Start()
     {
         base.Start();
         grounded = true;
+        attacking = false;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
@@ -47,7 +49,7 @@ public class PlayerBase : BaseMostThings
 
     public void ChangeAnimation(string animation)
     {
-        if (grounded)
+        if (grounded && !attacking)
         {
             animator.SetTrigger(animation);
 

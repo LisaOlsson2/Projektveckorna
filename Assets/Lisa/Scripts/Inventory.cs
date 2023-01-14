@@ -8,6 +8,9 @@ public class Inventory : BaseMostThings
 {
     public GameObject[] cheese;
 
+    [SerializeField]
+    Sprite food;
+
     public RectTransform square;
 
     public List<Sprite> inventory = new List<Sprite>();
@@ -15,12 +18,28 @@ public class Inventory : BaseMostThings
 
     public readonly Vector2 startPos = new Vector2(100, 100);
 
+    public readonly KeyCode pickUp = KeyCode.Mouse1;
+    public readonly KeyCode use = KeyCode.Mouse0;
+
     void Update()
     {
         if (square.gameObject.activeSelf && ((Input.mouseScrollDelta.y > 0 && square.transform.position.y < inventoryUI[inventoryUI.Count - 1].transform.position.y) || (Input.mouseScrollDelta.y < 0 && square.transform.position.y > inventoryUI[0].transform.position.y)))
         {
             square.anchoredPosition += Input.mouseScrollDelta * valueKeeper.distanceInventory;
         }
+
+        if (valueKeeper.health < cheese.Length && Input.GetKeyDown(use) && square.gameObject.activeSelf && CurrentSprite() == food)
+        {
+            UseItem(FindSprite(food));
+            cheese[valueKeeper.health].SetActive(true);
+            valueKeeper.health++;
+        }
+
+    }
+
+    public Sprite CurrentSprite()
+    {
+        return inventory[(int)(square.anchoredPosition.y - startPos.y) / valueKeeper.distanceInventory];
     }
 
     public int FindSprite(Sprite sprite)

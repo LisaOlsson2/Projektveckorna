@@ -8,7 +8,7 @@ public class Item : Interactive
 {
     void Update()
     {
-        if (Input.GetKeyDown(pickUp) && interactable)
+        if (Input.GetKeyDown(inventory.pickUp) && interactable)
         {
             if (inventory.inventory.Count == 0)
             {

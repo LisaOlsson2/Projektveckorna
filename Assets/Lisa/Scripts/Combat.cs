@@ -14,8 +14,6 @@ public class Combat : PlayerBase
     readonly float attackDelay = 0.25f;
     readonly float attackTime = 0.25f;
 
-    bool attacking;
-
     public override void Start()
     {
         base.Start();
@@ -24,7 +22,7 @@ public class Combat : PlayerBase
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !attacking && staminaTimer > 0 && inventory.square.gameObject.activeSelf && inventory.inventory[(int)(inventory.square.anchoredPosition.y - inventory.startPos.y) / valueKeeper.distanceInventory] == weapon)
+        if (grounded && Input.GetKeyDown(inventory.use) && !attacking && staminaTimer > 0 && inventory.square.gameObject.activeSelf && inventory.CurrentSprite() == weapon)
         {
             StartCoroutine(Attack());
         }
@@ -39,9 +37,9 @@ public class Combat : PlayerBase
         transform.GetChild(0).gameObject.SetActive(true);
         yield return new WaitForSeconds(attackTime);
         transform.GetChild(0).gameObject.SetActive(false);
+        attacking = false;
         SetWalkOrIdleOrSprint();
         yield return new WaitForSeconds(slashCooldown);
-        attacking = false;
     }
 
     public override void OnCollisionEnter2D(Collision2D collision)
@@ -59,6 +57,7 @@ public class Combat : PlayerBase
                     valueKeeper.health++;
                 }
             }
+            transform.position += new Vector3(transform.position.x - collision.transform.position.x, transform.position.y - collision.transform.position.y, 0);
         }
     }
 }

@@ -21,7 +21,7 @@ public class Crafting : Interactive
             {
                 spriteRenderer.color = new Vector4(1, 1, 1, 0.8f);
 
-                if (Input.GetKeyDown(use))
+                if (Input.GetKeyDown(inventory.use))
                 {
                     inventory.UseItem(place);
                     Craft();

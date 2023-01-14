@@ -202,7 +202,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 39993085}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.77, y: -2.72, z: 0}
+  m_LocalPosition: {x: -11.77, y: -2.72, z: 2}
   m_LocalScale: {x: 0.9375, y: 1.312, z: 1}
   m_Children:
   - {fileID: 1556444552}
@@ -1582,7 +1582,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1556444550}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
   m_LocalScale: {x: 0.53333336, y: 0.38109756, z: 1}
   m_Children: []
   m_Father: {fileID: 39993087}
@@ -1776,7 +1776,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1598241329}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4, z: 2}
+  m_LocalPosition: {x: 0, y: -4, z: 3}
   m_LocalScale: {x: 102.5, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2093,6 +2093,7 @@ MonoBehaviour:
   - {fileID: 329494116}
   - {fileID: 1947264946}
   - {fileID: 1423948622}
+  food: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
   square: {fileID: 913407439}
   inventory: []
   inventoryUI: []
