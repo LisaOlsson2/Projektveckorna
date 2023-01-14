@@ -15,6 +15,7 @@ public class ItKnows : MonoBehaviour
     public bool[] itemsCrafted;
 
     // health
+    public int health;
 
     // inventory
     public List<Sprite> inventorySprites = new List<Sprite>();
@@ -43,6 +44,7 @@ public class ItKnows : MonoBehaviour
         if (inEventOfTwo.Length == 1)
         {
             DontDestroyOnLoad(gameObject);
+            health = inventory.cheese.Length;
             itemsPickedUp = new bool[allItems.Length];
             itemsCrafted = new bool[allCraftingGhosts.Length];
         }
@@ -74,7 +76,13 @@ public class ItKnows : MonoBehaviour
         allItems = items;
         allCraftingGhosts = craftingGhosts;
         canvas = oldCanvas;
+
         button.onClick.AddListener(Exit);
+
+        for (int i = inventory.cheese.Length - 1; i > health - 1; i--)
+        {
+            inventory.cheese[i].SetActive(false);
+        }
 
         for (int i = 0; i < allItems.Length; i++)
         {

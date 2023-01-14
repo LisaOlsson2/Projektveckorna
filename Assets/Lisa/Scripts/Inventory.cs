@@ -6,12 +6,14 @@ using UnityEngine.UI;
 // Lisa
 public class Inventory : BaseMostThings
 {
+    public GameObject[] cheese;
+
     public RectTransform square;
 
     public List<Sprite> inventory = new List<Sprite>();
     public List<GameObject> inventoryUI = new List<GameObject>();
 
-    readonly Vector2 startPos = new Vector2(100, 100);
+    public readonly Vector2 startPos = new Vector2(100, 100);
 
     void Update()
     {

@@ -4,30 +4,22 @@ using UnityEngine;
 using UnityEngine.UI;
 
 // Lisa
-public class TempMovement : BaseMostThings
+public class TempMovement : PlayerBase
 {
-    readonly KeyCode left = KeyCode.A;
-    readonly KeyCode right = KeyCode.D;
     readonly KeyCode jump = KeyCode.W;
     readonly KeyCode dash = KeyCode.Space;
-    readonly KeyCode sprint = KeyCode.LeftShift;
 
     readonly float dashDuration = 0.3f;
     readonly float dashForce = 500;
     readonly float jumpForce = 200;
     readonly float baseSpeed = 2;
     readonly float staminaFull = 4;
-    readonly int sprintSpeed = 3;
+    readonly int sprintSpeed = 2;
 
     readonly float rightBorder = 10;
     readonly float leftBorder = -20;
 
     readonly float halfCamWorldspace = 8;
-
-    Rigidbody2D rb;
-    Animator animator;
-
-    Image staminaImageToChangeColor;
 
     [SerializeField]
     GameObject cam;
@@ -35,18 +27,21 @@ public class TempMovement : BaseMostThings
     [SerializeField]
     Slider slider;
 
-    bool grounded;
+    Image staminaImageToChangeColor;
+
     float camDistanceX;
-    float staminaTimer;
     int speedMultiplier = 2;
 
     public override void Start()
     {
         base.Start();
-        rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
         staminaImageToChangeColor = slider.fillRect.GetComponent<Image>();
         slider.maxValue = staminaFull;
+
+        colliders = GetComponents<PolygonCollider2D>();
+        // [0] idle
+        // [1] walk
+        // [2] sprint
     }
 
     void Update()
@@ -76,28 +71,57 @@ public class TempMovement : BaseMostThings
             if (Input.GetKeyDown(sprint))
             {
                 speedMultiplier *= sprintSpeed;
+                if ((Input.GetKey(left) && !Input.GetKey(right)) || (Input.GetKey(right) && !Input.GetKey(left)))
+                {
+                    ChangeAnimation("Run");
+                }
             }
             if (Input.GetKeyUp(sprint) && Mathf.Abs(speedMultiplier) > sprintSpeed)
             {
+                SetWalkOrIdleOrSprint();
                 speedMultiplier /= sprintSpeed;
             }
         }
 
-        if (Input.GetKeyDown(left) || (Input.GetKeyUp(right) && Input.GetKey(left)))
+        if ((Input.GetKeyDown(left) && !Input.GetKey(right)) || (Input.GetKeyUp(right) && Input.GetKey(left)))
         {
+            if ((!Input.GetKey(sprint) || staminaTimer < 0))
+            {
+                ChangeAnimation("Walk");
+            }
+            else if (Input.GetKey(sprint) && staminaTimer > 0)
+            {
+                ChangeAnimation("Run");
+            }
+
             transform.localRotation = Quaternion.Euler(0, 180, 0);
             speedMultiplier = -Mathf.Abs(speedMultiplier);
         }
-        if (Input.GetKeyDown(right) || (Input.GetKeyUp(left) && Input.GetKey(right)))
+        if ((Input.GetKeyDown(right) && !Input.GetKey(left))|| (Input.GetKeyUp(left) && Input.GetKey(right)))
         {
+            if ((!Input.GetKey(sprint) || staminaTimer < 0))
+            {
+                ChangeAnimation("Walk");
+            }
+            else if (Input.GetKey(sprint) && staminaTimer > 0)
+            {
+                ChangeAnimation("Run");
+            }
             transform.localRotation = Quaternion.Euler(0, 0, 0);
             speedMultiplier = Mathf.Abs(speedMultiplier);
         }
+
+        if ((Input.GetKeyUp(right) && !Input.GetKey(left)) || (Input.GetKeyUp(left) && !Input.GetKey(right)) || (Input.GetKeyDown(right) && Input.GetKey(left)) || (Input.GetKeyDown(left) && Input.GetKey(right)))
+        {
+            ChangeAnimation("Idel");
+        }
+
 
         if (Input.GetKeyDown(jump) && grounded)
         {
             animator.SetTrigger("Jump");
             rb.AddForce(transform.up * jumpForce);
+            grounded = false;
         }
 
         if ((transform.position.x > leftBorder && Input.GetKey(left) && !Input.GetKey(right)) || (transform.position.x < rightBorder && Input.GetKey(right) && !Input.GetKey(left)))
@@ -124,7 +148,7 @@ public class TempMovement : BaseMostThings
 
     IEnumerator Dash(int direction)
     {
-        staminaTimer -= 1;
+        staminaTimer -= 1.5f;
 
         if (staminaTimer < 0)
         {
@@ -141,33 +165,19 @@ public class TempMovement : BaseMostThings
 
     void StartFatigue()
     {
+        SetWalkOrIdleOrSprint();
         staminaImageToChangeColor.color = Color.red;
         speedMultiplier = Mathf.Abs(speedMultiplier) / speedMultiplier;
         staminaTimer = -staminaFull;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public override void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Ground" && animator.GetCurrentAnimatorStateInfo(0).IsName("JumpingAnimation"))
         {
-            if (Input.GetKey(left) || Input.GetKey(right))
-            {
-                animator.SetTrigger("Walk");
-            
-            }
-            else
-            {
-                animator.SetTrigger("Walk"); // there's no idle animation at the moment
-            }
-
             grounded = true;
+            SetWalkOrIdleOrSprint();
         }
     }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Ground")
-        {
-            grounded = false;
-        }
-    }
+
 }
