@@ -25,7 +25,7 @@ public class Inventory : BaseMostThings
     {
         if (square.gameObject.activeSelf && ((Input.mouseScrollDelta.y > 0 && square.transform.position.y < inventoryUI[inventoryUI.Count - 1].transform.position.y) || (Input.mouseScrollDelta.y < 0 && square.transform.position.y > inventoryUI[0].transform.position.y)))
         {
-            square.anchoredPosition += Input.mouseScrollDelta * valueKeeper.distanceInventory;
+            square.anchoredPosition += Input.mouseScrollDelta * Vector2.up * valueKeeper.distanceInventory;
         }
 
         if (valueKeeper.health < cheese.Length && Input.GetKeyDown(use) && square.gameObject.activeSelf && CurrentSprite() == food)

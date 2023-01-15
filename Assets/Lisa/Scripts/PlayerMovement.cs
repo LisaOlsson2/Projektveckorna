@@ -42,6 +42,43 @@ public class PlayerMovement : PlayerBase
         // [0] idle
         // [1] walk
         // [2] sprint
+        // [3] jump
+        // [4] attack
+    }
+
+    private void OnEnable()
+    {
+        if (staminaTimer > 0 && Input.GetKey(sprint))
+        {
+            speedMultiplier *= sprintSpeed;
+            if ((Input.GetKey(left) && !Input.GetKey(right)) || (Input.GetKey(right) && !Input.GetKey(left)))
+            {
+                ChangeAnimation("Run");
+            }
+        }
+
+
+        if (Input.GetKey(left) && !Input.GetKey(right))
+        {
+            StartLeftOrRight("left");
+        }
+        if (Input.GetKey(right) && !Input.GetKey(left))
+        {
+            StartLeftOrRight("right");
+        }
+
+        SetWalkOrIdleOrSprint();
+    }
+    private void OnDisable()
+    {
+        if (staminaTimer > 0 && Input.GetKey(sprint) && Mathf.Abs(speedMultiplier) > sprintSpeed)
+        {
+            SetWalkOrIdleOrSprint();
+            speedMultiplier /= sprintSpeed;
+        }
+
+        animator.SetTrigger("Idel"); // change this later
+
     }
 
     void Update()
@@ -102,6 +139,7 @@ public class PlayerMovement : PlayerBase
         {
             animator.SetTrigger("Jump");
             rb.AddForce(transform.up * jumpForce);
+
             grounded = false;
         }
 
@@ -154,10 +192,14 @@ public class PlayerMovement : PlayerBase
 
     public override void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ground" && animator.GetCurrentAnimatorStateInfo(0).IsName("JumpingAnimation"))
+        if (collision.gameObject.tag == "Ground" && !grounded)
         {
             grounded = true;
-            SetWalkOrIdleOrSprint();
+
+            if (this.enabled)
+            {
+                SetWalkOrIdleOrSprint();
+            }
         }
     }
 

@@ -10,9 +10,10 @@ public class Combat : PlayerBase
     [SerializeField]
     Sprite weapon;
 
-    readonly float slashCooldown = 0.15f;
+    //readonly float slashCooldown = 0.15f;
     readonly float attackDelay = 0.25f;
     readonly float attackTime = 0.25f;
+    readonly float knockback = 170;
 
     public override void Start()
     {
@@ -39,7 +40,17 @@ public class Combat : PlayerBase
         transform.GetChild(0).gameObject.SetActive(false);
         attacking = false;
         SetWalkOrIdleOrSprint();
-        yield return new WaitForSeconds(slashCooldown);
+    }
+
+
+    IEnumerator Knockback(float position)
+    {
+        rb.velocity = Vector3.zero;
+        GetComponent<PlayerMovement>().enabled = false;
+        rb.AddForce(Mathf.Abs(transform.position.x - position)/(transform.position.x - position) * Vector3.right * knockback);
+        yield return new WaitForSeconds(1);
+        rb.velocity = Vector3.zero;
+        GetComponent<PlayerMovement>().enabled = true;
     }
 
     public override void OnCollisionEnter2D(Collision2D collision)
@@ -48,6 +59,7 @@ public class Combat : PlayerBase
         {
             valueKeeper.health--;
             inventory.cheese[valueKeeper.health].SetActive(false);
+            StartCoroutine(Knockback(collision.transform.position.x));
             if (valueKeeper.health <= 0)
             {
                 // change this later
@@ -57,7 +69,6 @@ public class Combat : PlayerBase
                     valueKeeper.health++;
                 }
             }
-            transform.position += new Vector3(transform.position.x - collision.transform.position.x, transform.position.y - collision.transform.position.y, 0);
         }
     }
 }
