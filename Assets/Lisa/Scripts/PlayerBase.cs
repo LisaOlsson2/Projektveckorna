@@ -55,17 +55,13 @@ public class PlayerBase : BaseMostThings
 
             colliders[currentCollider].enabled = false;
 
-            if (animation == "Idel")
+            if (animation == "Idel" || animation == "Walk" || animation == "Jump")
             {
                 currentCollider = 0;
             }
-            else if (animation == "Walk")
-            {
-                currentCollider = 1;
-            }
             else if (animation == "Run")
             {
-                currentCollider = 2;
+                currentCollider = 1;
             }
             colliders[currentCollider].enabled = true;
         }

@@ -30,6 +30,7 @@ public class ItKnows : MonoBehaviour
 
     public Transform canvas;
     public GameObject emptyKinda;
+    public AudioController audioController;
 
     [SerializeField]
     Button exit;

@@ -39,11 +39,8 @@ public class PlayerMovement : PlayerBase
         slider.maxValue = staminaFull;
 
         colliders = GetComponents<PolygonCollider2D>();
-        // [0] idle
-        // [1] walk
-        // [2] sprint
-        // [3] jump
-        // [4] attack
+        // [0] idle walk jump
+        // [1] sprint
     }
 
     private void OnEnable()

@@ -15,6 +15,7 @@ public class TempEnemy : BaseMostThings
 
     readonly float distance = 1;
     readonly float knockback = 170;
+    readonly float deathDuration = 1.5f;
 
     int health = 2;
     float speed = 0.7f;
@@ -41,18 +42,25 @@ public class TempEnemy : BaseMostThings
         }
     }
 
+    IEnumerator Death()
+    {
+        gameObject.tag = "Untagged";
+        yield return new WaitForSeconds(deathDuration);
+        transform.GetChild(0).gameObject.SetActive(true);
+        transform.DetachChildren();
+        Destroy(gameObject);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Danger")
         {
             collision.gameObject.SetActive(false);
             health--;
-            GetComponent<Rigidbody2D>().AddForce(Mathf.Abs(transform.position.x - collision.transform.position.x) / (transform.position.x - collision.transform.position.x) * Vector3.right * knockback);
+            GetComponent<Rigidbody2D>().AddForce(new Vector3(Mathf.Abs(transform.position.x - collision.transform.position.x) / (transform.position.x - collision.transform.position.x), 1, 0) * knockback);
             if (health <= 0)
             {
-                transform.GetChild(0).gameObject.SetActive(true);
-                transform.DetachChildren();
-                Destroy(gameObject);
+                StartCoroutine(Death());
             }
         }
     }

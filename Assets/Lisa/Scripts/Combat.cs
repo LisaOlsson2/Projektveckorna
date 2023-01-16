@@ -10,7 +10,6 @@ public class Combat : PlayerBase
     [SerializeField]
     Sprite weapon;
 
-    //readonly float slashCooldown = 0.15f;
     readonly float attackDelay = 0.25f;
     readonly float attackTime = 0.25f;
     readonly float knockback = 170;
@@ -47,7 +46,7 @@ public class Combat : PlayerBase
     {
         rb.velocity = Vector3.zero;
         GetComponent<PlayerMovement>().enabled = false;
-        rb.AddForce(Mathf.Abs(transform.position.x - position)/(transform.position.x - position) * Vector3.right * knockback);
+        rb.AddForce((Mathf.Abs(transform.position.x - position)/(transform.position.x - position) * Vector3.right + Vector3.up) * knockback);
         yield return new WaitForSeconds(1);
         rb.velocity = Vector3.zero;
         GetComponent<PlayerMovement>().enabled = true;
