@@ -6,8 +6,12 @@ public class Patroling : MonoBehaviour
 {
 
     public bool moving;
+
     public float speed;
+
     public float distance;
+
+    public float rollSpeed;
 
     private bool movingRight = true;
 
@@ -21,13 +25,32 @@ public class Patroling : MonoBehaviour
 
     public bool startStunTimer;
 
+    public float rollingTimer;
+
+    public bool startRollingTimer;
+
+    bool playerPositionRight;
+
+    public GameObject player;
+
+    Rigidbody2D rb;
 
     private void Start()
     {
         moving = true;
+        rb = GetComponent<Rigidbody2D>();
+        rollSpeed = 5;
     }
     private void Update()
     {
+        if (player.transform.position.x > transform.position.x)
+        {
+            playerPositionRight = true;
+        }
+        else
+        {
+            playerPositionRight = false;
+        }
         if (moving)
         {
             transform.Translate(Vector2.right * speed * Time.deltaTime);
@@ -62,16 +85,38 @@ public class Patroling : MonoBehaviour
 
         void Roll()
         {
-            //rulla (add force) (transform.position, mot spelaren)
             startRollTimer = false;
             rollTimer = 0;
-            Debug.Log("rullar");
-            startStunTimer = true;
-            Debug.Log("stunTimer start");
-            moving = false;
-            Debug.Log("stunned");
-
+            
+            startRollingTimer = true;
         }
+        if (startRollingTimer)
+        {
+            rollingTimer += Time.deltaTime;
+            if (rollingTimer < 1)
+            {
+                if (playerPositionRight)
+                {
+                    rb.AddForce(new Vector2(rollSpeed, 0), ForceMode2D.Impulse);
+                    Debug.Log("rullar höger");
+                }
+                else
+                {
+                    rb.AddForce(new Vector2(-rollSpeed, 0));
+                    Debug.Log("rullar vänster");
+                }
+            }
+            else if (rollingTimer > 1)
+            {
+                startStunTimer = true;
+                Debug.Log("stunTimer start");
+                moving = false;
+                Debug.Log("stunned");
+                rollingTimer = 0;
+                startRollingTimer = false;
+            }
+        }
+
         if (startStunTimer)
         {
             stunTimer += Time.deltaTime;

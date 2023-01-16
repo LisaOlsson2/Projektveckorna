@@ -165,7 +165,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 5
+  m_Constraints: 4
 --- !u!114 &1349471916309215595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,7 +181,15 @@ MonoBehaviour:
   moving: 0
   speed: 5
   distance: 1
+  rollSpeed: 3
   groundDetection: {fileID: 1349471916234363982}
+  rollTimer: 0
+  startRollTimer: 0
+  stunTimer: 0
+  startStunTimer: 0
+  rollingTimer: 0
+  startRollingTimer: 0
+  player: {fileID: 1186329525144297118, guid: 770f95c75445f1e4da4d3034c53add0a, type: 3}
 --- !u!114 &8388432420144422734
 MonoBehaviour:
   m_ObjectHideFlags: 0
