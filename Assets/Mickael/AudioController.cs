@@ -1,7 +1,7 @@
 using UnityEngine.Audio;
 using System;
 using UnityEngine;
-
+//Mickael
 [System.Serializable]
 public class AudioController : MonoBehaviour
 {
@@ -18,12 +18,15 @@ public class AudioController : MonoBehaviour
             s.source.clip = s.clip;
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
+            s.source.loop = s.loop;
+
         }
     }
 
     // Update is called once per frame
-    public void play (string name)
+    public void Play (string name)
     {
-        Array.Find(sounds, sound => sound.name == name);
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        s.source.Play();
     }
 }
