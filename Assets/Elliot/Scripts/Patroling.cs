@@ -21,6 +21,10 @@ public class Patroling : MonoBehaviour
 
     public bool startStunTimer;
 
+    public GameObject Player;
+    public bool flip;
+    public float rollSpeed;
+
 
     private void Start()
     {
@@ -34,6 +38,18 @@ public class Patroling : MonoBehaviour
             startRollTimer = false;
             rollTimer = 0;
         }
+        Vector3 scale = transform.localScale;
+        if (Player.transform.position.x > transform.position.x)
+        {
+            scale.x = Mathf.Abs(scale.x) * -1 * (flip ? -1 : 1);
+            transform.Translate(x: rollSpeed * Time.deltaTime, y: 0, z: 0);
+        }
+        else
+        {
+            scale.x = Mathf.Abs(scale.x) * (flip ? -1 : 1);
+            transform.Translate(x: rollSpeed * Time.deltaTime * -1, y: 0, z: 0);
+        }
+            transform.localScale = scale;
             
         RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, distance);
         if (groundInfo.collider == false)
