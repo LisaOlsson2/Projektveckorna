@@ -18,6 +18,7 @@ public class PlayerBase : BaseMostThings
     public static PolygonCollider2D[] colliders;
     public static int currentCollider;
     public static bool attacking;
+    public static bool dont;
 
     public override void Start()
     {
@@ -51,19 +52,30 @@ public class PlayerBase : BaseMostThings
     {
         if (grounded && !attacking)
         {
+            int old = currentCollider;
             animator.SetTrigger(animation);
 
-            colliders[currentCollider].enabled = false;
-
-            if (animation == "Idel" || animation == "Walk" || animation == "Jump")
+            if (currentCollider == 0)
             {
+                if (animation == "Run")
+                {
+                    currentCollider = 1;
+                }
+            }
+            else if (animation != "Run")
+            {
+                if (animation == "Jump")
+                {
+                    dont = true;
+                }
                 currentCollider = 0;
             }
-            else if (animation == "Run")
+
+            if (old != currentCollider)
             {
-                currentCollider = 1;
+                colliders[old].enabled = false;
+                colliders[currentCollider].enabled = true;
             }
-            colliders[currentCollider].enabled = true;
         }
     }
     public virtual void OnCollisionEnter2D(Collision2D collision)

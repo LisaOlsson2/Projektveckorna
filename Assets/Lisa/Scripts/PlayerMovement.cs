@@ -134,7 +134,7 @@ public class PlayerMovement : PlayerBase
 
         if (Input.GetKeyDown(jump) && grounded)
         {
-            animator.SetTrigger("Jump");
+            ChangeAnimation("Jump");
             rb.AddForce(transform.up * jumpForce);
 
             grounded = false;
@@ -189,7 +189,11 @@ public class PlayerMovement : PlayerBase
 
     public override void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ground" && !grounded)
+        if (dont)
+        {
+            dont = false;
+        }    
+        else if (collision.gameObject.tag == "Ground" && !grounded)
         {
             grounded = true;
 
