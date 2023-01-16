@@ -252,9 +252,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55e935fd2ebe2004d9711c4dad989481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  allCraftingGhosts: []
+  itemsCrafted: 
+  health: 0
+  inventorySprites: []
+  amounts: 
+  allItems: []
+  itemsPickedUp: 
+  position: {x: 0, y: 0, z: 0}
   canvas: {fileID: 205203445}
-  thingy: {fileID: 2624343911629478153, guid: df49edf92d8673e49a47a54a4bebfbd8, type: 3}
   emptyKinda: {fileID: 5287341707398506310, guid: 7b5fae37c0301414a953ea57aa5466ea, type: 3}
+  exit: {fileID: 0}
 --- !u!4 &570254756
 Transform:
   m_ObjectHideFlags: 0
@@ -280,11 +288,12 @@ GameObject:
   - component: {fileID: 607923525}
   - component: {fileID: 607923524}
   - component: {fileID: 607923523}
-  - component: {fileID: 607923522}
+  - component: {fileID: 607923526}
   - component: {fileID: 607923521}
   - component: {fileID: 607923520}
   - component: {fileID: 607923519}
   - component: {fileID: 607923518}
+  - component: {fileID: 607923522}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -302,7 +311,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 405a50fb7f3d3b14e9d4fbd980aae3c9, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -400,6 +409,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eff2b30f5ec8444f8db8b9904bf773f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  valueKeeper: {fileID: 0}
+  cheese: []
+  food: {fileID: 0}
+  square: {fileID: 0}
   inventory: []
   inventoryUI: []
 --- !u!61 &607923520
@@ -458,9 +471,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 607923517}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5aafc523a630fa44f95640c139c0ae4a, type: 3}
+  m_Script: {fileID: 11500000, guid: 4bfcfddcb9f17fa4fbeb1bd8655536d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  valueKeeper: {fileID: 0}
   cam: {fileID: 2120112858}
   slider: {fileID: 1170731447}
 --- !u!95 &607923523
@@ -547,6 +561,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &607923526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607923517}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aafc523a630fa44f95640c139c0ae4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  valueKeeper: {fileID: 0}
+  rb: {fileID: 0}
+  animator: {fileID: 0}
+  cam: {fileID: 2120112858}
+  slider: {fileID: 1170731447}
 --- !u!1 &1162579353
 GameObject:
   m_ObjectHideFlags: 0
@@ -727,14 +758,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1311079611}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3f3e81a03ee4f24e8de387c48a80cfd, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d27e449b66eec64fb37cd1d71a771c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
   - name: footsteps
-    clip: {fileID: 8300000, guid: 405a50fb7f3d3b14e9d4fbd980aae3c9, type: 3}
-    volume: 0.181
-    pitch: 0.23
+    clip: {fileID: 8300000, guid: 1dcb76e57a626124793df994f1124ba5, type: 3}
+    volume: 0.072
+    pitch: 1.07
+    loop: 1
+    source: {fileID: 0}
+  - name: Landing
+    clip: {fileID: 8300000, guid: 11ba481d5f8bc7644ae17518cdc04879, type: 3}
+    volume: 0.021
+    pitch: 1.5
+    loop: 0
+    source: {fileID: 0}
+  - name: Jump
+    clip: {fileID: 0}
+    volume: 0.021
+    pitch: 2.22
+    loop: 0
     source: {fileID: 0}
 --- !u!4 &1311079613
 Transform:
@@ -761,9 +805,9 @@ GameObject:
   - component: {fileID: 1315641268}
   - component: {fileID: 1315641267}
   - component: {fileID: 1315641266}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -889,6 +933,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22bb4b8b6915b8248b9bed18f18a6746, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  valueKeeper: {fileID: 0}
+  inventory: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  interactable: 0
 --- !u!212 &1470824662
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -985,6 +1033,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e467135d2cf5bc4e8c1d02e229f37db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  valueKeeper: {fileID: 0}
+  inventory: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  interactable: 0
 --- !u!61 &1525673685
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1182,6 +1234,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e467135d2cf5bc4e8c1d02e229f37db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  valueKeeper: {fileID: 0}
+  inventory: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  interactable: 0
 --- !u!61 &1993418627
 BoxCollider2D:
   m_ObjectHideFlags: 0
