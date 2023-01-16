@@ -60,7 +60,7 @@ public class ItKnows : MonoBehaviour
             {
                 other = 0;
             }
-
+            inEventOfTwo[other].audioController = audioController;
             inEventOfTwo[other].SetValues(allItems, canvas, exit, inventory, allCraftingGhosts);
             Destroy(gameObject);
         }
@@ -120,13 +120,12 @@ public class ItKnows : MonoBehaviour
     public void AddItem(int place)
     {
         GameObject item = Instantiate(emptyKinda, canvas);
-
         item.GetComponent<Image>().sprite = inventory.inventory[place];
         item.GetComponentInChildren<Text>().text = amounts[place] + "";
         item.GetComponent<RectTransform>().anchoredPosition += new Vector2(0, distanceInventory * place);
         inventory.inventoryUI.Add(item);
     }
-
+    
     public void Exit()
     {
         for (int i = 0; i < allItems.Length; i++)
