@@ -101,7 +101,7 @@ public class MovementSound : BaseMostThings
         {
             animator.SetTrigger("Jump");
             rb.AddForce(transform.up * jumpForce);
-
+            grounded = false;
             FindObjectOfType<AudioController>().Play("Jump");
         }
 
@@ -171,11 +171,5 @@ public class MovementSound : BaseMostThings
             FindObjectOfType<AudioController>().Play("Landing");
         }
     }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Ground")
-        {
-            grounded = false;
-        }
-    }
+    
 }
