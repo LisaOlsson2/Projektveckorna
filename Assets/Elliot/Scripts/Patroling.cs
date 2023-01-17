@@ -6,8 +6,12 @@ public class Patroling : MonoBehaviour
 {
 
     public bool moving;
+
     public float speed;
+
     public float distance;
+
+    public float rollSpeed;
 
     private bool movingRight = true;
 
@@ -22,13 +26,20 @@ public class Patroling : MonoBehaviour
     public bool startStunTimer;
 
     public GameObject Player;
-    public bool flip;
-    public float rollSpeed;
 
+    public float rollingTimer;
+
+    public bool startRollingTimer;
+
+    bool playerPositionRight;
+
+    Rigidbody2D rb;
 
     private void Start()
     {
         moving = true;
+        rb = GetComponent<Rigidbody2D>();
+        rollSpeed = 15;
     }
     private void Update()
     {
@@ -38,23 +49,20 @@ public class Patroling : MonoBehaviour
             startRollTimer = false;
             rollTimer = 0;
         }
-        Vector3 scale = transform.localScale;
+
         if (Player.transform.position.x > transform.position.x)
         {
-            scale.x = Mathf.Abs(scale.x) * -1 * (flip ? -1 : 1);
-            transform.Translate(x: rollSpeed * Time.deltaTime, y: 0, z: 0);
+            playerPositionRight = true;
         }
         else
         {
-            scale.x = Mathf.Abs(scale.x) * (flip ? -1 : 1);
-            transform.Translate(x: rollSpeed * Time.deltaTime * -1, y: 0, z: 0);
+            playerPositionRight = false;
         }
-            transform.localScale = scale;
             
         RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, distance);
         if (groundInfo.collider == false)
         {
-            if (movingRight == true)
+            if (movingRight)
             {
                 transform.eulerAngles = new Vector3(0, -180, 0);
                 movingRight = false;
@@ -67,6 +75,7 @@ public class Patroling : MonoBehaviour
                 
             }
         }
+
         if (startRollTimer)
         {
             rollTimer += Time.deltaTime;
@@ -78,17 +87,39 @@ public class Patroling : MonoBehaviour
 
         void Roll()
         {
-            //rulla (add force) (transform.position, mot spelaren)
             startRollTimer = false;
             rollTimer = 0;
-            Debug.Log("rullar");
-            startStunTimer = true;
-            Debug.Log("stunTimer start");
-            moving = false;
-            Debug.Log("stunned");
+            startRollingTimer = true;
 
         }
-        if (startStunTimer)
+        if (startRollingTimer)
+        {
+            rollingTimer += Time.deltaTime;
+            if (rollingTimer < 1)
+            {
+                if (playerPositionRight)
+                {
+                    rb.AddForce(new Vector2(rollSpeed*Time.deltaTime, 0), ForceMode2D.Impulse);
+                    Debug.Log("rullar höger");
+                }
+                else
+                {
+                    rb.AddForce(new Vector2(-rollSpeed * Time.deltaTime, 0), ForceMode2D.Impulse);
+                    Debug.Log("rullar vänster");
+                }
+            }
+            else if (rollingTimer > 1)
+            {
+                startStunTimer = true;
+                Debug.Log("stunTimer start");
+                moving = false;
+                Debug.Log("stunned");
+                rollingTimer = 0;
+                startRollingTimer = false;
+            }
+        }
+
+            if (startStunTimer)
         {
             stunTimer += Time.deltaTime;
             if (stunTimer >= 3)

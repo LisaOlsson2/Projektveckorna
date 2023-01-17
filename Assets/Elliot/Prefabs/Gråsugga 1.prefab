@@ -187,9 +187,9 @@ MonoBehaviour:
   startRollTimer: 0
   stunTimer: 0
   startStunTimer: 0
+  Player: {fileID: 2199014443935620010, guid: 4c475b6c5d83f4b4fae306753f6dc62e, type: 3}
   rollingTimer: 0
   startRollingTimer: 0
-  player: {fileID: 1186329525144297118, guid: 770f95c75445f1e4da4d3034c53add0a, type: 3}
 --- !u!114 &8388432420144422734
 MonoBehaviour:
   m_ObjectHideFlags: 0
