@@ -12,20 +12,57 @@ public class Inventory : BaseMostThings
     Sprite food;
 
     public RectTransform square;
-
+    string[] numbers = new string[10];
     public List<Sprite> inventory = new List<Sprite>();
     public List<GameObject> inventoryUI = new List<GameObject>();
 
-    public readonly Vector2 startPos = new Vector2(100, 100);
+    public readonly Vector2 startPos = new Vector2(-2300, 0);
 
     public readonly KeyCode pickUp = KeyCode.Mouse1;
     public readonly KeyCode use = KeyCode.Mouse0;
 
+    public override void Start()
+    {
+        base.Start();
+        for (int i = 1; i < numbers.Length; i++)
+        {
+            numbers[i - 1] = i + "";
+        }
+        numbers[9] = 0 + "";
+
+    }
+
+
     void Update()
     {
-        if (square.gameObject.activeSelf && ((Input.mouseScrollDelta.y > 0 && square.transform.position.y < inventoryUI[inventoryUI.Count - 1].transform.position.y) || (Input.mouseScrollDelta.y < 0 && square.transform.position.y > inventoryUI[0].transform.position.y)))
+
+        if (square.gameObject.activeSelf)
         {
-            square.anchoredPosition += Input.mouseScrollDelta * Vector2.up * valueKeeper.distanceInventory;
+            if ((Input.mouseScrollDelta.y > 0 && square.transform.position.x < inventoryUI[inventoryUI.Count - 1].transform.position.x) || (Input.mouseScrollDelta.y < 0 && square.transform.position.x > inventoryUI[0].transform.position.x))
+            {
+                square.localPosition += Mathf.Abs(Input.mouseScrollDelta.y) /Input.mouseScrollDelta.y * Vector3.right * valueKeeper.distanceInventory;
+            }
+
+            foreach (string key in numbers)
+            {
+                if (Input.GetKeyDown(key))
+                {
+                    int place;
+                    if (int.Parse(key) > 0)
+                    {
+                        place = int.Parse(key) - 1;
+                    }
+                    else
+                    {
+                        place = 9;
+                    }
+
+                    if (place < inventory.Count)
+                    {
+                        square.transform.position = inventoryUI[place].transform.position;
+                    }
+                }
+            }
         }
 
         if (valueKeeper.health < cheese.Length && Input.GetKeyDown(use) && square.gameObject.activeSelf && CurrentSprite() == food)
@@ -39,7 +76,7 @@ public class Inventory : BaseMostThings
 
     public Sprite CurrentSprite()
     {
-        return inventory[(int)(square.anchoredPosition.y - startPos.y) / valueKeeper.distanceInventory];
+        return inventory[(int)((square.anchoredPosition.x - startPos.x) / valueKeeper.distanceInventory)];
     }
 
     public int FindSprite(Sprite sprite)

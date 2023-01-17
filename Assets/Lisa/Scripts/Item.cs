@@ -6,6 +6,9 @@ using UnityEngine.UI;
 // Lisa
 public class Item : Interactive
 {
+    [SerializeField]
+    Sprite icon;
+
     void Update()
     {
         if (Input.GetKeyDown(inventory.pickUp) && interactable)
@@ -15,13 +18,14 @@ public class Item : Interactive
                 inventory.square.gameObject.SetActive(true);
             }
 
-            int place = inventory.FindSprite(spriteRenderer.sprite);
+            int place = inventory.FindSprite(icon);
 
             if (place == inventory.inventory.Count)
             {
+
                 valueKeeper.amounts.Add(0);
-                inventory.inventory.Add(spriteRenderer.sprite);
-                valueKeeper.AddItem(place);
+                inventory.inventory.Add(icon);
+                valueKeeper.AddItem(inventory.FindSprite(icon));
             }
 
             valueKeeper.amounts[place]++;

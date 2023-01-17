@@ -40,8 +40,9 @@ public class invSound : BaseMostThings
 
     public Sprite CurrentSprite()
     {
-        return inventory[(int)(square.anchoredPosition.y - startPos.y) / valueKeeper.distanceInventory];
+        return inventory[(int)((square.anchoredPosition.y - startPos.y) / valueKeeper.distanceInventory)];
     }
+
 
     public int FindSprite(Sprite sprite)
     {

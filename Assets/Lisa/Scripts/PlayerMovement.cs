@@ -12,24 +12,18 @@ public class PlayerMovement : PlayerBase
     readonly float dashDuration = 0.3f;
     readonly float dashForce = 500;
     readonly float jumpForce = 200;
-    readonly float baseSpeed = 2;
+    public readonly float baseSpeed = 2;
     readonly float staminaFull = 4;
     readonly int sprintSpeed = 2;
 
-    readonly float rightBorder = 10;
-    readonly float leftBorder = -20;
-
-    readonly float halfCamWorldspace = 8;
-
-    [SerializeField]
-    GameObject cam;
+    readonly float rightWorldBorder = 100;
+    readonly float leftWorldBorder = -27.945f;
 
     [SerializeField]
     Slider slider;
 
     Image staminaImageToChangeColor;
 
-    float camDistanceX;
     int speedMultiplier = 2;
 
     public override void Start()
@@ -39,7 +33,7 @@ public class PlayerMovement : PlayerBase
         slider.maxValue = staminaFull;
 
         colliders = GetComponents<PolygonCollider2D>();
-        // [0] idle walk jump
+        // [0] idle walk jump attack 
         // [1] sprint
     }
 
@@ -48,12 +42,7 @@ public class PlayerMovement : PlayerBase
         if (staminaTimer > 0 && Input.GetKey(sprint))
         {
             speedMultiplier *= sprintSpeed;
-            if ((Input.GetKey(left) && !Input.GetKey(right)) || (Input.GetKey(right) && !Input.GetKey(left)))
-            {
-                ChangeAnimation("Run");
-            }
         }
-
 
         if (Input.GetKey(left) && !Input.GetKey(right))
         {
@@ -70,11 +59,10 @@ public class PlayerMovement : PlayerBase
     {
         if (staminaTimer > 0 && Input.GetKey(sprint) && Mathf.Abs(speedMultiplier) > sprintSpeed)
         {
-            SetWalkOrIdleOrSprint();
             speedMultiplier /= sprintSpeed;
         }
 
-        animator.SetTrigger("Idel"); // change this later
+        ChangeAnimation("Damage");
 
     }
 
@@ -140,7 +128,7 @@ public class PlayerMovement : PlayerBase
             grounded = false;
         }
 
-        if ((transform.position.x > leftBorder && Input.GetKey(left) && !Input.GetKey(right)) || (transform.position.x < rightBorder && Input.GetKey(right) && !Input.GetKey(left)))
+        if ((transform.position.x > leftWorldBorder && Input.GetKey(left) && !Input.GetKey(right)) || (transform.position.x < rightWorldBorder && Input.GetKey(right) && !Input.GetKey(left)))
         {
             transform.position += new Vector3(baseSpeed * speedMultiplier, 0, 0) * Time.deltaTime;
 
@@ -152,13 +140,6 @@ public class PlayerMovement : PlayerBase
         else
         {
             rb.velocity = new Vector3(0, rb.velocity.y, 0);
-        }
-
-        camDistanceX = transform.position.x - cam.transform.position.x;
-        cam.transform.position += new Vector3(0, transform.position.y - cam.transform.position.y, 0) * baseSpeed * Time.deltaTime;
-        if ((cam.transform.position.x < rightBorder - halfCamWorldspace && cam.transform.position.x > leftBorder + halfCamWorldspace) || (transform.position.x > leftBorder + halfCamWorldspace && transform.position.x < rightBorder - halfCamWorldspace))
-        {
-            cam.transform.position += new Vector3(camDistanceX, 0, 0) * baseSpeed * Time.deltaTime;
         }
     }
 
@@ -201,13 +182,18 @@ public class PlayerMovement : PlayerBase
             {
                 SetWalkOrIdleOrSprint();
             }
+            else
+            {
+                rb.velocity = Vector3.zero;
+                this.enabled = true;
+            }
         }
     }
 
 
     void StartLeftOrRight(string direction)
     {
-
+        animator.ResetTrigger("Idel");
         if ((!Input.GetKey(sprint) || staminaTimer < 0))
         {
             ChangeAnimation("Walk");

@@ -11,35 +11,68 @@ public class Crafting : Interactive
     // 0.8 = close item selected
     // 1 = built
 
-    int place;
+    [SerializeField]
+    Sprite[] materials;
+
+    [SerializeField]
+    int[] amounts;
 
     void Update()
     {
         if (interactable)
         {
-            if (inventory.square.transform.position.y == inventory.inventoryUI[place].transform.position.y)
-            {
-                spriteRenderer.color = new Vector4(1, 1, 1, 0.8f);
 
-                if (Input.GetKeyDown(inventory.use))
-                {
-                    inventory.UseItem(place);
-                    Craft();
-                }
-            }
-            else
+            for (int i = 0; i < materials.Length; i++)
             {
-                spriteRenderer.color = new Vector4(1, 1, 1, 0.6f);
+                if (inventory.CurrentSprite() == materials[i])
+                {
+                    spriteRenderer.color = new Vector4(1, 1, 1, 0.8f);
+
+                    if (Input.GetKeyDown(inventory.use))
+                    {
+                        inventory.UseItem(inventory.FindSprite(materials[i]));
+                        amounts[i]--;
+
+                        bool craft = true;
+                        foreach(int amount in amounts)
+                        {
+                            if (amount > 0)
+                            {
+                                craft = false;
+                                break;
+                            }
+                        }
+
+                        if (craft)
+                        {
+                            Craft1();
+                        }
+                    }
+                }
+
             }
         }
     }
 
+    void Craft1()
+    {
+        Craft();
+        foreach (Crafting craftingGhost in valueKeeper.allCraftingGhosts)
+        {
+            if (craftingGhost != null && craftingGhost != this)
+            {
+                return;
+            }
+        }
+        valueKeeper.TheEnd();
+    }
+    
     public void Craft()
     {
         spriteRenderer.color = Vector4.one;
-        BoxCollider2D boxCollider = GetComponent<BoxCollider2D>();
-        boxCollider.size = Vector2.one;
-        boxCollider.isTrigger = false;
+        //BoxCollider2D boxCollider = GetComponent<BoxCollider2D>();
+        //boxCollider.size = Vector2.one;
+        //boxCollider.isTrigger = false;
         Destroy(this);
     }
 
@@ -47,15 +80,16 @@ public class Crafting : Interactive
     {
         base.OnTriggerEnter2D(collision);
 
-        if (inventory.FindSprite(spriteRenderer.sprite) < inventory.inventory.Count)
+        for (int i = 0; i < materials.Length; i++)
         {
-            place = inventory.FindSprite(spriteRenderer.sprite);
+            if (inventory.FindSprite(materials[i]) < inventory.inventory.Count)
+            {
+                return;
+            }
         }
-        else
-        {
-            spriteRenderer.color = new Vector4(1, 1, 1, 0.4f);
-            interactable = false;
-        }
+
+        spriteRenderer.color = new Vector4(1, 1, 1, 0.4f);
+        interactable = false;
     }
 
     public override void OnTriggerExit2D(Collider2D collision)

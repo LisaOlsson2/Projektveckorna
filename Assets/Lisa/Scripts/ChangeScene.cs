@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-    public void StartPlaying()
+    public void Load(string name)
     {
-        SceneManager.LoadScene("Lisas Scene");
+        SceneManager.LoadScene(name);
     }
 }

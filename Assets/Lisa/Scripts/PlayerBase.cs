@@ -25,6 +25,7 @@ public class PlayerBase : BaseMostThings
         base.Start();
         grounded = true;
         attacking = false;
+        dont = false;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
@@ -50,7 +51,7 @@ public class PlayerBase : BaseMostThings
 
     public void ChangeAnimation(string animation)
     {
-        if (grounded && !attacking)
+        if ((grounded && !attacking) || animation == "Damage")
         {
             int old = currentCollider;
             animator.SetTrigger(animation);

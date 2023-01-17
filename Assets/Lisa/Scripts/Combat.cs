@@ -42,14 +42,12 @@ public class Combat : PlayerBase
     }
 
 
-    IEnumerator Knockback(float position)
+    void Knockback(float position)
     {
         rb.velocity = Vector3.zero;
         GetComponent<PlayerMovement>().enabled = false;
         rb.AddForce((Mathf.Abs(transform.position.x - position)/(transform.position.x - position) * Vector3.right + Vector3.up) * knockback);
-        yield return new WaitForSeconds(1);
-        rb.velocity = Vector3.zero;
-        GetComponent<PlayerMovement>().enabled = true;
+        grounded = false;
     }
 
     public override void OnCollisionEnter2D(Collision2D collision)
@@ -58,7 +56,7 @@ public class Combat : PlayerBase
         {
             valueKeeper.health--;
             inventory.cheese[valueKeeper.health].SetActive(false);
-            StartCoroutine(Knockback(collision.transform.position.x));
+            Knockback(collision.transform.position.x);
             if (valueKeeper.health <= 0)
             {
                 // change this later

@@ -28,14 +28,15 @@ public class ItKnows : MonoBehaviour
     // position
     public Vector3 position;
 
-    public Transform canvas;
+    public Transform inventoryParent;
     public GameObject emptyKinda;
     public AudioController audioController;
+
 
     [SerializeField]
     Button exit;
 
-    public readonly int distanceInventory = 100;
+    public readonly float distanceInventory = 575;
 
     void Start()
     {
@@ -60,8 +61,16 @@ public class ItKnows : MonoBehaviour
             {
                 other = 0;
             }
+
             inEventOfTwo[other].audioController = audioController;
-            inEventOfTwo[other].SetValues(allItems, canvas, exit, inventory, allCraftingGhosts);
+            inEventOfTwo[other].allItems = allItems;
+            inEventOfTwo[other].inventoryParent = inventoryParent;
+            inEventOfTwo[other].exit = exit;
+            inEventOfTwo[other].inventory = inventory;
+            inEventOfTwo[other].allCraftingGhosts = allCraftingGhosts;
+
+            inEventOfTwo[other].SetValues();
+
             Destroy(gameObject);
         }
         else
@@ -70,15 +79,9 @@ public class ItKnows : MonoBehaviour
         }
     }
 
-    void SetValues(GameObject[] items, Transform oldCanvas, Button button, Inventory player, Crafting[] craftingGhosts)
+    void SetValues()
     {
-        inventory = player;
-
-        allItems = items;
-        allCraftingGhosts = craftingGhosts;
-        canvas = oldCanvas;
-
-        button.onClick.AddListener(Exit);
+        exit.onClick.AddListener(Exit);
 
         for (int i = inventory.cheese.Length - 1; i > health - 1; i--)
         {
@@ -119,10 +122,10 @@ public class ItKnows : MonoBehaviour
 
     public void AddItem(int place)
     {
-        GameObject item = Instantiate(emptyKinda, canvas);
+        GameObject item = Instantiate(emptyKinda, inventoryParent);
         item.GetComponent<Image>().sprite = inventory.inventory[place];
         item.GetComponentInChildren<Text>().text = amounts[place] + "";
-        item.GetComponent<RectTransform>().anchoredPosition += new Vector2(0, distanceInventory * place);
+        item.GetComponent<RectTransform>().localPosition += new Vector3(distanceInventory * place, 0, 0);
         inventory.inventoryUI.Add(item);
     }
     
@@ -156,5 +159,10 @@ public class ItKnows : MonoBehaviour
         position = inventory.transform.position;
 
         SceneManager.LoadScene("Start");
+    }
+
+    public void TheEnd()
+    {
+        SceneManager.LoadScene("The End");
     }
 }
