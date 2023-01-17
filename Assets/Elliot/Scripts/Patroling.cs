@@ -50,11 +50,11 @@ public class Patroling : MonoBehaviour
             rollTimer = 0;
         }
 
-        if (Player.transform.position.x > transform.position.x)
+        if (Player.transform.position.x > transform.position.x)     //om spelarens position är mer än fiendens position så rör sig fienden höger, Theo
         {
             playerPositionRight = true;
         }
-        else
+        else        //annars så rör den sig vänster, Theo
         {
             playerPositionRight = false;
         }
@@ -79,36 +79,31 @@ public class Patroling : MonoBehaviour
         if (startRollTimer)
         {
             rollTimer += Time.deltaTime;
-            if (rollTimer >= 5)
+            if (rollTimer >= 5)     //om det har gått 5 sekunder eller mer, Theo
             {
-                Roll();
+                startRollTimer = false;
+                rollTimer = 0;
+                startRollingTimer = true;
             }
         }
 
-        void Roll()
-        {
-            startRollTimer = false;
-            rollTimer = 0;
-            startRollingTimer = true;
-
-        }
         if (startRollingTimer)
         {
             rollingTimer += Time.deltaTime;
             if (rollingTimer < 1)
             {
-                if (playerPositionRight)
+                if (playerPositionRight)        //fienden rör sig åt höger i 1 sekund ifall playerPositionRight är sant, Theo
                 {
                     rb.AddForce(new Vector2(rollSpeed*Time.deltaTime, 0), ForceMode2D.Impulse);
                     Debug.Log("rullar höger");
                 }
-                else
+                else        //annars rör fienden sig åt vänster, Theo
                 {
                     rb.AddForce(new Vector2(-rollSpeed * Time.deltaTime, 0), ForceMode2D.Impulse);
                     Debug.Log("rullar vänster");
                 }
             }
-            else if (rollingTimer > 1)
+            else if (rollingTimer > 1)      //efter 1 sekund så blir fineden "stunned" och stannar, Theo
             {
                 startStunTimer = true;
                 Debug.Log("stunTimer start");
@@ -119,10 +114,10 @@ public class Patroling : MonoBehaviour
             }
         }
 
-            if (startStunTimer)
+        if (startStunTimer)
         {
             stunTimer += Time.deltaTime;
-            if (stunTimer >= 3)
+            if (stunTimer >= 3)     //fienden står still i 3 sekunder, Theo
             {
                 Debug.Log("not stunned");
                 moving = true;

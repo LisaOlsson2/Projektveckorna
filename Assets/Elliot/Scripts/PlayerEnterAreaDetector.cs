@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 public class PlayerEnterAreaDetector : MonoBehaviour
-{
+{       //Theo
     [field: SerializeField]
 
     public bool playerInArea { get; private set; }
@@ -19,7 +19,7 @@ public class PlayerEnterAreaDetector : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag(detectionTag))
+        if (collision.CompareTag(detectionTag))     //om triggern kolliderar med objectet med detectionTag så slutar fienden röra på sig
         {
             playerInArea = true;
             Player = collision.gameObject.transform;
@@ -32,7 +32,7 @@ public class PlayerEnterAreaDetector : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag(detectionTag))
+        if (collision.CompareTag(detectionTag))     //om triggern slutar kollidera med objectet med detectionTag så börjar fienden röra på sig igen
         {
             playerInArea = false;
             Player = null;
