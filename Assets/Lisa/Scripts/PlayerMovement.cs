@@ -39,21 +39,24 @@ public class PlayerMovement : PlayerBase
 
     private void OnEnable()
     {
-        if (staminaTimer > 0 && Input.GetKey(sprint))
+        if (animator != null)
         {
-            speedMultiplier *= sprintSpeed;
-        }
+            if (staminaTimer > 0 && Input.GetKey(sprint))
+            {
+                speedMultiplier *= sprintSpeed;
+            }
 
-        if (Input.GetKey(left) && !Input.GetKey(right))
-        {
-            StartLeftOrRight("left");
-        }
-        if (Input.GetKey(right) && !Input.GetKey(left))
-        {
-            StartLeftOrRight("right");
-        }
+            if (Input.GetKey(left) && !Input.GetKey(right))
+            {
+                StartLeftOrRight("left");
+            }
+            if (Input.GetKey(right) && !Input.GetKey(left))
+            {
+                StartLeftOrRight("right");
+            }
 
-        SetWalkOrIdleOrSprint();
+            SetWalkOrIdleOrSprint();
+        }
     }
     private void OnDisable()
     {

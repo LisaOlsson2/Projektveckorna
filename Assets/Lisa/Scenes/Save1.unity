@@ -1583,9 +1583,8 @@ MonoBehaviour:
   - {fileID: 856877560}
   itemsPickedUp: 
   position: {x: 0, y: 0, z: 0}
-  inventoryParent: {fileID: 652195179}
-  emptyKinda: {fileID: 8388150730041215066, guid: 7b5fae37c0301414a953ea57aa5466ea, type: 3}
   audioController: {fileID: 1078363829}
+  cam: {fileID: 1728503746}
   exit: {fileID: 531906439}
 --- !u!1 &652195178
 GameObject:
@@ -3000,7 +2999,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1506097689
 SpriteRenderer:
   m_ObjectHideFlags: 0

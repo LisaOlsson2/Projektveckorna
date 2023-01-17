@@ -28,10 +28,12 @@ public class ItKnows : MonoBehaviour
     // position
     public Vector3 position;
 
-    public Transform inventoryParent;
-    public GameObject emptyKinda;
+    Transform inventoryParent;
+    GameObject emptyKinda;
     public AudioController audioController;
 
+    [SerializeField]
+    GameObject cam;
 
     [SerializeField]
     Button exit;
@@ -68,6 +70,7 @@ public class ItKnows : MonoBehaviour
             inEventOfTwo[other].exit = exit;
             inEventOfTwo[other].inventory = inventory;
             inEventOfTwo[other].allCraftingGhosts = allCraftingGhosts;
+            inEventOfTwo[other].cam = cam;
 
             inEventOfTwo[other].SetValues();
 
@@ -118,6 +121,7 @@ public class ItKnows : MonoBehaviour
         }
 
         inventory.transform.position = position;
+        cam.transform.position = new Vector3(inventory.transform.position.x, cam.transform.position.y, cam.transform.position.z);
     }
 
     public void AddItem(int place)
