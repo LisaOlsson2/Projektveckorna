@@ -28,6 +28,10 @@ public class ItKnows : MonoBehaviour
     // position
     public Vector3 position;
 
+    // endings
+    public bool dead;
+    public bool done;
+
     Transform inventoryParent;
     GameObject emptyKinda;
     public AudioController audioController;
@@ -39,7 +43,6 @@ public class ItKnows : MonoBehaviour
     Button exit;
 
     public readonly float distanceInventory = 575;
-
     void Start()
     {
         inEventOfTwo = FindObjectsOfType<ItKnows>();
@@ -121,7 +124,16 @@ public class ItKnows : MonoBehaviour
         }
 
         inventory.transform.position = position;
-        cam.transform.position = new Vector3(inventory.transform.position.x, cam.transform.position.y, cam.transform.position.z);
+
+        if (dead)
+        {
+
+        }
+
+        if (done)
+        {
+            TheEnd();
+        }
     }
 
     public void AddItem(int place)
@@ -167,6 +179,7 @@ public class ItKnows : MonoBehaviour
 
     public void TheEnd()
     {
-        SceneManager.LoadScene("The End");
+        done = true;
     }
+
 }

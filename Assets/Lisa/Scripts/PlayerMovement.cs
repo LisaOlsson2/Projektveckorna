@@ -12,12 +12,12 @@ public class PlayerMovement : PlayerBase
     readonly float dashDuration = 0.3f;
     readonly float dashForce = 500;
     readonly float jumpForce = 200;
-    public readonly float baseSpeed = 2;
+    readonly float baseSpeed = 2;
     readonly float staminaFull = 4;
     readonly int sprintSpeed = 2;
 
-    readonly float rightWorldBorder = 100;
-    readonly float leftWorldBorder = -27.945f;
+    readonly float rightWorldBorder = 65.205f;
+    readonly float leftWorldBorder = -9.315f;
 
     [SerializeField]
     Slider slider;

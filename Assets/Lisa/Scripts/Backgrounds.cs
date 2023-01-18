@@ -2,27 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Backgrounds : MonoBehaviour
+public class Backgrounds : BaseMostThings
 {
     [SerializeField]
     PlayerMovement player;
 
     GameObject[] backgrounds;
 
-    float currentRightBorder;
-    float currentLeftBorder;
+    readonly float borderDistance = 18.63f;
     static int currentArea;
-    float distance;
-
-    //[{area}, borders]
-    readonly float[,] borders = { { -27.945f, 27.945f}, { 27.945f, 50} };
 
     readonly float distanceToChange = 1;
-    readonly float halfCamWorldspace = 9.315f;
 
     // Start is called before the first frame update
-    void Start()
+    public override void Start()
     {
+        base.Start();
         backgrounds = new GameObject[transform.childCount];
         for (int i = 0; i < transform.childCount; i++)
         {
@@ -30,31 +25,16 @@ public class Backgrounds : MonoBehaviour
         }
 
         backgrounds[currentArea].SetActive(true);
-        currentLeftBorder = borders[currentArea, 0];
-        currentRightBorder = borders[currentArea, 1];
+        transform.position += borderDistance * currentArea * Vector3.right;
     }
 
 
     private void Update()
     {
-        distance = player.transform.position.x - transform.position.x;
-
-        if ((transform.position.x < currentRightBorder - halfCamWorldspace && transform.position.x > currentLeftBorder + halfCamWorldspace) || (player.transform.position.x > currentLeftBorder + halfCamWorldspace && player.transform.position.x < currentRightBorder - halfCamWorldspace))
+        if (Mathf.Abs(player.transform.position.x - transform.position.x) > borderDistance/2 + distanceToChange)
         {
-            transform.position += new Vector3(distance, 0, 0) * player.baseSpeed * Time.deltaTime;
+            NewArea((int)(Mathf.Abs(player.transform.position.x - transform.position.x)/(player.transform.position.x - transform.position.x)));
         }
-        else
-        {
-            if (player.transform.position.x > currentRightBorder + distanceToChange)
-            {
-                NewArea(1);
-            }
-            if (player.transform.position.x < currentLeftBorder - distanceToChange)
-            {
-                NewArea(-1);
-            }
-        }
-
     }
 
     void NewArea(int direction)
@@ -62,8 +42,6 @@ public class Backgrounds : MonoBehaviour
         backgrounds[currentArea].SetActive(false);
         currentArea += direction;
         backgrounds[currentArea].SetActive(true);
-        currentLeftBorder = borders[currentArea, 0];
-        currentRightBorder = borders[currentArea, 1];
-        transform.position += Vector3.right * halfCamWorldspace * 2 * direction;
+        transform.position += direction * borderDistance * Vector3.right;
     }
 }
