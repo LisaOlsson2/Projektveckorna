@@ -32,8 +32,12 @@ public class ItKnows : MonoBehaviour
     public bool dead;
     public bool done;
 
+    [SerializeField]
     Transform inventoryParent;
+    
+    [SerializeField]
     GameObject emptyKinda;
+
     public AudioController audioController;
 
     [SerializeField]
@@ -42,7 +46,14 @@ public class ItKnows : MonoBehaviour
     [SerializeField]
     Button exit;
 
+    [SerializeField]
+    Sprite death;
+
+    [SerializeField]
+    GameObject deathText;
+
     public readonly float distanceInventory = 575;
+
     void Start()
     {
         inEventOfTwo = FindObjectsOfType<ItKnows>();
@@ -127,7 +138,11 @@ public class ItKnows : MonoBehaviour
 
         if (dead)
         {
-
+            deathText.SetActive(true);
+            inventoryParent.parent.gameObject.SetActive(false);
+            Destroy(inventory.GetComponent<PlayerBase>());
+            Destroy(inventory.GetComponent<Animator>());
+            inventory.GetComponent<SpriteRenderer>().sprite = death;
         }
 
         if (done)
@@ -180,6 +195,17 @@ public class ItKnows : MonoBehaviour
     public void TheEnd()
     {
         done = true;
+    }
+
+    public IEnumerator Death()
+    {
+        Destroy(inventory.GetComponent<Combat>());
+        Animator animator = inventory.GetComponent<Animator>();
+        animator.SetTrigger("Death");
+        yield return new WaitForSeconds(1.5f);
+        Destroy(animator);
+        inventoryParent.parent.gameObject.SetActive(false);
+        deathText.SetActive(true);
     }
 
 }

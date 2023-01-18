@@ -68,6 +68,7 @@ public class Inventory : BaseMostThings
         if (valueKeeper.health < cheese.Length && Input.GetKeyDown(use) && square.gameObject.activeSelf && CurrentSprite() == food)
         {
             UseItem(FindSprite(food));
+            GetComponent<PlayerMovement>().ChangeAnimation("Eat");
             cheese[valueKeeper.health].SetActive(true);
             valueKeeper.health++;
         }

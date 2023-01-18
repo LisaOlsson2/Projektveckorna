@@ -5,7 +5,7 @@ using UnityEngine;
 public class Backgrounds : BaseMostThings
 {
     [SerializeField]
-    PlayerMovement player;
+    GameObject player;
 
     GameObject[] backgrounds;
 

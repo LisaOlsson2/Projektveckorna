@@ -60,12 +60,15 @@ public class PlayerMovement : PlayerBase
     }
     private void OnDisable()
     {
-        if (staminaTimer > 0 && Input.GetKey(sprint) && Mathf.Abs(speedMultiplier) > sprintSpeed)
+        if (animator != null)
         {
-            speedMultiplier /= sprintSpeed;
-        }
+            if (staminaTimer > 0 && Input.GetKey(sprint) && Mathf.Abs(speedMultiplier) > sprintSpeed)
+            {
+                speedMultiplier /= sprintSpeed;
+            }
 
-        ChangeAnimation("Damage");
+            ChangeAnimation("Damage");
+        }
 
     }
 
@@ -185,10 +188,17 @@ public class PlayerMovement : PlayerBase
             {
                 SetWalkOrIdleOrSprint();
             }
-            else
+            else if (rb != null)
             {
                 rb.velocity = Vector3.zero;
-                this.enabled = true;
+                if (valueKeeper.dead)
+                {
+                    StartCoroutine(valueKeeper.Death());
+                }
+                else
+                {
+                    this.enabled = true;
+                }
             }
         }
     }

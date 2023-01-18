@@ -23,7 +23,7 @@ public class PlayerBase : BaseMostThings
     public override void Start()
     {
         base.Start();
-        grounded = true;
+        grounded = false;
         attacking = false;
         dont = false;
         rb = GetComponent<Rigidbody2D>();

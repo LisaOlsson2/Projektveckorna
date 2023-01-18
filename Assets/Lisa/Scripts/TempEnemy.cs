@@ -5,9 +5,6 @@ using UnityEngine;
 // Lisa
 public class TempEnemy : BaseMostThings
 {
-    [SerializeField]
-    Transform player;
-
     //Animator animator;
     PolygonCollider2D[] colliders;
     // [0] Idel
