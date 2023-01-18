@@ -20,6 +20,8 @@ public class PlayerBase : BaseMostThings
     public static bool attacking;
     public static bool dont;
 
+    string currentState = "Idel";
+
     public override void Start()
     {
         base.Start();
@@ -56,6 +58,23 @@ public class PlayerBase : BaseMostThings
             int old = currentCollider;
             animator.SetTrigger(animation);
 
+            if (currentState == "Run")
+            {
+                audioController.Stop(currentState);
+            }
+            else if (currentState == "Walk")
+            {
+                audioController.Stop("Walk");
+            }
+
+            foreach (Sound sound in audioController.sounds)
+            {
+                if (sound.name == animation)
+                {
+                    audioController.Play(animation);
+                }
+            }
+
             if (currentCollider == 0)
             {
                 if (animation == "Run")
@@ -77,6 +96,8 @@ public class PlayerBase : BaseMostThings
                 colliders[old].enabled = false;
                 colliders[currentCollider].enabled = true;
             }
+
+            currentState = animation;
         }
     }
     public virtual void OnCollisionEnter2D(Collision2D collision)

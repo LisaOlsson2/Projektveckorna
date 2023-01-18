@@ -33,7 +33,7 @@ public class PlayerMovement : PlayerBase
         slider.maxValue = staminaFull;
 
         colliders = GetComponents<PolygonCollider2D>();
-        // [0] idle walk jump attack 
+        // [0] idle walk jump attack eat damage
         // [1] sprint
     }
 
@@ -60,7 +60,7 @@ public class PlayerMovement : PlayerBase
     }
     private void OnDisable()
     {
-        if (animator != null)
+        if (animator != null && audioController != null)
         {
             if (staminaTimer > 0 && Input.GetKey(sprint) && Mathf.Abs(speedMultiplier) > sprintSpeed)
             {
@@ -179,10 +179,11 @@ public class PlayerMovement : PlayerBase
         if (dont)
         {
             dont = false;
-        }    
+        }
         else if (collision.gameObject.tag == "Ground" && !grounded)
         {
             grounded = true;
+            audioController.Play("Landing");
 
             if (this.enabled)
             {
@@ -207,6 +208,7 @@ public class PlayerMovement : PlayerBase
     void StartLeftOrRight(string direction)
     {
         animator.ResetTrigger("Idel");
+
         if ((!Input.GetKey(sprint) || staminaTimer < 0))
         {
             ChangeAnimation("Walk");

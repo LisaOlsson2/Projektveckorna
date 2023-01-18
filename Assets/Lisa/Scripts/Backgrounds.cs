@@ -9,6 +9,9 @@ public class Backgrounds : BaseMostThings
 
     GameObject[] backgrounds;
 
+    MusicManager musicManager;
+    readonly string[] musicNames = { "music1", "music2"};
+
     readonly float borderDistance = 18.63f;
     static int currentArea;
 
@@ -18,12 +21,15 @@ public class Backgrounds : BaseMostThings
     public override void Start()
     {
         base.Start();
+
+        musicManager = FindObjectOfType<MusicManager>();
         backgrounds = new GameObject[transform.childCount];
         for (int i = 0; i < transform.childCount; i++)
         {
             backgrounds[i] = transform.GetChild(i).gameObject;
         }
 
+        musicManager.Play(musicNames[currentArea]);
         backgrounds[currentArea].SetActive(true);
         transform.position += borderDistance * currentArea * Vector3.right;
     }
@@ -39,9 +45,11 @@ public class Backgrounds : BaseMostThings
 
     void NewArea(int direction)
     {
+        musicManager.Stop(musicNames[currentArea]);
         backgrounds[currentArea].SetActive(false);
         currentArea += direction;
         backgrounds[currentArea].SetActive(true);
         transform.position += direction * borderDistance * Vector3.right;
+        musicManager.Play(musicNames[currentArea]);
     }
 }

@@ -58,6 +58,7 @@ public class ItKnows : MonoBehaviour
     {
         inEventOfTwo = FindObjectsOfType<ItKnows>();
         inventory = FindObjectOfType<Inventory>();
+        audioController = FindObjectOfType<AudioController>();
 
         if (inEventOfTwo.Length == 1)
         {
@@ -85,6 +86,7 @@ public class ItKnows : MonoBehaviour
             inEventOfTwo[other].inventory = inventory;
             inEventOfTwo[other].allCraftingGhosts = allCraftingGhosts;
             inEventOfTwo[other].cam = cam;
+            inEventOfTwo[other].deathText = deathText;
 
             inEventOfTwo[other].SetValues();
 

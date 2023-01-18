@@ -31,6 +31,8 @@ public class Item : Interactive
             valueKeeper.amounts[place]++;
             inventory.inventoryUI[place].GetComponentInChildren<Text>().text = "" + valueKeeper.amounts[place];
             Destroy(gameObject);
+
+            audioController.Play(gameObject.tag);
         }
     }
 }
