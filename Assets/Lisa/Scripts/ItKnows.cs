@@ -13,6 +13,8 @@ public class ItKnows : MonoBehaviour
     // crafted items
     public Crafting[] allCraftingGhosts;
     public bool[] itemsCrafted;
+    Sprite[][] materials;
+    int[][] materialAmounts;
 
     // health
     public int health;
@@ -66,6 +68,8 @@ public class ItKnows : MonoBehaviour
             health = inventory.cheese.Length;
             itemsPickedUp = new bool[allItems.Length];
             itemsCrafted = new bool[allCraftingGhosts.Length];
+            materials = new Sprite[allCraftingGhosts.Length][];
+            materialAmounts = new int[allCraftingGhosts.Length][];
         }
         else if (inEventOfTwo.Length == 2)
         {
@@ -120,6 +124,11 @@ public class ItKnows : MonoBehaviour
             {
                 allCraftingGhosts[i].spriteRenderer = allCraftingGhosts[i].GetComponent<SpriteRenderer>();
                 allCraftingGhosts[i].Craft();
+            }
+            else
+            {
+                allCraftingGhosts[i].materials = materials[i];
+                allCraftingGhosts[i].amounts = materialAmounts[i];
             }
         }
 
@@ -184,11 +193,12 @@ public class ItKnows : MonoBehaviour
             else
             {
                 itemsCrafted[i] = false;
+                materials[i] = allCraftingGhosts[i].materials;
+                materialAmounts[i] = allCraftingGhosts[i].amounts;
             }
         }
 
         inventorySprites = inventory.inventory;
-
         position = inventory.transform.position;
 
         SceneManager.LoadScene("Start");

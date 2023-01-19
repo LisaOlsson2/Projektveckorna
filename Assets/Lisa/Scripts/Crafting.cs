@@ -11,11 +11,9 @@ public class Crafting : Interactive
     // 0.8 = close item selected
     // 1 = built
 
-    [SerializeField]
-    Sprite[] materials;
+    public Sprite[] materials;
 
-    [SerializeField]
-    int[] amounts;
+    public int[] amounts;
 
     [SerializeField]
     bool more;
