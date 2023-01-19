@@ -59,13 +59,6 @@ public class Combat : PlayerBase
             Knockback(collision.transform.position.x);
             if (valueKeeper.health <= 0)
             {
-                /*
-                foreach (GameObject cheese in inventory.cheese)
-                {
-                    cheese.SetActive(true);
-                    valueKeeper.health++;
-                }
-                */
                 valueKeeper.dead = true;
             }
         }

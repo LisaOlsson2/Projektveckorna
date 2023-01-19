@@ -35,7 +35,6 @@ public class Inventory : BaseMostThings
 
     void Update()
     {
-
         if (square.gameObject.activeSelf)
         {
             if ((Input.mouseScrollDelta.y > 0 && square.transform.position.x < inventoryUI[inventoryUI.Count - 1].transform.position.x) || (Input.mouseScrollDelta.y < 0 && square.transform.position.x > inventoryUI[0].transform.position.x))
@@ -77,7 +76,7 @@ public class Inventory : BaseMostThings
 
     public Sprite CurrentSprite()
     {
-        return inventory[(int)((square.anchoredPosition.x - startPos.x) / valueKeeper.distanceInventory)];
+        return inventory[(int)((Mathf.RoundToInt(square.anchoredPosition.x) - startPos.x) / (valueKeeper.distanceInventory))];
     }
 
     public int FindSprite(Sprite sprite)
