@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class PlayerMovement : PlayerBase
 {
     readonly KeyCode jump = KeyCode.W;
-    readonly KeyCode dash = KeyCode.Space;
+    readonly KeyCode dash = KeyCode.P;
 
     readonly float dashDuration = 0.3f;
     readonly float dashForce = 500;

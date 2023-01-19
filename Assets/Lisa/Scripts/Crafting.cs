@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 // Lisa
 public class Crafting : Interactive
@@ -37,7 +38,15 @@ public class Crafting : Interactive
 
                     if (Input.GetKeyDown(inventory.use))
                     {
-                        inventory.UseItem(inventory.FindSprite(materials[i]));
+                        if (materials[i] == inventory.water)
+                        {
+                            inventory.inventory[inventory.FindSprite(inventory.water)] = inventory.empty;
+                            inventory.inventoryUI[inventory.FindSprite(inventory.empty)].GetComponent<Image>().sprite = inventory.empty;
+                        }
+                        else
+                        {
+                            inventory.UseItem(inventory.FindSprite(materials[i]));
+                        }
                         amounts[i]--;
 
                         if (amounts[i] == 0)

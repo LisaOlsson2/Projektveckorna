@@ -11,6 +11,9 @@ public class Inventory : BaseMostThings
     [SerializeField]
     Sprite food;
 
+    public Sprite water;
+    public Sprite empty;
+
     public RectTransform square;
     string[] numbers = new string[10];
     public List<Sprite> inventory = new List<Sprite>();
@@ -28,7 +31,7 @@ public class Inventory : BaseMostThings
         {
             numbers[i - 1] = i + "";
         }
-        numbers[9] = 0 + "";
+        numbers[9] = "0";
 
     }
 

@@ -27,29 +27,29 @@ public class MoreCrafting : Interactive
                 {
                     transform.GetChild(i).gameObject.SetActive(true);
                     inventory.UseItem(inventory.FindSprite(icons[i]));
-                    ChangeSprite();
+                    spriteRenderer.sprite = other;
                 }
             }
 
             if (inventory.CurrentSprite() == icons[icons.Length - 1] && transform.GetChild(1).gameObject.activeSelf)
             {
-                BoilWater();
+                StartCoroutine(BoilWater());
             }
         }
     }
 
     IEnumerator BoilWater()
     {
-        transform.GetChild(2).gameObject.SetActive(false);
+        transform.GetChild(1).gameObject.SetActive(false);
         animator.enabled = true;
         yield return new WaitForSeconds(1);
         animator.enabled = false;
         spriteRenderer.sprite = usual;
-
+        transform.GetChild(2).gameObject.SetActive(true);
     }
 
     public void ChangeSprite()
     {
-        spriteRenderer.sprite = other;
+        spriteRenderer.sprite = usual;
     }
 }
