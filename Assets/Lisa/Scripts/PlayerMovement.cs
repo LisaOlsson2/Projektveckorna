@@ -64,7 +64,7 @@ public class PlayerMovement : PlayerBase
     }
     private void OnDisable()
     {
-        if (animator != null && audioController != null)
+        if (animator != null && valueKeeper.audioController != null)
         {
             if (staminaTimer > 0 && Input.GetKey(sprint) && Mathf.Abs(speedMultiplier) > sprintSpeed)
             {
@@ -190,7 +190,7 @@ public class PlayerMovement : PlayerBase
         else if (collision.gameObject.tag == "Ground" && !grounded)
         {
             grounded = true;
-            audioController.Play("Landing");
+            valueKeeper.audioController.Play("Landing");
 
             if (this.enabled)
             {

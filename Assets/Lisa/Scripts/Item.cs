@@ -40,11 +40,11 @@ public class Item : Interactive
                 gameObject.SetActive(false);
             }
 
-            foreach (Sound sound in audioController.sounds)
+            foreach (Sound sound in valueKeeper.audioController.sounds)
             {
                 if (sound.name == gameObject.tag)
                 {
-                    audioController.Play(gameObject.tag);
+                    valueKeeper.audioController.Play(gameObject.tag);
                 }
             }
         }

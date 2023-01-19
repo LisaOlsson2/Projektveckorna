@@ -24,7 +24,9 @@ public class ItKnows : MonoBehaviour
     public List<int> amounts = new List<int>();
 
     // things picked up
-    public GameObject[] allItems;
+    [SerializeField]
+    GameObject itemsParent;
+    GameObject[] allItems;
     public bool[] itemsPickedUp;
 
     // position
@@ -61,6 +63,12 @@ public class ItKnows : MonoBehaviour
         inEventOfTwo = FindObjectsOfType<ItKnows>();
         inventory = FindObjectOfType<Inventory>();
         audioController = FindObjectOfType<AudioController>();
+        allItems = new GameObject[itemsParent.transform.childCount];
+
+        for (int i = 0; i < itemsParent.transform.childCount; i++)
+        {
+            allItems[i] = itemsParent.transform.GetChild(i).gameObject;
+        }
 
         if (inEventOfTwo.Length == 1)
         {

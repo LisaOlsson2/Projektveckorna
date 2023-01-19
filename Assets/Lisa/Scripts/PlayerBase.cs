@@ -61,14 +61,14 @@ public class PlayerBase : BaseMostThings
 
             if (currentState == "Run" || currentState == "Walk")
             {
-                audioController.Stop(currentState);
+                valueKeeper.audioController.Stop(currentState);
             }
 
-            foreach (Sound sound in audioController.sounds)
+            foreach (Sound sound in valueKeeper.audioController.sounds)
             {
                 if (sound.name == animation)
                 {
-                    audioController.Play(animation);
+                    valueKeeper.audioController.Play(animation);
                 }
             }
 
