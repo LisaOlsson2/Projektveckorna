@@ -5,31 +5,15 @@ using UnityEngine;
 // Lisa
 public class TempEnemy : BaseMostThings
 {
-    //Animator animator;
-    PolygonCollider2D[] colliders;
-    // [0] Idel
-    // [1] Roll
-
-    readonly float distance = 1;
     readonly float knockback = 170;
     readonly float deathDuration = 1.5f;
 
     int health = 2;
-    float speed = 0.7f;
-    float startPos;
-    bool defaultState = true;
-    public Animator animator;
+    Animator animator;
     public override void Start()
     {
-        //animator = GetComponent<Animator>();
-        colliders = GetComponents<PolygonCollider2D>();
-        startPos = transform.position.x;
+        base.Start();
         animator = GetComponentInParent<Animator>();
-    }
-
-    private void Update()
-    {
-      
     }
 
     IEnumerator Death()
