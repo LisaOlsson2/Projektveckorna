@@ -93,16 +93,14 @@ public class Patroling : MonoBehaviour
 
         if (startRollingTimer)
         {
-
             rollingTimer += Time.deltaTime;
             if (rollingTimer < 1)
             {
-                animator.SetBool("Roll", true);
                 if (playerPositionRight)        //fienden rör sig åt höger i 1 sekund ifall playerPositionRight är sant, Theo
                 {
                     rb.AddForce(new Vector2(rollSpeed*Time.deltaTime, 0), ForceMode2D.Impulse);
                     Debug.Log("rullar höger");
-                 
+
 
                 }
                 else        //annars rör fienden sig åt vänster, Theo
@@ -114,13 +112,14 @@ public class Patroling : MonoBehaviour
             }
             else if (rollingTimer > 1)      //efter 1 sekund så blir fineden "stunned" och stannar, Theo
             {
-                animator.SetBool("Roll", false);
+
                 startStunTimer = true;
                 Debug.Log("stunTimer start");
                 moving = false;
                 Debug.Log("stunned");
                 rollingTimer = 0;
                 startRollingTimer = false;
+          
             }
         }
 
@@ -133,6 +132,7 @@ public class Patroling : MonoBehaviour
                 moving = true;
                 stunTimer = 0;
                 startStunTimer = false;
+                animator.SetBool("Detect", false);
             }
         }
     }

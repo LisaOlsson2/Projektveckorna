@@ -48,7 +48,7 @@ public class PlayerEnterAreaDetector : MonoBehaviour
             Debug.Log("Exit");
             patroling.moving = true;
             Debug.Log("Moving");
-            
+            animator.SetBool("Detect", false);
 
         }
     }
