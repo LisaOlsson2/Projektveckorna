@@ -23,14 +23,18 @@ public class PlayerMovement : PlayerBase
     Slider slider;
 
     Image staminaImageToChangeColor;
+    ChangeInventorySprite water;
 
     int speedMultiplier = 2;
 
     public override void Start()
     {
         base.Start();
+        water = GetComponent<ChangeInventorySprite>();
+
         staminaImageToChangeColor = slider.fillRect.GetComponent<Image>();
         slider.maxValue = staminaFull;
+        staminaTimer = staminaFull;
 
         colliders = GetComponents<PolygonCollider2D>();
         // [0] idle walk jump attack eat damage
@@ -76,26 +80,21 @@ public class PlayerMovement : PlayerBase
     {
         slider.value = Mathf.Abs(staminaTimer);
 
-        if (Input.GetKey(sprint) && ((Input.GetKey(right) && !Input.GetKey(left)) || (Input.GetKey(left) && !Input.GetKey(right))) && staminaTimer > 0)
-        {
-            staminaTimer -= Time.deltaTime;
-            if (staminaTimer <= 0)
-            {
-                StartFatigue();
-            }
-        }
-        else if (staminaTimer < staminaFull)
-        {
-            staminaTimer += Time.deltaTime;
-            if (staminaTimer > 0 && staminaImageToChangeColor.color == Color.red)
-            {
-                staminaImageToChangeColor.color = Color.green;
-                speedMultiplier *= 2;
-            }
-        }
-
         if (staminaTimer > 0)
         {
+            if (Input.GetKey(sprint) && ((Input.GetKey(right) && !Input.GetKey(left)) || (Input.GetKey(left) && !Input.GetKey(right))))
+            {
+                staminaTimer -= Time.deltaTime;
+                if (staminaTimer <= 0)
+                {
+                    StartFatigue();
+                }
+            }
+            else if (staminaTimer < staminaFull)
+            {
+                staminaTimer += Time.deltaTime;
+            }
+
             if (Input.GetKeyDown(sprint))
             {
                 speedMultiplier *= sprintSpeed;
@@ -166,12 +165,20 @@ public class PlayerMovement : PlayerBase
         rb.velocity = Vector3.zero;
     }
 
+    public void StopFatigue()
+    {
+        staminaTimer = staminaFull;
+        staminaImageToChangeColor.color = Color.green;
+        speedMultiplier *= 2;
+    }
+
     void StartFatigue()
     {
         SetWalkOrIdleOrSprint();
         staminaImageToChangeColor.color = Color.red;
         speedMultiplier = Mathf.Abs(speedMultiplier) / speedMultiplier;
         staminaTimer = -staminaFull;
+        water.interactable = true;
     }
 
     public override void OnCollisionEnter2D(Collision2D collision)
