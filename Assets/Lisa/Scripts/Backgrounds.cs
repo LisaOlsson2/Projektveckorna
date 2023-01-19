@@ -7,8 +7,6 @@ public class Backgrounds : BaseMostThings
     [SerializeField]
     GameObject player;
 
-    GameObject[] backgrounds;
-
     MusicManager musicManager;
 
     readonly float borderDistance = 18.63f;
@@ -22,14 +20,8 @@ public class Backgrounds : BaseMostThings
         base.Start();
 
         musicManager = FindObjectOfType<MusicManager>();
-        backgrounds = new GameObject[transform.childCount];
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            backgrounds[i] = transform.GetChild(i).gameObject;
-        }
 
         musicManager.Play("music" + (currentArea + 1));
-        backgrounds[currentArea].SetActive(true);
         transform.position += borderDistance * currentArea * Vector3.right;
     }
 
@@ -45,9 +37,7 @@ public class Backgrounds : BaseMostThings
     void NewArea(int direction)
     {
         musicManager.Stop("music" + (currentArea + 1));
-        backgrounds[currentArea].SetActive(false);
         currentArea += direction;
-        backgrounds[currentArea].SetActive(true);
         transform.position += direction * borderDistance * Vector3.right;
         musicManager.Play("music" + (currentArea + 1));
     }

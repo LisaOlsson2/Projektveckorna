@@ -45,7 +45,7 @@ public class AudioController : MonoBehaviour
         Sound s = Array.Find(sounds, sound => sound.name == name);
         s.source.Stop();
     }
-    public void PlaySound()
+    public void PlaySfx()
     {
         if (buttonColorScript.sfxButtonGreen)
         {
