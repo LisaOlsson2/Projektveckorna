@@ -13,9 +13,18 @@ public class ButtonColorScript : MonoBehaviour
     public Color clickedHighlightedColor;
     public Color clickedPressedColor;
 
+    public bool musicButtonGreen;
+    public bool sfxButtonGreen;
+
     public Button musicButton;
     public Button sfxButton;
-    
+
+    private void Start()
+    {
+        musicButtonGreen = true;
+        sfxButtonGreen = true;
+    }
+
     public void ChangeMusicColor()
     {
         ColorBlock musicCB = musicButton.colors;
@@ -25,6 +34,7 @@ public class ButtonColorScript : MonoBehaviour
             musicCB.highlightedColor = clickedHighlightedColor;
             musicCB.pressedColor = clickedPressedColor;
             musicButton.colors = musicCB;
+            musicButtonGreen = false;
         }
         else    //ändrar färg på kanppen musik ifall den är röd (klickad färg)
         {
@@ -32,6 +42,7 @@ public class ButtonColorScript : MonoBehaviour
             musicCB.highlightedColor = HighlightedColor;
             musicCB.pressedColor = PressedColor;
             musicButton.colors = musicCB;
+            musicButtonGreen = true;
         }
         
     }
@@ -44,6 +55,7 @@ public class ButtonColorScript : MonoBehaviour
             sfxCB.highlightedColor = clickedHighlightedColor;
             sfxCB.pressedColor = clickedPressedColor;
             sfxButton.colors = sfxCB;
+            sfxButtonGreen = false;
         }
         else    //ändrar färg på sfx knappen ifall den är röd (klickad färg)
         {
@@ -51,6 +63,7 @@ public class ButtonColorScript : MonoBehaviour
             sfxCB.highlightedColor = HighlightedColor;
             sfxCB.pressedColor = PressedColor;
             sfxButton.colors = sfxCB;
+            sfxButtonGreen = true;
         }
         
     }
