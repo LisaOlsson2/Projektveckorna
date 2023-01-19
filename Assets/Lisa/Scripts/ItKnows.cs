@@ -172,6 +172,7 @@ public class ItKnows : MonoBehaviour
         if (dead)
         {
             deathText.SetActive(true);
+            deathText.transform.GetChild(0).GetChild(0).GetComponent<Button>().onClick.AddListener(Exit);
             inventoryParent.parent.gameObject.SetActive(false);
             Destroy(inventory.GetComponent<PlayerBase>());
             Destroy(inventory.GetComponent<Animator>());
