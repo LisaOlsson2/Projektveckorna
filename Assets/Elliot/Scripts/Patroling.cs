@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Patroling : MonoBehaviour
 {
@@ -34,10 +35,12 @@ public class Patroling : MonoBehaviour
     bool playerPositionRight;
 
     Rigidbody2D rb;
+    public Animator animator;
 
     private void Start()
     {
         moving = true;
+        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         rollSpeed = 15;
     }
@@ -48,6 +51,7 @@ public class Patroling : MonoBehaviour
             transform.Translate(Vector2.right * speed * Time.deltaTime);
             startRollTimer = false;
             rollTimer = 0;
+
         }
 
         if (Player.transform.position.x > transform.position.x)     //om spelarens position är mer än fiendens position så rör sig fienden höger, Theo
@@ -66,7 +70,7 @@ public class Patroling : MonoBehaviour
             {
                 transform.eulerAngles = new Vector3(0, -180, 0);
                 movingRight = false;
-           
+
             }
             else
             {
@@ -89,22 +93,28 @@ public class Patroling : MonoBehaviour
 
         if (startRollingTimer)
         {
+
             rollingTimer += Time.deltaTime;
             if (rollingTimer < 1)
             {
+                animator.SetBool("Roll", true);
                 if (playerPositionRight)        //fienden rör sig åt höger i 1 sekund ifall playerPositionRight är sant, Theo
                 {
                     rb.AddForce(new Vector2(rollSpeed*Time.deltaTime, 0), ForceMode2D.Impulse);
                     Debug.Log("rullar höger");
+                 
+
                 }
                 else        //annars rör fienden sig åt vänster, Theo
                 {
                     rb.AddForce(new Vector2(-rollSpeed * Time.deltaTime, 0), ForceMode2D.Impulse);
                     Debug.Log("rullar vänster");
+
                 }
             }
             else if (rollingTimer > 1)      //efter 1 sekund så blir fineden "stunned" och stannar, Theo
             {
+                animator.SetBool("Roll", false);
                 startStunTimer = true;
                 Debug.Log("stunTimer start");
                 moving = false;
@@ -125,6 +135,13 @@ public class Patroling : MonoBehaviour
                 startStunTimer = false;
             }
         }
+    }
+    public void ChangeAnimation(string animation)
+    {
+        animator.SetTrigger(animation);
+         
+        
+
     }
 }
     

@@ -17,8 +17,16 @@ public class PlayerEnterAreaDetector : MonoBehaviour
     [SerializeField]
     Patroling patroling;
 
+
+    private void Start()
+    {
+        animator = GetComponentInParent<Animator>();
+    }
+
+    public Animator animator;
     private void OnTriggerEnter2D(Collider2D collision)
     {
+       
         if (collision.CompareTag(detectionTag))     //om triggern kolliderar med objectet med detectionTag så slutar fienden röra på sig
         {
             playerInArea = true;
@@ -26,6 +34,7 @@ public class PlayerEnterAreaDetector : MonoBehaviour
             Debug.Log("enter");
             patroling.moving = false;
             Debug.Log("NotMoving");
+            animator.SetBool("Detect", true);
             patroling.startRollTimer = true;
         }
     }
@@ -39,6 +48,8 @@ public class PlayerEnterAreaDetector : MonoBehaviour
             Debug.Log("Exit");
             patroling.moving = true;
             Debug.Log("Moving");
+            
+
         }
     }
 }
