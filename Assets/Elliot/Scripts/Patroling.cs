@@ -96,11 +96,13 @@ public class Patroling : MonoBehaviour
                 {
                     rb.AddForce(new Vector2(rollSpeed*Time.deltaTime, 0), ForceMode2D.Impulse);
                     Debug.Log("rullar höger");
+                   // FindObjectOfType<AudioController>().Play("Enemyroll");
                 }
                 else        //annars rör fienden sig åt vänster, Theo
                 {
                     rb.AddForce(new Vector2(-rollSpeed * Time.deltaTime, 0), ForceMode2D.Impulse);
                     Debug.Log("rullar vänster");
+                    //FindObjectOfType<AudioController>().Play("Enemyroll");
                 }
             }
             else if (rollingTimer > 1)      //efter 1 sekund så blir fineden "stunned" och stannar, Theo

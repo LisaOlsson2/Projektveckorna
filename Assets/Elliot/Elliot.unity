@@ -1004,6 +1004,86 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &432234182
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 432234184}
+  - component: {fileID: 432234183}
+  m_Layer: 0
+  m_Name: Audiomanager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &432234183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 432234182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d27e449b66eec64fb37cd1d71a771c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: footsteps
+    clip: {fileID: 8300000, guid: 1dcb76e57a626124793df994f1124ba5, type: 3}
+    volume: 0.072
+    pitch: 1.07
+    loop: 1
+    source: {fileID: 0}
+  - name: Landing
+    clip: {fileID: 8300000, guid: 11ba481d5f8bc7644ae17518cdc04879, type: 3}
+    volume: 0.195
+    pitch: 1.5
+    loop: 0
+    source: {fileID: 0}
+  - name: Jump
+    clip: {fileID: 8300000, guid: 59b1f2e98ede0814b8b88af1d893349e, type: 3}
+    volume: 0.4
+    pitch: 2.22
+    loop: 0
+    source: {fileID: 0}
+  - name: WPickup
+    clip: {fileID: 8300000, guid: 440440837e4fd314cb93194555c8023e, type: 3}
+    volume: 0.58
+    pitch: 2.22
+    loop: 0
+    source: {fileID: 0}
+  - name: Sprint
+    clip: {fileID: 8300000, guid: 1a5f6d26c259ceb489ba2276a3f4efc9, type: 3}
+    volume: 0.58
+    pitch: 2.22
+    loop: 1
+    source: {fileID: 0}
+  - name: Enemyroll
+    clip: {fileID: 8300000, guid: 802b2dcd93e21254bb7980663b7b391e, type: 3}
+    volume: 0.58
+    pitch: 2.22
+    loop: 0
+    source: {fileID: 0}
+--- !u!4 &432234184
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 432234182}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &567172249
 GameObject:
   m_ObjectHideFlags: 0
