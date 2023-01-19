@@ -16,7 +16,7 @@ public class PlayerMovement : PlayerBase
     readonly float staminaFull = 4;
     readonly int sprintSpeed = 2;
 
-    readonly float rightWorldBorder = 65.205f;
+    readonly float rightWorldBorder = 18.63f * 2 + 9.315f;
     readonly float leftWorldBorder = -9.315f;
 
     [SerializeField]
