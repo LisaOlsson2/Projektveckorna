@@ -82,6 +82,7 @@ public class Patroling : MonoBehaviour
 
         if (startRollTimer)
         {
+            animator.SetBool("Detect", true);
             rollTimer += Time.deltaTime;
             if (rollTimer >= 5)     //om det har gått 5 sekunder eller mer, Theo
             {
@@ -93,6 +94,7 @@ public class Patroling : MonoBehaviour
 
         if (startRollingTimer)
         {
+            animator.SetBool("Roll", true);
             rollingTimer += Time.deltaTime;
             if (rollingTimer < 1)
             {
@@ -119,7 +121,8 @@ public class Patroling : MonoBehaviour
                 Debug.Log("stunned");
                 rollingTimer = 0;
                 startRollingTimer = false;
-          
+                animator.SetBool("Roll", false);
+
             }
         }
 
@@ -132,17 +135,11 @@ public class Patroling : MonoBehaviour
                 moving = true;
                 stunTimer = 0;
                 startStunTimer = false;
-                animator.SetBool("Detect", false);
+               
             }
         }
     }
-    public void ChangeAnimation(string animation)
-    {
-        animator.SetTrigger(animation);
-         
-        
-
-    }
+  
 }
     
 
