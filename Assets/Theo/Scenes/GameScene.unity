@@ -689,6 +689,7 @@ Transform:
   - {fileID: 1243644610}
   - {fileID: 1129493071}
   - {fileID: 99537657}
+  - {fileID: 1114627031}
   m_Father: {fileID: 1881514188}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -969,6 +970,8 @@ MonoBehaviour:
   clickedNormalColor: {r: 0.84313726, g: 0, b: 0, a: 0.627451}
   clickedHighlightedColor: {r: 0.84313726, g: 0, b: 0, a: 0.78431374}
   clickedPressedColor: {r: 0.5294118, g: 0.5294118, b: 0.23921569, a: 1}
+  musicButtonGreen: 0
+  sfxButtonGreen: 0
   musicButton: {fileID: 1129493072}
   sfxButton: {fileID: 99537658}
 --- !u!1 &786262499
@@ -1165,10 +1168,10 @@ RectTransform:
   m_GameObject: {fileID: 1114627030}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0041474, y: 1.0041474, z: 1.0041474}
+  m_LocalScale: {x: 1.0041475, y: 1.0041475, z: 1.0041475}
   m_Children: []
-  m_Father: {fileID: 1881514188}
-  m_RootOrder: 2
+  m_Father: {fileID: 163055837}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2508,7 +2511,6 @@ RectTransform:
   m_Children:
   - {fileID: 786262500}
   - {fileID: 163055837}
-  - {fileID: 1114627031}
   m_Father: {fileID: 524060827}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
