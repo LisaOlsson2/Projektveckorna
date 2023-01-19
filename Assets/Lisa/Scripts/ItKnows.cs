@@ -204,6 +204,7 @@ public class ItKnows : MonoBehaviour
         Destroy(inventory.GetComponent<Combat>());
         Animator animator = inventory.GetComponent<Animator>();
         animator.SetTrigger("Death");
+        audioController.Play("Death");
         yield return new WaitForSeconds(1.5f);
         Destroy(animator);
         inventoryParent.parent.gameObject.SetActive(false);

@@ -118,7 +118,7 @@ public class Inventory : BaseMostThings
                 }
                 else
                 {
-                    for (int i = place + 1; i < inventory.Count; i++)
+                    for (int i = inventory.Count - 1; i > place; i--)
                     {
                         inventoryUI[i].transform.position = inventoryUI[i - 1].transform.position;
                     }
