@@ -20,11 +20,12 @@ public class PlayerBase : BaseMostThings
     public static bool attacking;
     public static bool dont;
 
-    string currentState = "Idel";
+    static string currentState;
 
     public override void Start()
     {
         base.Start();
+        currentState = "Idel";
         grounded = false;
         attacking = false;
         dont = false;
@@ -58,20 +59,16 @@ public class PlayerBase : BaseMostThings
             int old = currentCollider;
             animator.SetTrigger(animation);
 
-            if (currentState == "Run")
+            if (currentState == "Run" || currentState == "Walk")
             {
-                audioController.Stop(currentState);
-            }
-            else if (currentState == "Walk")
-            {
-                audioController.Stop("Walk");
+                valueKeeper.audioController.Stop(currentState);
             }
 
-            foreach (Sound sound in audioController.sounds)
+            foreach (Sound sound in valueKeeper.audioController.sounds)
             {
                 if (sound.name == animation)
                 {
-                    audioController.Play(animation);
+                    valueKeeper.audioController.Play(animation);
                 }
             }
 

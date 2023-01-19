@@ -11,11 +11,9 @@ public class Crafting : Interactive
     // 0.8 = close item selected
     // 1 = built
 
-    [SerializeField]
-    Sprite[] materials;
+    public Sprite[] materials;
 
-    [SerializeField]
-    int[] amounts;
+    public int[] amounts;
 
     [SerializeField]
     bool more;
@@ -30,9 +28,9 @@ public class Crafting : Interactive
     {
         if (interactable && inventory.square.gameObject.activeSelf)
         {
-
             for (int i = 0; i < materials.Length; i++)
             {
+                spriteRenderer.color = new Vector4(1, 1, 1, 0.6f);
                 if (inventory.CurrentSprite() == materials[i])
                 {
                     spriteRenderer.color = new Vector4(1, 1, 1, 0.8f);
@@ -78,6 +76,7 @@ public class Crafting : Interactive
                             Craft1();
                         }
                     }
+                    break;
                 }
 
             }

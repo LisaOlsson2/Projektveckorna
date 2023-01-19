@@ -34,7 +34,6 @@ public class PlayerEnterAreaDetector : MonoBehaviour
             Debug.Log("enter");
             patroling.moving = false;
             Debug.Log("NotMoving");
-            animator.SetBool("Detect", true);
             patroling.startRollTimer = true;
         }
     }
@@ -48,7 +47,7 @@ public class PlayerEnterAreaDetector : MonoBehaviour
             Debug.Log("Exit");
             patroling.moving = true;
             Debug.Log("Moving");
-            
+            animator.SetBool("Detect", false);
 
         }
     }

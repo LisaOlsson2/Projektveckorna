@@ -30,7 +30,7 @@ public class Item : Interactive
 
             valueKeeper.amounts[place]++;
             inventory.inventoryUI[place].GetComponentInChildren<Text>().text = "" + valueKeeper.amounts[place];
-            if (transform.parent == null || transform.parent.name != "Water")
+            if (transform.parent.name != "Water")
             {
                 Destroy(gameObject);
             }
@@ -40,11 +40,11 @@ public class Item : Interactive
                 gameObject.SetActive(false);
             }
 
-            foreach (Sound sound in audioController.sounds)
+            foreach (Sound sound in valueKeeper.audioController.sounds)
             {
                 if (sound.name == gameObject.tag)
                 {
-                    audioController.Play(gameObject.tag);
+                    valueKeeper.audioController.Play(gameObject.tag);
                 }
             }
         }

@@ -16,7 +16,7 @@ public class PlayerMovement : PlayerBase
     readonly float staminaFull = 4;
     readonly int sprintSpeed = 2;
 
-    readonly float rightWorldBorder = 65.205f;
+    readonly float rightWorldBorder = 18.63f * 3 + 9.315f;
     readonly float leftWorldBorder = -9.315f;
 
     [SerializeField]
@@ -64,7 +64,7 @@ public class PlayerMovement : PlayerBase
     }
     private void OnDisable()
     {
-        if (animator != null && audioController != null)
+        if (animator != null && valueKeeper.audioController != null)
         {
             if (staminaTimer > 0 && Input.GetKey(sprint) && Mathf.Abs(speedMultiplier) > sprintSpeed)
             {
@@ -190,7 +190,7 @@ public class PlayerMovement : PlayerBase
         else if (collision.gameObject.tag == "Ground" && !grounded)
         {
             grounded = true;
-            audioController.Play("Landing");
+            valueKeeper.audioController.Play("Landing");
 
             if (this.enabled)
             {

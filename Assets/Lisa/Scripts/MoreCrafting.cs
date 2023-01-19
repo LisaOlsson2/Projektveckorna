@@ -7,12 +7,14 @@ public class MoreCrafting : Interactive
     public Sprite[] icons;
     public Sprite other;
 
+    Sprite usual;
     Animator animator;
 
     public override void Start()
     {
         base.Start();
         animator = GetComponent<Animator>();
+        usual = spriteRenderer.sprite;
     }
 
     private void Update()
@@ -42,14 +44,12 @@ public class MoreCrafting : Interactive
         animator.enabled = true;
         yield return new WaitForSeconds(1);
         animator.enabled = false;
-        spriteRenderer.sprite = other;
+        spriteRenderer.sprite = usual;
 
     }
 
     public void ChangeSprite()
     {
-        Sprite old = spriteRenderer.sprite;
         spriteRenderer.sprite = other;
-        other = old;
     }
 }
