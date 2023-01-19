@@ -108,15 +108,13 @@ public class Crafting : Interactive
     public void Craft()
     {
         spriteRenderer.color = Vector4.one;
-        //BoxCollider2D boxCollider = GetComponent<BoxCollider2D>();
-        //boxCollider.size = Vector2.one;
-        //boxCollider.isTrigger = false;
         if (more)
         {
             MoreCrafting more;
             more = gameObject.AddComponent<MoreCrafting>();
             more.icons = iconsIfMore;
             more.other = otherIfMore;
+            more.usual = spriteRenderer.sprite;
         }
         Destroy(this);
     }

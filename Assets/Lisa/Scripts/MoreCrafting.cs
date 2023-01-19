@@ -6,15 +6,13 @@ public class MoreCrafting : Interactive
 {
     public Sprite[] icons;
     public Sprite other;
-
-    Sprite usual;
+    public Sprite usual;
     Animator animator;
 
     public override void Start()
     {
         base.Start();
         animator = GetComponent<Animator>();
-        usual = spriteRenderer.sprite;
     }
 
     private void Update()

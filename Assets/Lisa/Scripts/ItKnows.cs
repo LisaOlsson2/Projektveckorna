@@ -15,6 +15,9 @@ public class ItKnows : MonoBehaviour
     public bool[] itemsCrafted;
     Sprite[][] materials;
     int[][] materialAmounts;
+    int waterChild;
+    [SerializeField]
+    GameObject water;
 
     // health
     public int health;
@@ -78,6 +81,7 @@ public class ItKnows : MonoBehaviour
             itemsCrafted = new bool[allCraftingGhosts.Length];
             materials = new Sprite[allCraftingGhosts.Length][];
             materialAmounts = new int[allCraftingGhosts.Length][];
+            waterChild = water.transform.childCount;
         }
         else if (inEventOfTwo.Length == 2)
         {
@@ -99,6 +103,7 @@ public class ItKnows : MonoBehaviour
             inEventOfTwo[other].allCraftingGhosts = allCraftingGhosts;
             inEventOfTwo[other].cam = cam;
             inEventOfTwo[other].deathText = deathText;
+            inEventOfTwo[other].water = water;
 
             inEventOfTwo[other].SetValues();
 
@@ -151,6 +156,15 @@ public class ItKnows : MonoBehaviour
                 AddItem(i);
             }
 
+        }
+
+        if (itemsCrafted[0])
+        {
+            if (waterChild < water.transform.childCount)
+            {
+                water.GetComponent<SpriteRenderer>().sprite = water.GetComponent<MoreCrafting>().other;
+                water.transform.GetChild(waterChild).gameObject.SetActive(true);
+            }
         }
 
         inventory.transform.position = position;
@@ -208,8 +222,25 @@ public class ItKnows : MonoBehaviour
 
         inventorySprites = inventory.inventory;
         position = inventory.transform.position;
+        
+        if (itemsCrafted[0])
+        {
+            waterChild = Water();
+        }
 
         SceneManager.LoadScene("Start");
+    }
+
+    int Water()
+    {
+        for (int i = 0; i < water.transform.childCount; i++)
+        {
+            if (water.transform.GetChild(i).gameObject.activeSelf)
+            {
+                return i;
+            }
+        }
+        return water.transform.childCount;
     }
 
     public void TheEnd()

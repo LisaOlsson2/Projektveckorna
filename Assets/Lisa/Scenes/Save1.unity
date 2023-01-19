@@ -2778,6 +2778,7 @@ MonoBehaviour:
   - {fileID: 1988533627}
   - {fileID: 428170792}
   itemsCrafted: 
+  water: {fileID: 796716462}
   health: 0
   inventorySprites: []
   amounts: 
