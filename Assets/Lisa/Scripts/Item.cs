@@ -30,7 +30,7 @@ public class Item : Interactive
 
             valueKeeper.amounts[place]++;
             inventory.inventoryUI[place].GetComponentInChildren<Text>().text = "" + valueKeeper.amounts[place];
-            if (transform.parent == null || transform.parent.name != "Water")
+            if (transform.parent.name != "Water")
             {
                 Destroy(gameObject);
             }
