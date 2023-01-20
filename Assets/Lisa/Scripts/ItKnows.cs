@@ -64,6 +64,8 @@ public class ItKnows : MonoBehaviour
 
     public readonly float distanceInventory = 575;
 
+    public PlayerMovement player;
+
     void Start()
     {
         inEventOfTwo = FindObjectsOfType<ItKnows>();

@@ -38,6 +38,7 @@ public class Crafting : Interactive
 
                     if (Input.GetKeyDown(inventory.use))
                     {
+
                         if (materials[i] == inventory.water)
                         {
                             inventory.inventory[inventory.FindSprite(inventory.water)] = inventory.empty;
@@ -76,12 +77,14 @@ public class Crafting : Interactive
                             if (amount > 0)
                             {
                                 craft = false;
+                                StartCoroutine(CraftAnimation(6/12));
                                 break;
                             }
                         }
 
                         if (craft)
                         {
+                            StartCoroutine(CraftAnimation(6/12 * 3));
                             Craft1();
                         }
                     }
@@ -117,6 +120,14 @@ public class Crafting : Interactive
             more.usual = spriteRenderer.sprite;
         }
         Destroy(this);
+    }
+
+    IEnumerator CraftAnimation(float seconds)
+    {
+        valueKeeper.player.ChangeAnimation("Craft");
+        yield return new WaitForSeconds(seconds);
+        valueKeeper.player.SetWalkOrIdleOrSprint();
+
     }
 
     public override void OnTriggerEnter2D(Collider2D collision)

@@ -37,24 +37,16 @@ public class GameManagerScript : MonoBehaviour
             pauseMenu.SetActive(true);
         }
 
-        if (paused)
-        {
-            Time.timeScale = 0;     //pausar tiden
-            Debug.Log("time scale 0");
-        }
-        else
-        {
-            Time.timeScale = 1;     //startar tiden
-            Debug.Log("time scale 1");
-        }
     }
 
     public void PauseGame()
     {
         paused = true;
+        Time.timeScale = 0;
     }
     public void UnPauseGame()
     {
         paused = false;
+        Time.timeScale = 1;
     }
 }

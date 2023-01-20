@@ -11,6 +11,8 @@ public class AudioController : MonoBehaviour
 
     public Sound[] sounds;
 
+    float[] volumes;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -29,6 +31,28 @@ public class AudioController : MonoBehaviour
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
 
+        }
+        volumes = new float[sounds.Length];
+
+        for (int i = 0; i < volumes.Length; i++)
+        {
+            volumes[i] = sounds[i].volume;
+        }
+    }
+
+    public void NoSound()
+    {
+        foreach(Sound sound in sounds)
+        {
+            sound.volume = 0;
+        }
+    }
+
+    public void Sound()
+    {
+        for (int i = 0; i < volumes.Length; i++)
+        {
+            sounds[i].volume = volumes[i];
         }
     }
 

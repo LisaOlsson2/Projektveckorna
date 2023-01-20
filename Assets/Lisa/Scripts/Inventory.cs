@@ -6,6 +6,9 @@ using UnityEngine.UI;
 // Lisa
 public class Inventory : BaseMostThings
 {
+    [SerializeField]
+    GameManagerScript gameManager;
+
     public GameObject[] cheese;
 
     [SerializeField]
