@@ -5,21 +5,21 @@ using UnityEngine;
 public class PlayMusic : MonoBehaviour
 {
     MusicSound musicSound;
-    ButtonColorScript buttonColorScript;
+    ButtonSpriteScript buttonSpriteScript;
 
     void Start()
     {
         musicSound = GetComponent<MusicSound>();
-        buttonColorScript = GetComponent<ButtonColorScript>();
+        buttonSpriteScript = GetComponent<ButtonSpriteScript>();
     }
 
     public void PLAYMusic()
     {
-        if (buttonColorScript.musicButtonGreen)
+        if (buttonSpriteScript.musicButtonOn)
         {
             musicSound.volume = 1;
         }
-        else if (!buttonColorScript.musicButtonGreen)
+        else if (!buttonSpriteScript.musicButtonOn)
         {
             musicSound.volume = 0;
         }

@@ -5,19 +5,17 @@ using UnityEngine;
 [System.Serializable]
 public class AudioController : MonoBehaviour
 {
-    public bool soundOn;
     public bool sfxOn;
 
-    ButtonColorScript buttonColorScript;
+    ButtonSpriteScript buttonSpriteScript;
 
     public Sound[] sounds;
 
     // Start is called before the first frame update
     private void Start()
     {
-        buttonColorScript = GetComponent<ButtonColorScript>();
+        buttonSpriteScript = GetComponent<ButtonSpriteScript>();
 
-        soundOn = true;
         sfxOn = true;
     }
 
@@ -47,13 +45,13 @@ public class AudioController : MonoBehaviour
     }
     public void PlaySfx()
     {
-        if (buttonColorScript.sfxButtonGreen)
+        if (buttonSpriteScript.sfxButtonOn)
         {
-            soundOn = true;
+            sfxOn = true;
         }
-        else if (!buttonColorScript.sfxButtonGreen)
+        else if (!buttonSpriteScript.sfxButtonOn)
         {
-            soundOn = false;
+            sfxOn = false;
         }
     }
 }
