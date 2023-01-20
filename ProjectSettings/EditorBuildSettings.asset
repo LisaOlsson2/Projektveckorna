@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Lisa/Scenes/Start.unity
-    guid: 7c994056694fa9b4f864fb64a6d5ef4a
+    path: Assets/Theo/Scenes/StartScene.unity
+    guid: 1a200595001653b44be6260ca5748ea6
   - enabled: 1
     path: Assets/Lisa/Scenes/Save1.unity
     guid: 53f6425f69a14ee4c94ac241f62a9896

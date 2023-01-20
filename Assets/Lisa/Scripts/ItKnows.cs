@@ -59,6 +59,9 @@ public class ItKnows : MonoBehaviour
     [SerializeField]
     GameObject deathText;
 
+    [SerializeField]
+    GameObject theEnd;
+
     public readonly float distanceInventory = 575;
 
     void Start()
@@ -103,6 +106,7 @@ public class ItKnows : MonoBehaviour
             inEventOfTwo[other].allCraftingGhosts = allCraftingGhosts;
             inEventOfTwo[other].cam = cam;
             inEventOfTwo[other].deathText = deathText;
+            inEventOfTwo[other].theEnd = theEnd;
             inEventOfTwo[other].water = water;
 
             inEventOfTwo[other].SetValues();
@@ -229,7 +233,7 @@ public class ItKnows : MonoBehaviour
             waterChild = Water();
         }
 
-        SceneManager.LoadScene("Start");
+        SceneManager.LoadScene("StartScene");
     }
 
     int Water()
@@ -247,6 +251,8 @@ public class ItKnows : MonoBehaviour
     public void TheEnd()
     {
         done = true;
+        inventoryParent.parent.gameObject.SetActive(false);
+        theEnd.SetActive(true);
     }
 
     public IEnumerator Death()
