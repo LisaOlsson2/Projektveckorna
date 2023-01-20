@@ -40,7 +40,7 @@ public class MoreCrafting : Interactive
     {
         transform.GetChild(1).gameObject.SetActive(false);
         animator.enabled = true;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(8/12f * 4);
         animator.enabled = false;
         spriteRenderer.sprite = usual;
         transform.GetChild(2).gameObject.SetActive(true);

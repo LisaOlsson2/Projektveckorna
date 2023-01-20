@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StartSceneManager : MonoBehaviour
 {   //Theo
@@ -10,6 +11,22 @@ public class StartSceneManager : MonoBehaviour
 
     [SerializeField]
     GameObject startMenu;
+
+    [SerializeField]
+    Button clear;
+
+    [SerializeField]
+    GameObject load;
+
+    private void Start()
+    {
+        if (GameObject.Find("The Allmighty") != null)
+        {
+            clear.interactable = true;
+            GameObject.Find("New Save").SetActive(false);
+            load.SetActive(true);
+        }
+    }
 
     void Update()
     {
