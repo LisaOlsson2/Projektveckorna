@@ -8,6 +8,7 @@ public class PlayerMovement : PlayerBase
 {
     readonly KeyCode jump = KeyCode.W;
     readonly KeyCode dash = KeyCode.P;
+    readonly KeyCode jump2 = KeyCode.Space;
 
     readonly float dashDuration = 0.3f;
     readonly float dashForce = 500;
@@ -125,7 +126,7 @@ public class PlayerMovement : PlayerBase
         }
 
 
-        if (Input.GetKeyDown(jump) && grounded)
+        if ((Input.GetKeyDown(jump) || Input.GetKeyDown(jump2)) && grounded)
         {
             ChangeAnimation("Jump");
             rb.AddForce(transform.up * jumpForce);
