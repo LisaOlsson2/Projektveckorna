@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpecifikSpawner : MonoBehaviour
 {
-
+    //Elliot
     [SerializeField]
     private GameObject GrosuggaSpawner;
     float timer;

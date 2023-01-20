@@ -15,6 +15,7 @@ public class Gråsuggspawner : MonoBehaviour
     }
 
     // Update is called once per frame
+    //Detta gör att objectet valt i arrayen kommer instantiate den genom random valda kordinater 
     void Update()
     {
         timer += Time.deltaTime;

@@ -37,14 +37,14 @@ public class Patroling : MonoBehaviour
     Rigidbody2D rb;
     public Animator animator;
 
-    private void Start()
+    private void Start() //Hämtar och startar data här - Elliot
     {
         moving = true;
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         rollSpeed = 15;
     }
-    private void Update()
+    private void Update() //Den här gör så att gubben rör sig genom "speed" - Elliot
     {
         if (moving)
         {
@@ -64,6 +64,7 @@ public class Patroling : MonoBehaviour
         }
             
         RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, distance);
+        //Använder raycast för att kolla om den kollidar med något under sig, om detta händer vänder objectet och raycasten till höger eller vänster - Elliot
         if (groundInfo.collider == false)
         {
             if (movingRight)
