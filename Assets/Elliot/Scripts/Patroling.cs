@@ -136,7 +136,8 @@ public class Patroling : MonoBehaviour
                 moving = true;
                 stunTimer = 0;
                 startStunTimer = false;
-               
+                animator.SetBool("Detect", false);
+
             }
         }
     }
