@@ -26,6 +26,18 @@ public class Combat : PlayerBase
         {
             StartCoroutine(Attack());
         }
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            valueKeeper.health--;
+            inventory.cheese[valueKeeper.health].SetActive(false);
+            Knockback(1);
+            if (valueKeeper.health <= 0)
+            {
+                valueKeeper.dead = true;
+            }
+        }
+
     }
 
     IEnumerator Attack()
@@ -59,13 +71,6 @@ public class Combat : PlayerBase
             Knockback(collision.transform.position.x);
             if (valueKeeper.health <= 0)
             {
-                /*
-                foreach (GameObject cheese in inventory.cheese)
-                {
-                    cheese.SetActive(true);
-                    valueKeeper.health++;
-                }
-                */
                 valueKeeper.dead = true;
             }
         }

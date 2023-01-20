@@ -11,6 +11,9 @@ public class Inventory : BaseMostThings
     [SerializeField]
     Sprite food;
 
+    public Sprite water;
+    public Sprite empty;
+
     public RectTransform square;
     string[] numbers = new string[10];
     public List<Sprite> inventory = new List<Sprite>();
@@ -28,14 +31,13 @@ public class Inventory : BaseMostThings
         {
             numbers[i - 1] = i + "";
         }
-        numbers[9] = 0 + "";
+        numbers[9] = "0";
 
     }
 
 
     void Update()
     {
-
         if (square.gameObject.activeSelf)
         {
             if ((Input.mouseScrollDelta.y > 0 && square.transform.position.x < inventoryUI[inventoryUI.Count - 1].transform.position.x) || (Input.mouseScrollDelta.y < 0 && square.transform.position.x > inventoryUI[0].transform.position.x))
@@ -77,7 +79,7 @@ public class Inventory : BaseMostThings
 
     public Sprite CurrentSprite()
     {
-        return inventory[(int)((square.anchoredPosition.x - startPos.x) / valueKeeper.distanceInventory)];
+        return inventory[(int)((Mathf.RoundToInt(square.anchoredPosition.x) - startPos.x) / (valueKeeper.distanceInventory))];
     }
 
     public int FindSprite(Sprite sprite)
@@ -118,7 +120,7 @@ public class Inventory : BaseMostThings
                 }
                 else
                 {
-                    for (int i = place + 1; i < inventory.Count; i++)
+                    for (int i = inventory.Count - 1; i > place; i--)
                     {
                         inventoryUI[i].transform.position = inventoryUI[i - 1].transform.position;
                     }

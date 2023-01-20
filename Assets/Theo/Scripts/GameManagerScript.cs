@@ -22,7 +22,7 @@ public class GameManagerScript : MonoBehaviour
         {
             PauseGame();
             background.SetActive(true);     //sätter på bakgrunden
-            pauseMenu.SetActive(true);      //sätter op pausmenyn
+            pauseMenu.SetActive(true);      //sätter på pausmenyn
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && background.activeSelf && pauseMenu.activeSelf)     //om man trycker på escape och ifall bakgrunden och pausmenyn är aktiv
         {

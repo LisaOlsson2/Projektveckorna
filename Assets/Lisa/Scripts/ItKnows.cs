@@ -13,6 +13,11 @@ public class ItKnows : MonoBehaviour
     // crafted items
     public Crafting[] allCraftingGhosts;
     public bool[] itemsCrafted;
+    Sprite[][] materials;
+    int[][] materialAmounts;
+    int waterChild;
+    [SerializeField]
+    GameObject water;
 
     // health
     public int health;
@@ -22,7 +27,9 @@ public class ItKnows : MonoBehaviour
     public List<int> amounts = new List<int>();
 
     // things picked up
-    public GameObject[] allItems;
+    [SerializeField]
+    GameObject itemsParent;
+    GameObject[] allItems;
     public bool[] itemsPickedUp;
 
     // position
@@ -59,6 +66,12 @@ public class ItKnows : MonoBehaviour
         inEventOfTwo = FindObjectsOfType<ItKnows>();
         inventory = FindObjectOfType<Inventory>();
         audioController = FindObjectOfType<AudioController>();
+        allItems = new GameObject[itemsParent.transform.childCount];
+
+        for (int i = 0; i < itemsParent.transform.childCount; i++)
+        {
+            allItems[i] = itemsParent.transform.GetChild(i).gameObject;
+        }
 
         if (inEventOfTwo.Length == 1)
         {
@@ -66,6 +79,9 @@ public class ItKnows : MonoBehaviour
             health = inventory.cheese.Length;
             itemsPickedUp = new bool[allItems.Length];
             itemsCrafted = new bool[allCraftingGhosts.Length];
+            materials = new Sprite[allCraftingGhosts.Length][];
+            materialAmounts = new int[allCraftingGhosts.Length][];
+            waterChild = water.transform.childCount;
         }
         else if (inEventOfTwo.Length == 2)
         {
@@ -87,6 +103,7 @@ public class ItKnows : MonoBehaviour
             inEventOfTwo[other].allCraftingGhosts = allCraftingGhosts;
             inEventOfTwo[other].cam = cam;
             inEventOfTwo[other].deathText = deathText;
+            inEventOfTwo[other].water = water;
 
             inEventOfTwo[other].SetValues();
 
@@ -121,6 +138,11 @@ public class ItKnows : MonoBehaviour
                 allCraftingGhosts[i].spriteRenderer = allCraftingGhosts[i].GetComponent<SpriteRenderer>();
                 allCraftingGhosts[i].Craft();
             }
+            else
+            {
+                allCraftingGhosts[i].materials = materials[i];
+                allCraftingGhosts[i].amounts = materialAmounts[i];
+            }
         }
 
         inventory.inventory = inventorySprites;
@@ -136,11 +158,21 @@ public class ItKnows : MonoBehaviour
 
         }
 
+        if (itemsCrafted[0])
+        {
+            if (waterChild < water.transform.childCount)
+            {
+                water.GetComponent<SpriteRenderer>().sprite = water.GetComponent<MoreCrafting>().other;
+                water.transform.GetChild(waterChild).gameObject.SetActive(true);
+            }
+        }
+
         inventory.transform.position = position;
 
         if (dead)
         {
             deathText.SetActive(true);
+            deathText.transform.GetChild(0).GetChild(0).GetComponent<Button>().onClick.AddListener(Exit);
             inventoryParent.parent.gameObject.SetActive(false);
             Destroy(inventory.GetComponent<PlayerBase>());
             Destroy(inventory.GetComponent<Animator>());
@@ -184,14 +216,32 @@ public class ItKnows : MonoBehaviour
             else
             {
                 itemsCrafted[i] = false;
+                materials[i] = allCraftingGhosts[i].materials;
+                materialAmounts[i] = allCraftingGhosts[i].amounts;
             }
         }
 
         inventorySprites = inventory.inventory;
-
         position = inventory.transform.position;
+        
+        if (itemsCrafted[0])
+        {
+            waterChild = Water();
+        }
 
         SceneManager.LoadScene("Start");
+    }
+
+    int Water()
+    {
+        for (int i = 0; i < water.transform.childCount; i++)
+        {
+            if (water.transform.GetChild(i).gameObject.activeSelf)
+            {
+                return i;
+            }
+        }
+        return water.transform.childCount;
     }
 
     public void TheEnd()
@@ -204,6 +254,7 @@ public class ItKnows : MonoBehaviour
         Destroy(inventory.GetComponent<Combat>());
         Animator animator = inventory.GetComponent<Animator>();
         animator.SetTrigger("Death");
+        audioController.Play("Death");
         yield return new WaitForSeconds(1.5f);
         Destroy(animator);
         inventoryParent.parent.gameObject.SetActive(false);
