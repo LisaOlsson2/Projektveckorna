@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 public class ButtonSpriteScript : MonoBehaviour
 {
+    public Button MusicButton;
     public Sprite OnMusicSprite;
     public Sprite OffMusicSprite;
+
+    public Button SFXButton;
     public Sprite OnSFXSprite;
     public Sprite OffSFXSprite;
-    public Button MusicButton;
-    public Button SFXButton;
 
     public bool musicButtonOn;
     public bool sfxButtonOn;
@@ -29,12 +30,12 @@ public class ButtonSpriteScript : MonoBehaviour
 
     public void ChanegeMusicButtonImage()
     {
-        if (MusicButton.image.sprite == OnMusicSprite)
+        if (MusicButton.image.sprite == OnMusicSprite)  //change sprite on music button if the active sprite is "OnMusicSprite"
         {
             MusicButton.image.sprite = OffMusicSprite;
             musicButtonOn = false;
         }
-        else
+        else                                            //change sprite on music button if the active sprite isn't "OnMusicSprite"
         {
             MusicButton.image.sprite = OnMusicSprite;
             musicButtonOn = true;
@@ -42,12 +43,12 @@ public class ButtonSpriteScript : MonoBehaviour
     }
     public void ChangeSFXButtonImage()
     {
-        if (SFXButton.image.sprite == OnSFXSprite)
+        if (SFXButton.image.sprite == OnSFXSprite)       //change sprite on sfx button if the active sprite is "OnSFXSprite"
         {
             SFXButton.image.sprite = OffSFXSprite;
             sfxButtonOn = false;
         }
-        else
+        else                                            //change sprite on sfx button if the active sprite isn't "OnSFXSprite"
         {
             SFXButton.image.sprite = OnSFXSprite;
             sfxButtonOn = true;
