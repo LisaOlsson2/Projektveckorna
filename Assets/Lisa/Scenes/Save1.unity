@@ -2307,6 +2307,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d27e449b66eec64fb37cd1d71a771c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundOn: 0
+  sfxOn: 0
   sounds:
   - name: Walk
     clip: {fileID: 8300000, guid: 1dcb76e57a626124793df994f1124ba5, type: 3}
@@ -2333,21 +2335,21 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: Run
-    clip: {fileID: 8300000, guid: 1a5f6d26c259ceb489ba2276a3f4efc9, type: 3}
+    clip: {fileID: 8300000, guid: aeb58134e051df44891cb284f9a29707, type: 3}
     volume: 0.35
-    pitch: 2.22
+    pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: Crafting
-    clip: {fileID: 8300000, guid: 1386a50ef74d0b5459cfb3df547a6e44, type: 3}
+    clip: {fileID: 8300000, guid: c1751d6086232634bb8ff393d9065579, type: 3}
     volume: 0.35
     pitch: 1.5
     loop: 0
     source: {fileID: 0}
   - name: Death
     clip: {fileID: 8300000, guid: 6fcd1533678f17f4290995adaa2e88e6, type: 3}
-    volume: 0.35
-    pitch: 2
+    volume: 0.18
+    pitch: 1.48
     loop: 0
     source: {fileID: 0}
   - name: Enemyroll
@@ -2358,8 +2360,8 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Damage
     clip: {fileID: 8300000, guid: 317430cdb6537b846b2b7b0227ea37dc, type: 3}
-    volume: 0.35
-    pitch: 2
+    volume: 0.18
+    pitch: 1.48
     loop: 0
     source: {fileID: 0}
   - name: Fire
@@ -2367,6 +2369,36 @@ MonoBehaviour:
     volume: 0.7
     pitch: 2
     loop: 1
+    source: {fileID: 0}
+  - name: Boiling
+    clip: {fileID: 8300000, guid: 89f24734ca0cc674096998406b2ec32a, type: 3}
+    volume: 0.7
+    pitch: 2
+    loop: 1
+    source: {fileID: 0}
+  - name: CraftingFinish
+    clip: {fileID: 8300000, guid: 28338202e8758fc418315d91530943e0, type: 3}
+    volume: 0.35
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ClearDemo
+    clip: {fileID: 8300000, guid: 584b0d2cfca5e6d478a31a64c72f65a3, type: 3}
+    volume: 0.35
+    pitch: 1.5
+    loop: 0
+    source: {fileID: 0}
+  - name: WaterDrop
+    clip: {fileID: 8300000, guid: 98e3f824df08d2f41a5678a6d690a8aa, type: 3}
+    volume: 0.35
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Eating
+    clip: {fileID: 8300000, guid: 0208d18ff8c13bb49b4d159b38a301e1, type: 3}
+    volume: 0.11
+    pitch: 1.35
+    loop: 0
     source: {fileID: 0}
 --- !u!4 &1078363830
 Transform:
