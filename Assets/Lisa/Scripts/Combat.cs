@@ -53,7 +53,7 @@ public class Combat : PlayerBase
 
     public override void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Danger")
+        if (collision.gameObject.tag == "Danger" && valueKeeper.health > 0)
         {
             valueKeeper.health--;
             inventory.cheese[valueKeeper.health].SetActive(false);
