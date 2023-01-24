@@ -2419,7 +2419,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1e128230d5919424998244d432d949bc, type: 3}
   - {fileID: 21300000, guid: 15c2f566ddf53034cbbe555629a4d7a0, type: 3}
   - {fileID: 21300000, guid: 7c3346a1cb2e9764cafe31e03def01f5, type: 3}
-  amounts: 010000000500000003000000
+  amounts: 010000000200000003000000
   more: 0
   iconsIfMore: []
   otherIfMore: {fileID: 0}
@@ -3432,11 +3432,13 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   dead: 0
   done: 0
+  audioController: {fileID: 1078363829}
   inventoryParent: {fileID: 652195179}
   emptyKinda: {fileID: 8388150730041215066, guid: 7b5fae37c0301414a953ea57aa5466ea, type: 3}
-  audioController: {fileID: 1078363829}
-  cam: {fileID: 1728503746}
-  exit: {fileID: 531906439}
+  exitButtons:
+  - {fileID: 531906439}
+  - {fileID: 918905875}
+  - {fileID: 835823291}
   death: {fileID: 21300000, guid: 9c3aa5e4a582c8946acbfb0e50041f33, type: 3}
   deathText: {fileID: 205645484}
   theEnd: {fileID: 1576329671}
@@ -10634,7 +10636,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   valueKeeper: {fileID: 0}
-  gameManager: {fileID: 0}
   cheese:
   - {fileID: 1765885541}
   - {fileID: 329494116}

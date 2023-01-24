@@ -5,66 +5,65 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 // Lisa
+// this is the valuekeeper
 public class ItKnows : MonoBehaviour
 {
-    ItKnows[] inEventOfTwo;
-    Inventory inventory;
+    ItKnows[] inEventOfTwo; // every time you enter the scene after the first time
+    Inventory inventory; // the inventory script attached to the player
 
-    // crafted items
-    public Crafting[] allCraftingGhosts;
-    public bool[] itemsCrafted;
-    Sprite[][] materials;
-    int[][] materialAmounts;
-    int waterChild;
+    // saves crafted items
+    public Crafting[] allCraftingGhosts; // array of everything that can be crafted, the crafting scripts get destroyed when something gets crafted
+    public bool[] itemsCrafted; // true if the craftingghost in the same place is null
+    Sprite[][] materials; // each craftingghost has a sprite array of materials
+    int[][] materialAmounts; // and an int array of amounts
+    int waterChild; // active child in the fireplace. if none, this is the count of children in the fireplace
     [SerializeField]
-    GameObject water;
+    GameObject water; // the fireplace
 
-    // health
+    // saves health
     public int health;
 
-    // inventory
-    public List<Sprite> inventorySprites = new List<Sprite>();
-    public List<int> amounts = new List<int>();
+    // saves inventory
+    public List<Sprite> inventorySprites = new List<Sprite>(); // things in the inventory
+    public List<int> amounts = new List<int>(); // how many of each of the things in the inventory
 
-    // things picked up
+    // saves things picked up
     [SerializeField]
-    GameObject itemsParent;
-    GameObject[] allItems;
-    public bool[] itemsPickedUp;
+    GameObject itemsParent; // the parent of all things that can be picked up
+    GameObject[] allItems; // stores the children of the itemsparent
+    public bool[] itemsPickedUp; // true if the same place in allitems is null (has been picked up)
 
-    // position
+    // saves position
     public Vector3 position;
 
-    // endings
+    // saves endings
     public bool dead;
     public bool done;
+
+
+    public AudioController audioController;
 
     [SerializeField]
     Transform inventoryParent;
     
     [SerializeField]
-    GameObject emptyKinda;
-
-    public AudioController audioController;
+    GameObject emptyKinda; // gameobject for the inventory, it gets a sprite when it gets instantiated
 
     [SerializeField]
-    GameObject cam;
-
-    [SerializeField]
-    Button exit;
+    Button[] exitButtons;
 
     [SerializeField]
     Sprite death;
 
     [SerializeField]
-    GameObject deathText;
+    GameObject deathText; // deathscreen
 
     [SerializeField]
-    GameObject theEnd;
+    GameObject theEnd; // congratilationscreen
 
     public readonly float distanceInventory = 575;
 
-    public PlayerMovement player;
+    public PlayerMovement player; // i should remove this
 
     void Start()
     {
@@ -73,12 +72,12 @@ public class ItKnows : MonoBehaviour
         audioController = FindObjectOfType<AudioController>();
         allItems = new GameObject[itemsParent.transform.childCount];
 
-        for (int i = 0; i < itemsParent.transform.childCount; i++)
+        for (int i = 0; i < itemsParent.transform.childCount; i++) // add the children to the array
         {
             allItems[i] = itemsParent.transform.GetChild(i).gameObject;
         }
 
-        if (inEventOfTwo.Length == 1)
+        if (inEventOfTwo.Length == 1) // if this is a new save
         {
             DontDestroyOnLoad(gameObject);
             health = inventory.cheese.Length;
@@ -103,10 +102,9 @@ public class ItKnows : MonoBehaviour
             inEventOfTwo[other].audioController = audioController;
             inEventOfTwo[other].allItems = allItems;
             inEventOfTwo[other].inventoryParent = inventoryParent;
-            inEventOfTwo[other].exit = exit;
+            inEventOfTwo[other].exitButtons = exitButtons;
             inEventOfTwo[other].inventory = inventory;
             inEventOfTwo[other].allCraftingGhosts = allCraftingGhosts;
-            inEventOfTwo[other].cam = cam;
             inEventOfTwo[other].deathText = deathText;
             inEventOfTwo[other].theEnd = theEnd;
             inEventOfTwo[other].water = water;
@@ -123,37 +121,41 @@ public class ItKnows : MonoBehaviour
 
     void SetValues()
     {
-        exit.onClick.AddListener(Exit);
+        foreach(Button exit in exitButtons)
+        {
+            exit.onClick.AddListener(Exit);
+        }
 
         for (int i = inventory.cheese.Length - 1; i > health - 1; i--)
         {
+            // if this cheese has been lost, inactivate it
             inventory.cheese[i].SetActive(false);
         }
 
         for (int i = 0; i < allItems.Length; i++)
         {
-            if (itemsPickedUp[i])
+            if (itemsPickedUp[i]) // if this item has been picked up
             {
-                Destroy(allItems[i]);
+                Destroy(allItems[i]); // destroy it
             }
         }
         for (int i = 0; i < allCraftingGhosts.Length; i++)
         {
-            if (itemsCrafted[i])
+            if (itemsCrafted[i]) // if this thing has been crafted
             {
-                allCraftingGhosts[i].spriteRenderer = allCraftingGhosts[i].GetComponent<SpriteRenderer>();
-                allCraftingGhosts[i].Craft();
+                allCraftingGhosts[i].spriteRenderer = allCraftingGhosts[i].GetComponent<SpriteRenderer>(); // so it can craft before its start has been called
+                allCraftingGhosts[i].Craft(); // crafts the thing
             }
-            else
+            else // if it hasn't been crafted
             {
-                allCraftingGhosts[i].materials = materials[i];
-                allCraftingGhosts[i].amounts = materialAmounts[i];
+                allCraftingGhosts[i].materials = materials[i]; // make the materials left the same as when the scene was exited
+                allCraftingGhosts[i].amounts = materialAmounts[i]; // same, but with the amount of materials left
             }
         }
 
-        inventory.inventory = inventorySprites;
+        inventory.inventory = inventorySprites; // gives the player its old inventory back
 
-        if (inventory.inventory.Count > 0)
+        if (inventory.inventory.Count > 0) // if the inventory isn't empty
         {
             inventory.square.gameObject.SetActive(true);
 
@@ -164,21 +166,20 @@ public class ItKnows : MonoBehaviour
 
         }
 
-        if (itemsCrafted[0])
+        if (itemsCrafted[0]) // if the fire place has been crafted
         {
-            if (waterChild < water.transform.childCount)
+            if (waterChild < water.transform.childCount) // if there's a pot in it
             {
                 water.GetComponent<SpriteRenderer>().sprite = water.GetComponent<MoreCrafting>().other;
                 water.transform.GetChild(waterChild).gameObject.SetActive(true);
             }
         }
 
-        inventory.transform.position = position;
+        inventory.transform.position = position; // places the player where it was
 
         if (dead)
         {
             deathText.SetActive(true);
-            deathText.transform.GetChild(0).GetChild(0).GetComponent<Button>().onClick.AddListener(Exit);
             inventoryParent.parent.gameObject.SetActive(false);
             Destroy(inventory.GetComponent<PlayerBase>());
             Destroy(inventory.GetComponent<Animator>());
@@ -193,18 +194,18 @@ public class ItKnows : MonoBehaviour
 
     public void AddItem(int place)
     {
-        GameObject item = Instantiate(emptyKinda, inventoryParent);
-        item.GetComponent<Image>().sprite = inventory.inventory[place];
-        item.GetComponentInChildren<Text>().text = amounts[place] + "";
-        item.GetComponent<RectTransform>().localPosition += new Vector3(distanceInventory * place, 0, 0);
-        inventory.inventoryUI.Add(item);
+        GameObject item = Instantiate(emptyKinda, inventoryParent); // instantiates an object
+        item.GetComponent<Image>().sprite = inventory.inventory[place]; // changes the sprite of the object to the sprite in its place in the list of sprites
+        item.GetComponentInChildren<Text>().text = amounts[place] + ""; // changes the text of the child of the object to the amount ni the inventory of this material
+        item.GetComponent<RectTransform>().localPosition += new Vector3(distanceInventory * place, 0, 0); // moves it to its place in the inventory
+        inventory.inventoryUI.Add(item); // adds the object to the inventory gameobject list
     }
     
-    public void Exit()
+    public void Exit() // saves progress before exiting
     {
         for (int i = 0; i < allItems.Length; i++)
         {
-            if (allItems[i] == null)
+            if (allItems[i] == null) // if the gameobject has been destroyed (picked up)
             {
                 itemsPickedUp[i] = true;
             }
@@ -230,15 +231,15 @@ public class ItKnows : MonoBehaviour
         inventorySprites = inventory.inventory;
         position = inventory.transform.position;
         
-        if (itemsCrafted[0])
+        if (itemsCrafted[0]) // if the fireplace has been crafted
         {
-            waterChild = Water();
+            waterChild = Water(); // check if any children of the fireplace are active, if they are, waterchild becomes the active one, otherwise it's the amount of children
         }
 
         SceneManager.LoadScene("StartScene");
     }
 
-    int Water()
+    int Water() // retruns the index of the active child of the fireplace
     {
         for (int i = 0; i < water.transform.childCount; i++)
         {
@@ -253,20 +254,20 @@ public class ItKnows : MonoBehaviour
     public void TheEnd()
     {
         done = true;
-        inventoryParent.parent.gameObject.SetActive(false);
-        theEnd.SetActive(true);
+        inventoryParent.parent.gameObject.SetActive(false); // inactivate the usual canvas
+        theEnd.SetActive(true); // activate the canvas with the congratulationscreen
     }
 
     public IEnumerator Death()
     {
-        Destroy(inventory.GetComponent<Combat>());
-        Animator animator = inventory.GetComponent<Animator>();
-        animator.SetTrigger("Death");
-        audioController.Play("Death");
-        yield return new WaitForSeconds(1.5f);
+        Destroy(inventory.GetComponent<Combat>()); // destroys the combat script, the movement script will already be disabled
+        Animator animator = inventory.GetComponent<Animator>(); // reference to the players animator
+        animator.SetTrigger("Death"); // starts the death animation
+        audioController.Play("Death"); // plays the death sound
+        yield return new WaitForSeconds(18/12f); // the death animation is 18 frames and plays at a framerate of 12 fps, so it just waits until it's done
         Destroy(animator);
-        inventoryParent.parent.gameObject.SetActive(false);
-        deathText.SetActive(true);
+        inventoryParent.parent.gameObject.SetActive(false); // inactivates the usual canvas
+        deathText.SetActive(true); // activates the deathscreen canvas
     }
 
 }

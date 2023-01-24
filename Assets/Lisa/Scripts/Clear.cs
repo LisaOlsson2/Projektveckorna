@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// Lisa, might change this script later
 public class Clear : MonoBehaviour
 {
     [SerializeField]

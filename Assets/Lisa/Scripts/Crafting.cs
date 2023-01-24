@@ -12,37 +12,37 @@ public class Crafting : Interactive
     // 0.8 = close item selected
     // 1 = built
 
-    public Sprite[] materials;
+    public Sprite[] materials; // inventory icons representing the materials needed
 
-    public int[] amounts;
-
-    [SerializeField]
-    bool more;
+    public int[] amounts; // how many of the material at the same place in the array above that are needed
 
     [SerializeField]
-    Sprite[] iconsIfMore;
+    bool more; // true if you can add more to this after it's been crafted
 
     [SerializeField]
-    Sprite otherIfMore;
+    Sprite[] iconsIfMore; // materials that can be added later
+
+    [SerializeField]
+    Sprite otherIfMore; // the change of sprite for when it's been crafted further
 
     void Update()
     {
-        if (interactable && inventory.square.gameObject.activeSelf)
+        if (interactable) // if you're close enough and you have at least one of the materials in your inventory
         {
-            for (int i = 0; i < materials.Length; i++)
+            for (int i = 0; i < materials.Length; i++) // go through the materials needed and check if one is selected
             {
-                spriteRenderer.color = new Vector4(1, 1, 1, 0.6f);
-                if (inventory.CurrentSprite() == materials[i])
+                spriteRenderer.color = new Vector4(1, 1, 1, 0.6f); // not selected
+                if (inventory.CurrentSprite() == materials[i]) // if selected
                 {
-                    spriteRenderer.color = new Vector4(1, 1, 1, 0.8f);
+                    spriteRenderer.color = new Vector4(1, 1, 1, 0.8f); // selected
 
-                    if (Input.GetKeyDown(inventory.use))
+                    if (Input.GetKeyDown(inventory.use)) // if you press use
                     {
 
-                        if (materials[i] == inventory.water)
+                        if (materials[i] == inventory.water) // if it's water
                         {
-                            inventory.inventory[inventory.FindSprite(inventory.water)] = inventory.empty;
-                            inventory.inventoryUI[inventory.FindSprite(inventory.empty)].GetComponent<Image>().sprite = inventory.empty;
+                            inventory.inventory[inventory.FindSprite(inventory.water)] = inventory.empty; // change to the empty bottle cap sprite
+                            inventory.inventoryUI[inventory.FindSprite(inventory.empty)].GetComponent<Image>().sprite = inventory.empty; // change the sprite of the object too
                         }
                         else
                         {
@@ -50,9 +50,9 @@ public class Crafting : Interactive
                         }
                         amounts[i]--;
 
-                        if (amounts[i] == 0)
+                        if (amounts[i] == 0) // if it's the last needed of a material
                         {
-                            Sprite[] sprites = new Sprite[materials.Length - 1];
+                            Sprite[] sprites = new Sprite[materials.Length - 1]; // make a new array with one less spot than the previous
                             int[] ints = new int[amounts.Length - 1];
 
                             int i3 = 0;
@@ -62,40 +62,41 @@ public class Crafting : Interactive
                                 {
                                     continue;
                                 }
-                                sprites[i3] = materials[i2];
+
+                                // if the material wasn't the one used up
+                                sprites[i3] = materials[i2]; // add it to the new array
                                 ints[i3] = amounts[i2];
-                                i3++;
+                                i3++; // the next that will be added to is the next place in the new array
                             }
 
-                            amounts = ints;
+                            amounts = ints; // save the new array as the usual array
                             materials = sprites;
                         }
 
                         bool craft = true;
                         foreach(int amount in amounts)
                         {
-                            if (amount > 0)
+                            if (amount > 0) // if there are more materials left of this thing
                             {
                                 craft = false;
-                                StartCoroutine(CraftAnimation(6/12));
+                                StartCoroutine(CraftAnimation(6/12)); // play the animation once
                                 break;
                             }
                         }
 
                         if (craft)
                         {
-                            StartCoroutine(CraftAnimation(6/12 * 3));
-                            Craft1();
+                            StartCoroutine(CraftAnimation(6/12 * 3)); // play the animation thrice
+                            Craft1(); // craft the item
                         }
                     }
                     break;
                 }
-
             }
         }
     }
 
-    void Craft1()
+    void Craft1() // thingy before craft to check if it's the last craftable item
     {
         Craft();
         foreach (Crafting craftingGhost in valueKeeper.allCraftingGhosts)
@@ -132,18 +133,15 @@ public class Crafting : Interactive
 
     public override void OnTriggerEnter2D(Collider2D collision)
     {
-        base.OnTriggerEnter2D(collision);
-
+        spriteRenderer.color = new Vector4(1, 1, 1, 0.4f);
         for (int i = 0; i < materials.Length; i++)
         {
-            if (inventory.FindSprite(materials[i]) < inventory.inventory.Count)
+            if (inventory.FindSprite(materials[i]) < inventory.inventory.Count) // if you have at least one of the materials in your inventory
             {
+                base.OnTriggerEnter2D(collision); // makes interactable true
                 return;
             }
         }
-
-        spriteRenderer.color = new Vector4(1, 1, 1, 0.4f);
-        interactable = false;
     }
 
     public override void OnTriggerExit2D(Collider2D collision)

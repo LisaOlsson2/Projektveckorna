@@ -7,6 +7,6 @@ public class BaseMostThings : MonoBehaviour
     public ItKnows valueKeeper;
     public virtual void Start()
     {
-        valueKeeper = FindObjectOfType<ItKnows>();
+        valueKeeper = FindObjectOfType<ItKnows>(); // most things need a reference to this
     }
 }

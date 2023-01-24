@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 // Lisa
 public class PlayerBase : BaseMostThings
@@ -13,12 +12,13 @@ public class PlayerBase : BaseMostThings
     public Rigidbody2D rb;
     public Animator animator;
 
+    // these are static because they have to be the same in both combat and playermovement
     public static float staminaTimer;
     public static bool grounded;
     public static PolygonCollider2D[] colliders;
     public static int currentCollider;
     public static bool attacking;
-    public static bool dont;
+    public static bool dont; // don't do ground stuff when you change to the jumping animation from the sprinting
 
     static string currentState;
 
@@ -52,49 +52,51 @@ public class PlayerBase : BaseMostThings
         }
     }
 
+    // all player animations except for death go through this function so that other things can happen as well
     public void ChangeAnimation(string animation)
     {
-        if ((grounded && !attacking) || animation == "Damage")
+        if ((grounded && !attacking) || animation == "Damage") // so the animation doesn't change to something else while you're in the middle of jumping or attacking or taking damage, unless it gets told to change to the damage animation
         {
-            int old = currentCollider;
+            int old = currentCollider; // the previous collider's place in the array of colliders
             animator.SetTrigger(animation);
 
-            if (currentState == "Run" || currentState == "Walk")
+            if (currentState == "Run" || currentState == "Walk") // if it changes from an animation where the sound loops
             {
-                valueKeeper.audioController.Stop(currentState);
+                valueKeeper.audioController.Stop(currentState); // stop the sound
             }
 
             foreach (Sound sound in valueKeeper.audioController.sounds)
             {
-                if (sound.name == animation)
+                if (sound.name == animation) // if there's a sound for the animation
                 {
-                    valueKeeper.audioController.Play(animation);
+                    valueKeeper.audioController.Play(animation); // play it
+                    break;
                 }
             }
 
-            if (currentCollider == 0)
+            if (currentCollider == 0) // if the currently enabled collider isn't the running collider
             {
-                if (animation == "Run")
+                if (animation == "Run") // if the new animation is the running animation
                 {
-                    currentCollider = 1;
+                    currentCollider = 1; // change to the running collider (it gets changed for real further down)
                 }
             }
-            else if (animation != "Run")
+            else if (animation != "Run") // if the current collider is the running collider and the new animation isn't the running animation
             {
-                if (animation == "Jump")
+                if (animation == "Jump") // if the new animation is the jumping animation
                 {
-                    dont = true;
+                    dont = true; // don't make the hit the ground stuff happen
                 }
-                currentCollider = 0;
+                currentCollider = 0; // change to the usual collider
             }
 
-            if (old != currentCollider)
+            if (old != currentCollider) // if the collider changes
             {
-                colliders[old].enabled = false;
-                colliders[currentCollider].enabled = true;
+                colliders[old].enabled = false; // disable the old
+                colliders[currentCollider].enabled = true; // enable the new
             }
 
-            currentState = animation;
+            currentState = animation; // store the name of the current animation for when it changes next time
         }
     }
     public virtual void OnCollisionEnter2D(Collision2D collision)

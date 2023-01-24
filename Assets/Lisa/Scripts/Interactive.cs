@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Lisa
+// things you can interact with, currently just things you can pick up and craft
 public class Interactive : BaseMostThings
 {
     public Inventory inventory;
