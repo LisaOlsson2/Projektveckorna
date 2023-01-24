@@ -65,7 +65,7 @@ public class Patroling : MonoBehaviour
             
         RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, distance);
         //Använder raycast för att kolla om den kollidar med något under sig, om detta händer vänder objectet och raycasten till höger eller vänster - Elliot
-        if (groundInfo.collider == false)
+        if (!groundInfo.collider.CompareTag("SewerGround") && !groundInfo.collider.CompareTag("Item"))
         {
             if (movingRight)
             {
