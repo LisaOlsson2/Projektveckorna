@@ -63,7 +63,7 @@ public class ItKnows : MonoBehaviour
 
     public readonly float distanceInventory = 575;
 
-    public PlayerMovement player; // i should remove this
+    public PlayerMovement player; // used by other scripts to make things happen in the player script
 
     void Start()
     {
@@ -71,6 +71,7 @@ public class ItKnows : MonoBehaviour
         inventory = FindObjectOfType<Inventory>();
         audioController = FindObjectOfType<AudioController>();
         allItems = new GameObject[itemsParent.transform.childCount];
+        player = inventory.GetComponent<PlayerMovement>();
 
         for (int i = 0; i < itemsParent.transform.childCount; i++) // add the children to the array
         {
@@ -108,6 +109,7 @@ public class ItKnows : MonoBehaviour
             inEventOfTwo[other].deathText = deathText;
             inEventOfTwo[other].theEnd = theEnd;
             inEventOfTwo[other].water = water;
+            inEventOfTwo[other].player = player;
 
             inEventOfTwo[other].SetValues();
 

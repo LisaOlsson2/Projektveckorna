@@ -12,6 +12,7 @@ public class Inventory : BaseMostThings
     Sprite food; // cheese inventory icon
 
     public Sprite water; // clean water icon
+    public Sprite dirty; // dirty water icon
     public Sprite empty; // empty water icon
 
     public RectTransform square; // thingy behind the icons to show which one you're at
@@ -34,7 +35,6 @@ public class Inventory : BaseMostThings
         numbers[9] = "0";
 
     }
-
 
     void Update()
     {
@@ -65,16 +65,25 @@ public class Inventory : BaseMostThings
                     }
                 }
             }
-        }
 
-        if (valueKeeper.health < cheese.Length && Input.GetKeyDown(use) && square.gameObject.activeSelf && CurrentSprite() == food) // if you press use while you have the cheese selected in the inventory and you aren't at full health
-        {
-            UseItem(FindSprite(food));
-            GetComponent<PlayerMovement>().ChangeAnimation("Eat");
-            cheese[valueKeeper.health].SetActive(true);
-            valueKeeper.health++;
-        }
+            if (Input.GetKeyDown(use))
+            {
+                if (valueKeeper.health < cheese.Length && CurrentSprite() == food) // if you press use while you have the cheese selected in the inventory and you aren't at full health
+                {
+                    UseItem(FindSprite(food));
+                    GetComponent<PlayerMovement>().ChangeAnimation("Eat");
+                    cheese[valueKeeper.health].SetActive(true);
+                    valueKeeper.health++;
+                }
 
+                if (PlayerBase.staminaTimer < 0 && CurrentSprite() == water)
+                {
+                    ChangeSprite(FindSprite(water), empty);
+                    valueKeeper.player.StopFatigue();
+                }
+            }
+
+        }
     }
 
     public Sprite CurrentSprite() // returns the sprite of the current item in the inventory
@@ -128,5 +137,11 @@ public class Inventory : BaseMostThings
                 }
             }
         }
+    }
+
+    public void ChangeSprite(int place, Sprite newSprite)
+    {
+        inventory[place] = newSprite;
+        inventoryUI[place].GetComponent<Image>().sprite = newSprite;
     }
 }

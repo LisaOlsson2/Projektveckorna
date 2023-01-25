@@ -15,8 +15,9 @@ public class PlayerMovement : PlayerBase
     readonly float jumpForce = 200;
     readonly float baseSpeed = 2; // this gets multiplied with the speedmultiplier
     readonly float staminaFull = 4;
-    readonly int sprintSpeed = 2; // the speedmultiplier gets multiplied with this when you start sprinting
+    readonly int sprintSpeed = 2; // the speedmultiplier which is at 2 usually gets multiplied with this when you start sprinting
     readonly int tiredSpeed = 2; // added because mickael didn't want the player to be slow when it's tired
+    readonly int normalSpeed = 2;
 
     readonly float rightWorldBorder = 18.63f * 3 + 9.315f;
     readonly float leftWorldBorder = -9.315f;
@@ -25,15 +26,14 @@ public class PlayerMovement : PlayerBase
     Slider slider; // indicator for the stamina
 
     Image staminaImageToChangeColor;
-    ChangeInventorySprite water;
 
-    int speedMultiplier = 2;
+    int speedMultiplier;
 
     public override void Start()
     {
         base.Start();
-        water = GetComponent<ChangeInventorySprite>();
 
+        speedMultiplier = normalSpeed;
         staminaImageToChangeColor = slider.fillRect.GetComponent<Image>();
         slider.maxValue = staminaFull;
         staminaTimer = staminaFull; // start with full stamina
@@ -165,23 +165,19 @@ public class PlayerMovement : PlayerBase
         rb.velocity = Vector3.zero; // no velocity, the dash is over
     }
 
-    // i gotta change this
     public void StopFatigue()
     {
         staminaTimer = staminaFull;
         staminaImageToChangeColor.color = Color.green;
-        speedMultiplier *= 2;
+        speedMultiplier = Mathf.Abs(speedMultiplier)/speedMultiplier * normalSpeed;
     }
 
-    // 
     void StartFatigue()
     {
         SetWalkOrIdleOrSprint();
         staminaImageToChangeColor.color = Color.red;
         speedMultiplier = (Mathf.Abs(speedMultiplier) / speedMultiplier) * tiredSpeed;
         staminaTimer = -staminaFull;
-        print(water);
-        water.interactable = true; // you can now drink water, but i'll probably remove it
     }
 
     public override void OnCollisionEnter2D(Collision2D collision)

@@ -128,7 +128,6 @@ public class Crafting : Interactive
         valueKeeper.player.ChangeAnimation("Craft");
         yield return new WaitForSeconds(seconds);
         valueKeeper.player.SetWalkOrIdleOrSprint();
-
     }
 
     public override void OnTriggerEnter2D(Collider2D collision)
