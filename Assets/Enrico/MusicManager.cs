@@ -18,8 +18,11 @@ public class MusicManager : MusicAndSound
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
         }
-
         play = ItKnows.music;
+        if (!play)
+        {
+            Change();
+        }
     }
 
     public void Stop(string name)

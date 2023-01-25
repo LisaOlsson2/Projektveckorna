@@ -14,7 +14,9 @@ public class MusicAndSound : MonoBehaviour
 
     Image image;
 
-    public void Change(Button button)
+    public Button button;
+    
+    public void Change()
     {
         if (image == null)
         {

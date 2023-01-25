@@ -2620,10 +2620,10 @@ MonoBehaviour:
       - m_Target: {fileID: 1078363829}
         m_TargetAssemblyTypeName: MusicAndSound, Assembly-CSharp
         m_MethodName: Change
-        m_Mode: 2
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 441076489}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3540,6 +3540,7 @@ MonoBehaviour:
   play: 0
   enabledSprite: {fileID: 21300000, guid: cd5c8c78df52f0141b8d2778f85f50b2, type: 3}
   disabledSprite: {fileID: 21300000, guid: b2209a8d1bd1a3b4baa7f638fd6e4896, type: 3}
+  button: {fileID: 1761206005}
   musicsound:
   - name: music1
     clip: {fileID: 8300000, guid: a1e77ce90e429d84ead4513830553a93, type: 3}
@@ -3583,7 +3584,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &687742734
 GameObject:
@@ -6181,6 +6182,7 @@ MonoBehaviour:
   play: 0
   enabledSprite: {fileID: 21300000, guid: 630ba253c1bfbd749b9eecd1af525d89, type: 3}
   disabledSprite: {fileID: 21300000, guid: 11e0613c85d54fa43962b833de59aa48, type: 3}
+  button: {fileID: 441076489}
   sounds:
   - name: Walk
     clip: {fileID: 8300000, guid: 1dcb76e57a626124793df994f1124ba5, type: 3}
@@ -6284,7 +6286,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1080201912
 GameObject:
@@ -10037,10 +10039,10 @@ MonoBehaviour:
       - m_Target: {fileID: 656651814}
         m_TargetAssemblyTypeName: MusicAndSound, Assembly-CSharp
         m_MethodName: Change
-        m_Mode: 2
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 1761206005}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

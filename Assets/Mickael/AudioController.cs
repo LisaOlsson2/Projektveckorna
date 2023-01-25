@@ -7,12 +7,6 @@ public class AudioController : MusicAndSound
 {
     public Sound[] sounds;
 
-    // Start is called before the first frame update
-    private void Start()
-    {
-        play = ItKnows.sound;
-    }
-
     void Awake()
     {
         foreach (Sound s in sounds)
@@ -22,7 +16,11 @@ public class AudioController : MusicAndSound
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
-
+        }
+        play = ItKnows.sound;
+        if (!play)
+        {
+            Change();
         }
     }
 
