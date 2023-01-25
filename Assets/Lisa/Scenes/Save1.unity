@@ -2572,7 +2572,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &441076489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2586,7 +2586,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -2617,13 +2617,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ChangeButtonSprite, Assembly-CSharp
-        m_MethodName: OnClickSound
-        m_Mode: 1
+      - m_Target: {fileID: 1078363829}
+        m_TargetAssemblyTypeName: MusicAndSound, Assembly-CSharp
+        m_MethodName: Change
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 441076489}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3537,6 +3537,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b87b4a1c8adbaa4980e403099d7169c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  play: 0
+  enabledSprite: {fileID: 21300000, guid: cd5c8c78df52f0141b8d2778f85f50b2, type: 3}
+  disabledSprite: {fileID: 21300000, guid: b2209a8d1bd1a3b4baa7f638fd6e4896, type: 3}
   musicsound:
   - name: music1
     clip: {fileID: 8300000, guid: a1e77ce90e429d84ead4513830553a93, type: 3}
@@ -3568,7 +3571,6 @@ MonoBehaviour:
     pitch: 0.1
     loop: 1
     source: {fileID: 0}
-  volumes: []
 --- !u!4 &656651815
 Transform:
   m_ObjectHideFlags: 0
@@ -5970,6 +5972,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1112828648}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &979182834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6164,7 +6178,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d27e449b66eec64fb37cd1d71a771c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sfxOn: 0
+  play: 0
+  enabledSprite: {fileID: 21300000, guid: 630ba253c1bfbd749b9eecd1af525d89, type: 3}
+  disabledSprite: {fileID: 21300000, guid: 11e0613c85d54fa43962b833de59aa48, type: 3}
   sounds:
   - name: Walk
     clip: {fileID: 8300000, guid: 1dcb76e57a626124793df994f1124ba5, type: 3}
@@ -9546,6 +9562,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1112828648}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1658163365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9904,7 +9932,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1761206002
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9975,7 +10003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -10006,13 +10034,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ChangeButtonSprite, Assembly-CSharp
-        m_MethodName: OnClickMusic
-        m_Mode: 1
+      - m_Target: {fileID: 656651814}
+        m_TargetAssemblyTypeName: MusicAndSound, Assembly-CSharp
+        m_MethodName: Change
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1761206005}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
