@@ -34,11 +34,13 @@ public class ButtonSpriteScript : MonoBehaviour
         {
             MusicButton.image.sprite = OffMusicSprite;
             musicButtonOn = false;
+            ItKnows.music = false;
         }
         else                                            //change sprite on music button if the active sprite isn't "OnMusicSprite"
         {
             MusicButton.image.sprite = OnMusicSprite;
             musicButtonOn = true;
+            ItKnows.music = true;
         }
     }
     public void ChangeSFXButtonImage()
@@ -47,11 +49,13 @@ public class ButtonSpriteScript : MonoBehaviour
         {
             SFXButton.image.sprite = OffSFXSprite;
             sfxButtonOn = false;
+            ItKnows.sound = false;
         }
         else                                            //change sprite on sfx button if the active sprite isn't "OnSFXSprite"
         {
             SFXButton.image.sprite = OnSFXSprite;
             sfxButtonOn = true;
+            ItKnows.sound = true;
         }
     }
 }

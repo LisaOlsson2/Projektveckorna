@@ -8,6 +8,9 @@ using UnityEngine.UI;
 // this is the valuekeeper
 public class ItKnows : MonoBehaviour
 {
+    public static bool music = true;
+    public static bool sound = true;
+
     ItKnows[] inEventOfTwo; // every time you enter the scene after the first time
     Inventory inventory; // the inventory script attached to the player
 
@@ -205,6 +208,8 @@ public class ItKnows : MonoBehaviour
     
     public void Exit() // saves progress before exiting
     {
+        music = FindObjectOfType<MusicManager>().play;
+        sound = audioController.play;
         for (int i = 0; i < allItems.Length; i++)
         {
             if (allItems[i] == null) // if the gameobject has been destroyed (picked up)

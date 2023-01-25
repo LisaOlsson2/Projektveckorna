@@ -12,10 +12,14 @@ public class MusicAndSound : MonoBehaviour
     [SerializeField]
     Sprite disabledSprite;
 
+    Image image;
 
     public void Change(Button button)
     {
-        Image image = button.GetComponent<Image>();
+        if (image == null)
+        {
+            image = button.GetComponent<Image>();
+        }
 
         if (image.sprite == enabledSprite)
         {

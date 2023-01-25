@@ -19,7 +19,7 @@ public class MusicManager : MusicAndSound
             s.source.loop = s.loop;
         }
 
-        play = true;
+        play = ItKnows.music;
     }
 
     public void Stop(string name)

@@ -10,7 +10,7 @@ public class AudioController : MusicAndSound
     // Start is called before the first frame update
     private void Start()
     {
-        play = true;
+        play = ItKnows.sound;
     }
 
     void Awake()
