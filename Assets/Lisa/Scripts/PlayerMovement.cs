@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Lisa, fix the water
+// Lisa
 public class PlayerMovement : PlayerBase
 {
     readonly KeyCode jump = KeyCode.W;

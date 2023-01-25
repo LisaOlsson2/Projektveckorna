@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Lisa, might change this script later
+// Lisa
 public class Clear : MonoBehaviour
 {
     [SerializeField]
