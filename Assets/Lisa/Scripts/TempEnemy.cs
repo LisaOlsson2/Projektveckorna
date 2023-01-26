@@ -12,9 +12,13 @@ public class TempEnemy : MonoBehaviour
     int health = 2;
     public Animator animator;
 
+   
+    [SerializeField]
+    Patroling patroling;
     void Start()
     {
         animator = GetComponentInParent<Animator>();
+    
     }
 
     IEnumerator Death()
@@ -30,7 +34,7 @@ public class TempEnemy : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (collision.gameObject.tag == "Danger" && health > 0 )
+        if (collision.gameObject.tag == "Danger" && health > 0 && patroling.rollingD)
         {
             animator.SetBool("TookDamage", true); // Elliot added this
             collision.gameObject.SetActive(false); // a square with the tag danger is set active when the player attacks, this row inactivates it
