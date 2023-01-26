@@ -147,11 +147,21 @@ public class Inventory : BaseMostThings
 
     public void Button(Transform button)
     {
-        print(":0");
         int place = button.GetSiblingIndex();
         if (place < inventory.Count)
         {
             square.anchoredPosition = startPos + 575 * place * Vector2.right;
         }
+    }
+
+    public void PlayCraftingAnimation(int repeats)
+    {
+        StartCoroutine(CraftAnimation(6/12f * repeats));
+    }
+    IEnumerator CraftAnimation(float seconds)
+    {
+        valueKeeper.player.ChangeAnimation("Craft");
+        yield return new WaitForSeconds(seconds);
+        valueKeeper.player.SetWalkOrIdleOrSprint();
     }
 }

@@ -38,7 +38,6 @@ public class Crafting : Interactive
 
                     if (Input.GetKeyDown(inventory.use)) // if you press use
                     {
-
                         if (materials[i] == inventory.water) // if it's water
                         {
                             inventory.inventory[inventory.FindSprite(inventory.water)] = inventory.empty; // change to the empty bottle cap sprite
@@ -79,14 +78,14 @@ public class Crafting : Interactive
                             if (amount > 0) // if there are more materials left of this thing
                             {
                                 craft = false;
-                                StartCoroutine(CraftAnimation(6/12)); // play the animation once
+                                inventory.PlayCraftingAnimation(1); // play the animation once
                                 break;
                             }
                         }
 
                         if (craft)
                         {
-                            StartCoroutine(CraftAnimation(6/12 * 3)); // play the animation thrice
+                            inventory.PlayCraftingAnimation(3); // play the animation thrice
                             Craft1(); // craft the item
                         }
                     }
@@ -111,7 +110,6 @@ public class Crafting : Interactive
     
     public void Craft()
     {
-        spriteRenderer.color = Vector4.one;
         if (more)
         {
             MoreCrafting more;
@@ -120,14 +118,8 @@ public class Crafting : Interactive
             more.other = otherIfMore;
             more.usual = spriteRenderer.sprite;
         }
+        spriteRenderer.color = Vector4.one;
         Destroy(this);
-    }
-
-    IEnumerator CraftAnimation(float seconds)
-    {
-        valueKeeper.player.ChangeAnimation("Craft");
-        yield return new WaitForSeconds(seconds);
-        valueKeeper.player.SetWalkOrIdleOrSprint();
     }
 
     public override void OnTriggerEnter2D(Collider2D collision)
