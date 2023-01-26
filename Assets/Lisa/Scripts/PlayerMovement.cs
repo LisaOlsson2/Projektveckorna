@@ -12,7 +12,7 @@ public class PlayerMovement : PlayerBase
 
     readonly float dashDuration = 0.3f;
     readonly float dashForce = 500;
-    readonly float jumpForce = 200;
+    readonly float jumpForce = 300;
     readonly float baseSpeed = 2; // this gets multiplied with the speedmultiplier
     readonly float staminaFull = 4;
     readonly int sprintSpeed = 2; // the speedmultiplier which is at 2 usually gets multiplied with this when you start sprinting

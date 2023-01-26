@@ -144,4 +144,14 @@ public class Inventory : BaseMostThings
         inventory[place] = newSprite;
         inventoryUI[place].GetComponent<Image>().sprite = newSprite;
     }
+
+    public void Button(Transform button)
+    {
+        print(":0");
+        int place = button.GetSiblingIndex();
+        if (place < inventory.Count)
+        {
+            square.anchoredPosition = startPos + 575 * place * Vector2.right;
+        }
+    }
 }
