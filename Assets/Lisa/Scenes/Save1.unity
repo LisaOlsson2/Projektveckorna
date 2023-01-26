@@ -635,7 +635,7 @@ GameObject:
   - component: {fileID: 152209049}
   - component: {fileID: 152209051}
   - component: {fileID: 152209050}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SlashArea
   m_TagString: Danger
   m_Icon: {fileID: 0}
@@ -733,6 +733,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &169117715 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1039455155787888312, guid: 399d8a47b33d0e34a9d37bfaae003576, type: 3}
+  m_PrefabInstance: {fileID: 322516190}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &194713390
 GameObject:
   m_ObjectHideFlags: 0
@@ -1725,6 +1730,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1039455155787888258, guid: 399d8a47b33d0e34a9d37bfaae003576, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 169117715}
     - target: {fileID: 2078036819243013787, guid: 399d8a47b33d0e34a9d37bfaae003576, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.75
@@ -1739,7 +1748,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2078036819312884657, guid: 399d8a47b33d0e34a9d37bfaae003576, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2078036819312884659, guid: 399d8a47b33d0e34a9d37bfaae003576, type: 3}
       propertyPath: m_RootOrder
@@ -1804,6 +1813,14 @@ PrefabInstance:
     - target: {fileID: 2078036819312884670, guid: 399d8a47b33d0e34a9d37bfaae003576, type: 3}
       propertyPath: distance
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762238339579008124, guid: 399d8a47b33d0e34a9d37bfaae003576, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762238339579008124, guid: 399d8a47b33d0e34a9d37bfaae003576, type: 3}
+      propertyPath: m_TagString
+      value: Damage
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 399d8a47b33d0e34a9d37bfaae003576, type: 3}
@@ -10515,7 +10532,7 @@ GameObject:
   - component: {fileID: 1905663510}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

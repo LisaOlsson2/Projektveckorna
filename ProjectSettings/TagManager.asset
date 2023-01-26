@@ -12,6 +12,7 @@ TagManager:
   - WPickup
   - SewerGround
   - Item
+  - Damage
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - UI
   - Grosugga
   - 
-  - 
+  - Damage
   - player
   - 
   - 

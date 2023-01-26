@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5887717625469199475}
   - component: {fileID: 5887717625469199474}
   - component: {fileID: 5887717625469199473}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: PlayerDetect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,3 +81,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <playerInArea>k__BackingField: 0
   detectionTag: Player
+  patroling: {fileID: 0}
+  animator: {fileID: 0}

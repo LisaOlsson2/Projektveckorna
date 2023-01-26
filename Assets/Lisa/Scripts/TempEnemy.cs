@@ -10,7 +10,8 @@ public class TempEnemy : MonoBehaviour
     readonly float deathDuration = 1.5f;
 
     int health = 2;
-    Animator animator;
+    public Animator animator;
+
     void Start()
     {
         animator = GetComponentInParent<Animator>();
@@ -29,7 +30,7 @@ public class TempEnemy : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (collision.gameObject.tag == "Danger" && health > 0)
+        if (collision.gameObject.tag == "Danger" && health > 0 )
         {
             animator.SetBool("TookDamage", true); // Elliot added this
             collision.gameObject.SetActive(false); // a square with the tag danger is set active when the player attacks, this row inactivates it

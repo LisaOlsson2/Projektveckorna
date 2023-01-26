@@ -34,6 +34,8 @@ public class Patroling : MonoBehaviour
 
     bool playerPositionRight;
 
+
+
     Rigidbody2D rb;
     public Animator animator;
 
@@ -42,7 +44,6 @@ public class Patroling : MonoBehaviour
         moving = true;
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        rollSpeed = 15;
     }
     private void Update() //Den här gör så att gubben rör sig genom "speed" - Elliot
     {
