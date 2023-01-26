@@ -11,6 +11,11 @@ public class Inventory : BaseMostThings
     [SerializeField]
     Sprite food; // cheese inventory icon
 
+    [SerializeField]
+    GameObject[] open;
+    [SerializeField]
+    GameObject[] closed;
+
     public Sprite water; // clean water icon
     public Sprite dirty; // dirty water icon
     public Sprite empty; // empty water icon
@@ -24,6 +29,7 @@ public class Inventory : BaseMostThings
 
     public readonly KeyCode pickUp = KeyCode.Mouse1; // right click
     public readonly KeyCode use = KeyCode.Mouse0; // left click
+    readonly KeyCode openBook = KeyCode.E;
 
     public override void Start()
     {
@@ -38,6 +44,31 @@ public class Inventory : BaseMostThings
 
     void Update()
     {
+        if (Input.GetKeyDown(openBook))
+        {
+            if (open.Length > closed.Length)
+            {
+                Time.timeScale = 0;
+            }
+            else
+            {
+                Time.timeScale = 1;
+            }
+
+            foreach (GameObject open in open)
+            {
+                open.SetActive(false);
+            }
+            foreach (GameObject closed in closed)
+            {
+                closed.SetActive(true);
+            }
+
+            GameObject[] hold = open;
+            open = closed;
+            closed = hold;
+        }
+
         if (square.gameObject.activeSelf) // if the inventory isn't empty
         {
             if ((Input.mouseScrollDelta.y > 0 && square.transform.position.x < inventoryUI[inventoryUI.Count - 1].transform.position.x) || (Input.mouseScrollDelta.y < 0 && square.transform.position.x > inventoryUI[0].transform.position.x)) // if you scroll the wheel within how much you have in your inventory

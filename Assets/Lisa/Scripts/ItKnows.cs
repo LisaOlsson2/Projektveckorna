@@ -62,7 +62,7 @@ public class ItKnows : MonoBehaviour
     GameObject deathText; // deathscreen
 
     [SerializeField]
-    GameObject theEnd; // congratilationscreen
+    GameObject theEnd; // congratulationscreen
 
     public readonly float distanceInventory = 575;
 
