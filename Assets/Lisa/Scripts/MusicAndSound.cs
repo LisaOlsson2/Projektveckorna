@@ -12,32 +12,35 @@ public class MusicAndSound : MonoBehaviour
     [SerializeField]
     Sprite disabledSprite;
 
+    [SerializeField]
     Image image;
 
-    public Button button;
+    //Button button;
     
     public void Change()
     {
-        if (image == null)
+        /*
+        if (button == null)
         {
-            image = button.GetComponent<Image>();
+            button = image.GetComponent<Button>();
         }
+        */
 
         if (image.sprite == enabledSprite)
         {
             play = false;
             image.sprite = disabledSprite;
-            SpriteState spriteState = new SpriteState();
-            spriteState.highlightedSprite = enabledSprite;
-            button.spriteState = spriteState;
+            //SpriteState spriteState = new SpriteState();
+            //spriteState.highlightedSprite = enabledSprite;
+            //button.spriteState = spriteState;
         }
         else
         {
             play = true;
             image.sprite = enabledSprite;
-            SpriteState spriteState = new SpriteState();
-            spriteState.highlightedSprite = disabledSprite;
-            button.spriteState = spriteState;
+            //SpriteState spriteState = new SpriteState();
+            //spriteState.highlightedSprite = disabledSprite;
+            //button.spriteState = spriteState;
         }
     }
 }

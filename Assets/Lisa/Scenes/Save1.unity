@@ -449,8 +449,8 @@ RectTransform:
   m_LocalScale: {x: 3.178808, y: 3.178808, z: 3.178808}
   m_Children:
   - {fileID: 1354832246}
-  - {fileID: 441076492}
   - {fileID: 1761206002}
+  - {fileID: 441076492}
   m_Father: {fileID: 1105863019}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2751,7 +2751,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 11e0613c85d54fa43962b833de59aa48, type: 3}
+    m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -2828,7 +2828,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 63897723}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3821,7 +3821,7 @@ MonoBehaviour:
   play: 0
   enabledSprite: {fileID: 21300000, guid: cd5c8c78df52f0141b8d2778f85f50b2, type: 3}
   disabledSprite: {fileID: 21300000, guid: b2209a8d1bd1a3b4baa7f638fd6e4896, type: 3}
-  button: {fileID: 1761206005}
+  image: {fileID: 1761206003}
   musicsound:
   - name: music1
     clip: {fileID: 8300000, guid: a1e77ce90e429d84ead4513830553a93, type: 3}
@@ -6727,7 +6727,7 @@ MonoBehaviour:
   play: 0
   enabledSprite: {fileID: 21300000, guid: 630ba253c1bfbd749b9eecd1af525d89, type: 3}
   disabledSprite: {fileID: 21300000, guid: 11e0613c85d54fa43962b833de59aa48, type: 3}
-  button: {fileID: 441076489}
+  image: {fileID: 441076490}
   sounds:
   - name: Walk
     clip: {fileID: 8300000, guid: 1dcb76e57a626124793df994f1124ba5, type: 3}
@@ -10802,7 +10802,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 63897723}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10876,7 +10876,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: b2209a8d1bd1a3b4baa7f638fd6e4896, type: 3}
+    m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
