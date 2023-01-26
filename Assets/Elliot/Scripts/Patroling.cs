@@ -34,7 +34,7 @@ public class Patroling : MonoBehaviour
 
     bool playerPositionRight;
    public float startPostiton;
-
+    public bool rollingD;
 
 
     Rigidbody2D rb;
@@ -51,6 +51,7 @@ public class Patroling : MonoBehaviour
     {
         if (moving)
         {
+            rollingD = true; 
             transform.Translate(Vector2.right * speed * Time.deltaTime);
             startRollTimer = false;
             rollTimer = 0;
@@ -141,6 +142,7 @@ public class Patroling : MonoBehaviour
                 stunTimer = 0;
                 startStunTimer = false;
                 animator.SetBool("Detect", false);
+                rollingD = true;
 
             }
         }
