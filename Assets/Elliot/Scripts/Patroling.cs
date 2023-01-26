@@ -33,6 +33,7 @@ public class Patroling : MonoBehaviour
     public bool startRollingTimer;
 
     bool playerPositionRight;
+   public float startPostiton;
 
 
 
@@ -41,6 +42,7 @@ public class Patroling : MonoBehaviour
 
     private void Start() //Hämtar och startar data här - Elliot
     {
+        startPostiton = transform.position.x;
         moving = true;
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -66,21 +68,22 @@ public class Patroling : MonoBehaviour
             
         RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, distance);
         //Använder raycast för att kolla om den kollidar med något under sig, om detta händer vänder objectet och raycasten till höger eller vänster - Elliot
-        if (!groundInfo.collider.CompareTag("SewerGround") && !groundInfo.collider.CompareTag("Item"))
-        {
-            if (movingRight)
+     
+
+            if (transform.position.x  >= startPostiton + 8)
             {
+                Debug.Log("flip");
                 transform.eulerAngles = new Vector3(0, -180, 0);
                 movingRight = false;
-
+              
             }
-            else
+            else if (transform.position.x <= startPostiton - 8)
             {
                 transform.eulerAngles = new Vector3(0, 0, 0);
                 movingRight = true;
                 
             }
-        }
+        
 
         if (startRollTimer)
         {
