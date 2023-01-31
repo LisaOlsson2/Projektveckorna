@@ -191,7 +191,7 @@ public class PlayerMovement : PlayerBase
         else if (collision.gameObject.tag == "Ground" && !grounded)
         {
             grounded = true;
-            groundY = collision.gameObject.GetComponent<BoxCollider2D>().size.y * collision.transform.lossyScale.y / 2 + collision.transform.position.y;
+            groundY = collision.gameObject.GetComponent<BoxCollider2D>().size.y * collision.transform.lossyScale.y / 2f + collision.transform.position.y;
             valueKeeper.audioController.Play("Landing");
 
             if (this.enabled) // if you hit the ground after jumping
