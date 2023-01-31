@@ -28,6 +28,7 @@ public class PlayerMovement : PlayerBase
     Image staminaImageToChangeColor;
 
     int speedMultiplier;
+    float groundY;
 
     public override void Start()
     {
@@ -125,7 +126,7 @@ public class PlayerMovement : PlayerBase
             ChangeAnimation("Idel");
         }
 
-        if ((Input.GetKeyDown(jump) || Input.GetKeyDown(jump2)) && grounded)
+        if ((Input.GetKeyDown(jump) || Input.GetKeyDown(jump2)) && grounded && transform.position.y - (0.13f * 9) > groundY)
         {
             ChangeAnimation("Jump");
             rb.AddForce(transform.up * jumpForce);
@@ -189,6 +190,7 @@ public class PlayerMovement : PlayerBase
         else if (collision.gameObject.tag == "Ground" && !grounded)
         {
             grounded = true;
+            groundY = collision.gameObject.GetComponent<BoxCollider2D>().size.y * collision.transform.lossyScale.y / 2 + collision.transform.position.y;
             valueKeeper.audioController.Play("Landing");
 
             if (this.enabled) // if you hit the ground after jumping
