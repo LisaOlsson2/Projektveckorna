@@ -18,17 +18,8 @@ public class Item : Interactive
                 inventory.square.gameObject.SetActive(true); // make the lil thingy that shows where you are appear
             }
 
-            int place = inventory.FindSprite(icon); // the place of this item in the inventory list
+            inventory.AddItem(icon);
 
-            if (place == inventory.inventory.Count) // if it doesn't exist yet
-            {
-                valueKeeper.amounts.Add(0); // add a new int to the list with amounts in the valuekeeper, it gets increased later
-                inventory.inventory.Add(icon); // add it to the inventory
-                valueKeeper.AddItem(inventory.FindSprite(icon)); // add it in the UI
-            }
-
-            valueKeeper.amounts[place]++; // increase the amount of this item in the inventory
-            inventory.inventoryUI[place].GetComponentInChildren<Text>().text = "" + valueKeeper.amounts[place]; // change the number to the new amount
             if (transform.parent.name != "Water") // if you pick the item up from anything that isn't the fire place
             {
                 Destroy(gameObject);

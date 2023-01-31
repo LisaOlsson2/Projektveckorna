@@ -9,7 +9,7 @@ public class Inventory : BaseMostThings
     public GameObject[] cheese; // health
 
     [SerializeField]
-    Sprite food; // cheese inventory icon
+    Sprite[] food; // inventory icons for food
 
     [SerializeField]
     GameObject[] open;
@@ -99,12 +99,24 @@ public class Inventory : BaseMostThings
 
             if (Input.GetKeyDown(use))
             {
-                if (valueKeeper.health < cheese.Length && CurrentSprite() == food) // if you press use while you have the cheese selected in the inventory and you aren't at full health
+                if (valueKeeper.health < cheese.Length) // if you press use while you aren't at full health
                 {
-                    UseItem(FindSprite(food));
-                    GetComponent<PlayerMovement>().ChangeAnimation("Eat");
-                    cheese[valueKeeper.health].SetActive(true);
-                    valueKeeper.health++;
+                    for (int i = 0; i < food.Length; i++) // if you have any type of food selected
+                    {
+                        if (CurrentSprite() == food[i])
+                        {
+                            if (i > 0)
+                            {
+                                AddItem(empty);
+                            }
+
+                            UseItem(FindSprite(food[i]));
+                            GetComponent<PlayerMovement>().ChangeAnimation("Eat");
+                            cheese[valueKeeper.health].SetActive(true);
+                            valueKeeper.health++;
+                            break;
+                        }
+                    }
                 }
 
                 if (PlayerBase.staminaTimer < 0 && CurrentSprite() == water)
@@ -115,6 +127,22 @@ public class Inventory : BaseMostThings
             }
 
         }
+    }
+
+    public void AddItem(Sprite icon)
+    {
+        int place = FindSprite(icon); // the place of this item in the inventory list
+
+        if (place == inventory.Count) // if it doesn't exist yet
+        {
+            valueKeeper.amounts.Add(0); // add a new int to the list with amounts in the valuekeeper, it gets increased later
+            inventory.Add(icon); // add it to the inventory
+            valueKeeper.AddItem(FindSprite(icon)); // add it in the UI
+        }
+
+        valueKeeper.amounts[place]++; // increase the amount of this item in the inventory
+        inventoryUI[place].GetComponentInChildren<Text>().text = "" + valueKeeper.amounts[place]; // change the number to the new amount
+
     }
 
     public Sprite CurrentSprite() // returns the sprite of the current item in the inventory
@@ -172,8 +200,8 @@ public class Inventory : BaseMostThings
 
     public void ChangeSprite(int place, Sprite newSprite)
     {
-        inventory[place] = newSprite;
-        inventoryUI[place].GetComponent<Image>().sprite = newSprite;
+        AddItem(newSprite);
+        UseItem(place);
     }
 
     public void Button(Transform button)
