@@ -19,7 +19,8 @@ public class PlayerMovement : PlayerBase
     readonly int tiredSpeed = 2; // added because mickael didn't want the player to be slow when it's tired
     readonly int normalSpeed = 2;
 
-    readonly float rightWorldBorder = 18.63f * 3 + 9.315f;
+    readonly float rightWorldBorder = //18.63f * 3 + 9.315f;
+        155;
     readonly float leftWorldBorder = -9.315f;
 
     [SerializeField]
