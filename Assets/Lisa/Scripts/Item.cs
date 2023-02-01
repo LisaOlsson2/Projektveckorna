@@ -9,6 +9,9 @@ public class Item : Interactive
     [SerializeField]
     Sprite icon;
 
+    [SerializeField]
+    Sprite water;
+
     void Update()
     {
         if (Input.GetKeyDown(inventory.pickUp) && interactable) // if you pick it up while you're close enough
@@ -28,6 +31,14 @@ public class Item : Interactive
             {
                 transform.parent.GetComponent<MoreCrafting>().ChangeSprite(); // changes the sprite of the fireplace to the one it has when it's empty
                 gameObject.SetActive(false);
+
+                if (transform.GetSiblingIndex() > 2)
+                {
+                    valueKeeper.waiting[transform.GetSiblingIndex() - 3] = false;
+                    spriteRenderer.sprite = water;
+                    GetComponent<Cooking>().enabled = true;
+                    this.enabled = false;
+                }
             }
 
             foreach (Sound sound in valueKeeper.audioController.sounds) // goes through mickaels audiocontroller and checks if there's a sound that matches the tag of this item

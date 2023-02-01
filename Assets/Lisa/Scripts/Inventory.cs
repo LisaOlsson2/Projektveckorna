@@ -15,6 +15,8 @@ public class Inventory : BaseMostThings
     GameObject[] open;
     [SerializeField]
     GameObject[] closed;
+    [SerializeField]
+    GameObject[] pages;
 
     public Sprite water; // clean water icon
     public Sprite dirty; // dirty water icon
@@ -30,6 +32,10 @@ public class Inventory : BaseMostThings
     public readonly KeyCode pickUp = KeyCode.Mouse1; // right click
     public readonly KeyCode use = KeyCode.Mouse0; // left click
     readonly KeyCode openBook = KeyCode.E;
+    readonly KeyCode left = KeyCode.A;
+    readonly KeyCode right = KeyCode.D;
+
+    int currentPage;
 
     public override void Start()
     {
@@ -44,6 +50,17 @@ public class Inventory : BaseMostThings
 
     void Update()
     {
+        if ((Input.GetKeyDown(left) || Input.GetKeyDown(right)) && Time.timeScale == 0)
+        {
+            pages[currentPage].SetActive(false);
+            currentPage++;
+            if (currentPage >= pages.Length)
+            {
+                currentPage = 0;
+            }
+            pages[currentPage].SetActive(true);
+        }
+
         if (Input.GetKeyDown(openBook))
         {
             if (open.Length > closed.Length)

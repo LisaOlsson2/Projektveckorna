@@ -8,10 +8,9 @@ public class Water : Interactive
     [SerializeField]
     Sprite filled;
 
-    [SerializeField]
-    Sprite[] sprites;
+    public Sprite[] sprites;
 
-    int current;
+    public int current;
 
     private void Update()
     {
@@ -23,6 +22,7 @@ public class Water : Interactive
             {
                 spriteRenderer.sprite = sprites[current];
                 current++;
+                valueKeeper.blueberrys = current;
 
                 if (current == sprites.Length)
                 {

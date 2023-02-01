@@ -31,6 +31,9 @@ public class ItKnows : MonoBehaviour
     public List<int> amounts = new List<int>(); // how many of each of the things in the inventory
 
     // saves things picked up
+    public int blueberrys;
+    [SerializeField]
+    Water berry;
     [SerializeField]
     GameObject itemsParent; // the parent of all things that can be picked up
     GameObject[] allItems; // stores the children of the itemsparent
@@ -43,6 +46,12 @@ public class ItKnows : MonoBehaviour
     public bool dead;
     public bool done;
 
+    // saves soups
+    public bool[] waiting = new bool[3];
+    [SerializeField]
+    Cooking[] soups;
+    public Sprite[][] ingredients = new Sprite[3][];
+    public int[][] ingredientAmounts = new int[3][];
 
     public AudioController audioController;
 
@@ -113,6 +122,8 @@ public class ItKnows : MonoBehaviour
             inEventOfTwo[other].theEnd = theEnd;
             inEventOfTwo[other].water = water;
             inEventOfTwo[other].player = player;
+            inEventOfTwo[other].soups = soups;
+            inEventOfTwo[other].berry = berry;
 
             inEventOfTwo[other].SetValues();
 
@@ -177,6 +188,32 @@ public class ItKnows : MonoBehaviour
             {
                 water.GetComponent<SpriteRenderer>().sprite = water.GetComponent<MoreCrafting>().other;
                 water.transform.GetChild(waterChild).gameObject.SetActive(true);
+
+                if (waterChild > 2)
+                {
+                    int child = waterChild - 3;
+                    if (waiting[child])
+                    {
+                        soups[child].Cook();
+                    }
+                    else
+                    {
+                        soups[child].materials = ingredients[child];
+                        soups[child].amounts = ingredientAmounts[child];
+                    }
+                }
+            }
+        }
+        if (blueberrys > 0)
+        {
+            berry.spriteRenderer.sprite = berry.sprites[blueberrys - 1];
+            if (blueberrys < berry.sprites.Length)
+            {
+                berry.current = blueberrys;
+            }
+            else
+            {
+                Destroy(berry);
             }
         }
 
@@ -195,6 +232,7 @@ public class ItKnows : MonoBehaviour
         {
             TheEnd();
         }
+
     }
 
     public void AddItem(int place)
