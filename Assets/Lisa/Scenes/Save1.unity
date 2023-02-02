@@ -9344,7 +9344,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Right click and empty bottle cap
+  m_Text: 'Empty bottle cap
+
+    Right click'
 --- !u!222 &1025915465
 CanvasRenderer:
   m_ObjectHideFlags: 0

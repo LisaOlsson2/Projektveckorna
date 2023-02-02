@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 // Lisa
 // things you can interact with, currently just things you can pick up and craft
@@ -11,8 +12,10 @@ public class Interactive : BaseMostThings
     public bool interactable;
 
     public int instructionChild;
-
     static int amount;
+    GameObject instructions;
+    Text recipe;
+    public string recipe2 = ":0";
 
     // Start is called before the first frame update
     public override void Start()
@@ -20,38 +23,46 @@ public class Interactive : BaseMostThings
         base.Start();
         inventory = FindObjectOfType<Inventory>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        instructions = inventory.instructions.GetChild(instructionChild).gameObject;
+        recipe = instructions.GetComponent<Text>();
     }
 
     public virtual void Update()
     {
-        if (inventory.instructions.GetChild(instructionChild).gameObject.activeSelf && interactable && amount < 2)
+        if (instructions.activeSelf && interactable && amount < 2)
         {
-            for (int i = 0; i < inventory.instructions.childCount; i++)
-            {
-                if (inventory.instructions.GetChild(i).gameObject.activeSelf)
-                {
-                    inventory.instructions.GetChild(i).gameObject.SetActive(false);
-                }
-            }
-            inventory.instructions.GetChild(instructionChild).gameObject.SetActive(true);
+            InactivateOthers(true);
         }
     }
 
+    void InactivateOthers(bool mine)
+    {
+        for (int i = 0; i < inventory.instructions.childCount; i++)
+        {
+            if (inventory.instructions.GetChild(i).gameObject.activeSelf)
+            {
+                inventory.instructions.GetChild(i).gameObject.SetActive(false);
+            }
+        }
+        instructions.SetActive(mine);
+
+        if (mine)
+        {
+            inventory.instructions.anchoredPosition = (transform.position - inventory.cam.position) * (Screen.width / 18.63f);
+            if (instructionChild == 2)
+            {
+                recipe.text = recipe2;
+            }
+        }
+    }
 
     public virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (!interactable)
         {
             interactable = true;
-            for (int i = 0; i < inventory.instructions.childCount; i++)
-            {
-                if (inventory.instructions.GetChild(i).gameObject.activeSelf)
-                {
-                    inventory.instructions.GetChild(i).gameObject.SetActive(false);
-                }
-            }
-            inventory.instructions.GetChild(instructionChild).gameObject.SetActive(true);
-            inventory.instructions.anchoredPosition = (transform.position - inventory.cam.position) * (Screen.width / 18.63f);
+            InactivateOthers(true);
             amount++;
         }
     }
@@ -64,7 +75,7 @@ public class Interactive : BaseMostThings
             if (amount <= 0)
             {
                 amount = 0;
-                inventory.instructions.GetChild(instructionChild).gameObject.SetActive(false);
+                InactivateOthers(false);
             }
         }
     }

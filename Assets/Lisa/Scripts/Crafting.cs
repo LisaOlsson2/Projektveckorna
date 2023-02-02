@@ -28,7 +28,7 @@ public class Crafting : Interactive
     public override void Start()
     {
         base.Start();
-        instructionChild = 1;
+        instructionChild = 2;
     }
 
     public override void Update()
