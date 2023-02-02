@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Lisa
+// Almost the same as crafting, i'll fix that later
 public class Cooking : Interactive
 {
     [SerializeField]
@@ -16,6 +18,12 @@ public class Cooking : Interactive
 
     [SerializeField]
     Sprite sprite;
+
+    public override void Start()
+    {
+        base.Start();
+        instructionChild = 2;
+    }
 
     private void Update()
     {

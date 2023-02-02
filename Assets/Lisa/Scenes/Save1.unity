@@ -331,6 +331,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   materials:
   - {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   amounts: 05000000
@@ -463,6 +464,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: fa9cb78b08db06f49a7eb615060c89b7, type: 3}
   water: {fileID: 0}
 --- !u!1 &34459848
@@ -604,6 +606,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: 5187f65931f457d408dd41212318c97d, type: 3}
   water: {fileID: 0}
 --- !u!61 &56279780
@@ -892,6 +895,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: 9f1eb4757ab0dac41acc1c67852ec544, type: 3}
   water: {fileID: 0}
 --- !u!61 &127475987
@@ -1046,6 +1050,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: fa9cb78b08db06f49a7eb615060c89b7, type: 3}
   water: {fileID: 0}
 --- !u!212 &131188622
@@ -1148,6 +1153,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
 --- !u!61 &151374734
@@ -1385,6 +1391,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: 3a3d95a9c5d81024ba2a4e692a9708bd, type: 3}
   water: {fileID: 0}
 --- !u!61 &162798832
@@ -1728,6 +1735,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: 8a7f2dc289ed9cb40b5dba8ffd994332, type: 3}
   water: {fileID: 21300000, guid: cc6653f3d79925f47914d53923c232ba, type: 3}
 --- !u!114 &192938911
@@ -1746,6 +1754,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   sprites:
   - {fileID: 21300000, guid: 3a3d95a9c5d81024ba2a4e692a9708bd, type: 3}
   - {fileID: 21300000, guid: 9f1eb4757ab0dac41acc1c67852ec544, type: 3}
@@ -1888,6 +1897,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
 --- !u!61 &201111258
@@ -2017,6 +2027,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   sprites:
   - {fileID: 21300000, guid: 3a3d95a9c5d81024ba2a4e692a9708bd, type: 3}
   - {fileID: 21300000, guid: 9f1eb4757ab0dac41acc1c67852ec544, type: 3}
@@ -2068,6 +2079,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: 8a7f2dc289ed9cb40b5dba8ffd994332, type: 3}
   water: {fileID: 21300000, guid: cc6653f3d79925f47914d53923c232ba, type: 3}
 --- !u!212 &202575639
@@ -2270,6 +2282,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: 5187f65931f457d408dd41212318c97d, type: 3}
   water: {fileID: 0}
 --- !u!61 &211899239
@@ -2475,6 +2488,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: 7c3346a1cb2e9764cafe31e03def01f5, type: 3}
   water: {fileID: 0}
 --- !u!1 &220874421
@@ -2622,6 +2636,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
 --- !u!61 &230318292
@@ -2827,6 +2842,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: 6d4d0e1c8fad93340a61b3d8ef813c8b, type: 3}
   water: {fileID: 0}
 --- !u!1 &269453709
@@ -2955,6 +2971,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   materials:
   - {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   amounts: 05000000
@@ -3189,6 +3206,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: 3a3d95a9c5d81024ba2a4e692a9708bd, type: 3}
   water: {fileID: 0}
 --- !u!61 &323711931
@@ -3469,6 +3487,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: 5187f65931f457d408dd41212318c97d, type: 3}
   water: {fileID: 0}
 --- !u!1 &369126739
@@ -3520,6 +3539,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: 9f1eb4757ab0dac41acc1c67852ec544, type: 3}
   water: {fileID: 0}
 --- !u!61 &369126742
@@ -3730,6 +3750,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
 --- !u!61 &383508250
@@ -4086,6 +4107,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   materials:
   - {fileID: 21300000, guid: 1e128230d5919424998244d432d949bc, type: 3}
   - {fileID: 21300000, guid: 15c2f566ddf53034cbbe555629a4d7a0, type: 3}
@@ -4129,6 +4151,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: 7d2b2ebbd9b9fb444b8b6bd2d9b9e773, type: 3}
   water: {fileID: 0}
 --- !u!61 &437261939
@@ -4480,6 +4503,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: 9f1eb4757ab0dac41acc1c67852ec544, type: 3}
   water: {fileID: 0}
 --- !u!1 &517563136
@@ -4858,7 +4882,7 @@ RectTransform:
   m_LocalScale: {x: 0.13, y: 0.13, z: 1}
   m_Children: []
   m_Father: {fileID: 1112828652}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -5161,6 +5185,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: 5187f65931f457d408dd41212318c97d, type: 3}
   water: {fileID: 0}
 --- !u!1 &640704713
@@ -5212,6 +5237,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
 --- !u!61 &640704716
@@ -5400,7 +5426,7 @@ RectTransform:
   m_Children:
   - {fileID: 893625615}
   m_Father: {fileID: 1112828652}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5553,7 +5579,7 @@ RectTransform:
   m_Children:
   - {fileID: 387996840}
   m_Father: {fileID: 1112828652}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -5792,6 +5818,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
 --- !u!61 &735799474
@@ -6003,6 +6030,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: 3a3d95a9c5d81024ba2a4e692a9708bd, type: 3}
   water: {fileID: 0}
 --- !u!61 &759623521
@@ -6131,6 +6159,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: 9f1eb4757ab0dac41acc1c67852ec544, type: 3}
   water: {fileID: 0}
 --- !u!61 &761807654
@@ -6327,6 +6356,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: 7d2b2ebbd9b9fb444b8b6bd2d9b9e773, type: 3}
   water: {fileID: 0}
 --- !u!61 &786060221
@@ -6546,6 +6576,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   materials:
   - {fileID: 21300000, guid: 7d2b2ebbd9b9fb444b8b6bd2d9b9e773, type: 3}
   - {fileID: 21300000, guid: 02b4df752cec8414fa061a6ee55f8eec, type: 3}
@@ -6586,6 +6617,85 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 16, y: 16}
   m_EdgeRadius: 0
+--- !u!1 &808005585
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 808005586}
+  - component: {fileID: 808005588}
+  - component: {fileID: 808005587}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &808005586
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808005585}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1334689007}
+  - {fileID: 1869297523}
+  - {fileID: 2119462379}
+  - {fileID: 1025915463}
+  m_Father: {fileID: 1112828652}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &808005587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808005585}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &808005588
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808005585}
+  m_CullTransparentMesh: 1
 --- !u!1 &808779418
 GameObject:
   m_ObjectHideFlags: 0
@@ -6619,7 +6729,7 @@ RectTransform:
   - {fileID: 329494117}
   - {fileID: 1329149862}
   m_Father: {fileID: 1112828652}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -6795,6 +6905,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
 --- !u!61 &818682636
@@ -6909,6 +7020,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: 7d2b2ebbd9b9fb444b8b6bd2d9b9e773, type: 3}
   water: {fileID: 0}
 --- !u!61 &818916386
@@ -7128,6 +7240,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: 7c3346a1cb2e9764cafe31e03def01f5, type: 3}
   water: {fileID: 0}
 --- !u!1 &835823289
@@ -7388,6 +7501,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: 7d2b2ebbd9b9fb444b8b6bd2d9b9e773, type: 3}
   water: {fileID: 0}
 --- !u!1 &883533968
@@ -7439,6 +7553,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
 --- !u!61 &883533971
@@ -7851,6 +7966,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   materials:
   - {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   amounts: 05000000
@@ -7906,6 +8022,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
 --- !u!61 &941287929
@@ -8020,6 +8137,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: 7d2b2ebbd9b9fb444b8b6bd2d9b9e773, type: 3}
   water: {fileID: 0}
 --- !u!61 &951561675
@@ -8495,6 +8613,85 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &1025915462
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1025915463}
+  - component: {fileID: 1025915465}
+  - component: {fileID: 1025915464}
+  m_Layer: 5
+  m_Name: Text (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1025915463
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025915462}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 808005586}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1025915464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025915462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.7843138, g: 0.67058825, b: 0.5882353, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 88bbf10cf17a82f44ab079ae09f008f5, type: 3}
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 50
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: Right click and empty bottle cap
+--- !u!222 &1025915465
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025915462}
+  m_CullTransparentMesh: 1
 --- !u!1 &1033022184
 GameObject:
   m_ObjectHideFlags: 0
@@ -8622,6 +8819,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: f03829bb7cbc025438c9ee961e7d9531, type: 3}
   water: {fileID: 21300000, guid: cc6653f3d79925f47914d53923c232ba, type: 3}
 --- !u!114 &1033022189
@@ -8640,6 +8838,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   sprites:
   - {fileID: 21300000, guid: fa9cb78b08db06f49a7eb615060c89b7, type: 3}
   ints: 04000000
@@ -8773,6 +8972,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
 --- !u!1 &1078363828
@@ -9154,6 +9354,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 808005586}
   - {fileID: 687742735}
   - {fileID: 531906438}
   - {fileID: 808779419}
@@ -9759,6 +9960,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   filled: {fileID: 21300000, guid: 6d4d0e1c8fad93340a61b3d8ef813c8b, type: 3}
   sprites: []
   current: 0
@@ -9811,6 +10013,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
 --- !u!61 &1205393402
@@ -10016,6 +10219,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: 15c2f566ddf53034cbbe555629a4d7a0, type: 3}
   water: {fileID: 0}
 --- !u!1 &1226572144
@@ -10067,6 +10271,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
 --- !u!61 &1226572147
@@ -10332,6 +10537,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: b31e3b74740c1864897a36f5ca9857bb, type: 3}
   water: {fileID: 0}
 --- !u!212 &1246382269
@@ -10511,6 +10717,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   filled: {fileID: 21300000, guid: 9148dd6130c53244eb9d3f8f6573bd31, type: 3}
   sprites:
   - {fileID: 21300000, guid: 87a87f6131cc25c4492fdeb3dd22849c, type: 3}
@@ -10674,6 +10881,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: fa9cb78b08db06f49a7eb615060c89b7, type: 3}
   water: {fileID: 0}
 --- !u!212 &1267805817
@@ -11027,6 +11235,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1329149861}
   m_CullTransparentMesh: 1
+--- !u!1 &1334689006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1334689007}
+  - component: {fileID: 1334689009}
+  - component: {fileID: 1334689008}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1334689007
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334689006}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 808005586}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1334689008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334689006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.7843138, g: 0.67058825, b: 0.5882353, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 88bbf10cf17a82f44ab079ae09f008f5, type: 3}
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 50
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: Right click
+--- !u!222 &1334689009
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334689006}
+  m_CullTransparentMesh: 1
 --- !u!1 &1350598548
 GameObject:
   m_ObjectHideFlags: 0
@@ -11076,6 +11363,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
 --- !u!61 &1350598551
@@ -11449,6 +11737,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: fa9cb78b08db06f49a7eb615060c89b7, type: 3}
   water: {fileID: 0}
 --- !u!212 &1372984685
@@ -11551,6 +11840,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: 3a3d95a9c5d81024ba2a4e692a9708bd, type: 3}
   water: {fileID: 0}
 --- !u!61 &1386118437
@@ -11730,6 +12020,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: 02b4df752cec8414fa061a6ee55f8eec, type: 3}
   water: {fileID: 0}
 --- !u!61 &1387693367
@@ -11833,6 +12124,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: fa9cb78b08db06f49a7eb615060c89b7, type: 3}
   water: {fileID: 0}
 --- !u!212 &1388030284
@@ -11921,6 +12213,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: 7d2b2ebbd9b9fb444b8b6bd2d9b9e773, type: 3}
   water: {fileID: 0}
 --- !u!61 &1403770238
@@ -12364,6 +12657,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: 1e128230d5919424998244d432d949bc, type: 3}
   water: {fileID: 0}
 --- !u!1 &1521649379
@@ -12415,6 +12709,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
 --- !u!61 &1521649382
@@ -12620,6 +12915,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: f07938f29666fee4eb0c85d655bbfea2, type: 3}
   water: {fileID: 0}
 --- !u!1 &1540077629
@@ -12861,6 +13157,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: fa9cb78b08db06f49a7eb615060c89b7, type: 3}
   water: {fileID: 0}
 --- !u!212 &1540886805
@@ -12952,7 +13249,7 @@ RectTransform:
   - {fileID: 732054417}
   - {fileID: 517563137}
   m_Father: {fileID: 1112828652}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -14483,6 +14780,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: b31e3b74740c1864897a36f5ca9857bb, type: 3}
   water: {fileID: 0}
 --- !u!61 &1852561784
@@ -14511,6 +14809,85 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10.24, y: 10.24}
   m_EdgeRadius: 0
+--- !u!1 &1869297522
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1869297523}
+  - component: {fileID: 1869297525}
+  - component: {fileID: 1869297524}
+  m_Layer: 5
+  m_Name: Text (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1869297523
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869297522}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 808005586}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1869297524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869297522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.7843138, g: 0.67058825, b: 0.5882353, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 88bbf10cf17a82f44ab079ae09f008f5, type: 3}
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 50
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: Left click
+--- !u!222 &1869297525
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869297522}
+  m_CullTransparentMesh: 1
 --- !u!1 &1905663500
 GameObject:
   m_ObjectHideFlags: 0
@@ -14693,6 +15070,8 @@ MonoBehaviour:
   square: {fileID: 893625615}
   inventory: []
   inventoryUI: []
+  instructions: {fileID: 808005586}
+  cam: {fileID: 1728503749}
 --- !u!114 &1905663508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15143,6 +15522,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   materials:
   - {fileID: 21300000, guid: f07938f29666fee4eb0c85d655bbfea2, type: 3}
   amounts: 01000000
@@ -15486,6 +15866,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: 7c3346a1cb2e9764cafe31e03def01f5, type: 3}
   water: {fileID: 0}
 --- !u!1 &2053117887
@@ -15669,6 +16050,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
 --- !u!61 &2093668856
@@ -15748,6 +16130,85 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2119462378
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2119462379}
+  - component: {fileID: 2119462381}
+  - component: {fileID: 2119462380}
+  m_Layer: 5
+  m_Name: Text (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &2119462379
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119462378}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 808005586}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2119462380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119462378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.7843138, g: 0.67058825, b: 0.5882353, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 88bbf10cf17a82f44ab079ae09f008f5, type: 3}
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 50
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: Ingredients
+--- !u!222 &2119462381
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119462378}
+  m_CullTransparentMesh: 1
 --- !u!1 &2137174807
 GameObject:
   m_ObjectHideFlags: 0
@@ -15823,6 +16284,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   spriteRenderer: {fileID: 0}
   interactable: 0
+  instructionChild: 0
   icon: {fileID: 21300000, guid: fa9cb78b08db06f49a7eb615060c89b7, type: 3}
   water: {fileID: 0}
 --- !u!212 &2137174811

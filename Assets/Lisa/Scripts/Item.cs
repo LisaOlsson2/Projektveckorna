@@ -12,6 +12,12 @@ public class Item : Interactive
     [SerializeField]
     Sprite water;
 
+    public override void Start()
+    {
+        base.Start();
+        instructionChild = 0;
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(inventory.pickUp) && interactable) // if you pick it up while you're close enough

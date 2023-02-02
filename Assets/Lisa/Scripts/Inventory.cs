@@ -37,6 +37,11 @@ public class Inventory : BaseMostThings
 
     int currentPage;
 
+    public RectTransform instructions;
+
+    public Transform cam;
+
+
     public override void Start()
     {
         base.Start();
@@ -45,7 +50,6 @@ public class Inventory : BaseMostThings
             numbers[i - 1] = i + "";
         }
         numbers[9] = "0";
-
     }
 
     void Update()
