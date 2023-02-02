@@ -16,6 +16,8 @@ public class Interactive : BaseMostThings
     public GameObject instructions;
     Text recipe;
     public string recipe2 = ":0";
+    [SerializeField]
+    Vector2 pixelDistance;
 
     // Start is called before the first frame update
     public override void Start()
@@ -49,7 +51,7 @@ public class Interactive : BaseMostThings
 
         if (mine)
         {
-            inventory.instructions.anchoredPosition = (transform.position - inventory.cam.position) * (Screen.width / 18.63f);
+            inventory.instructions.anchoredPosition = new Vector2(transform.position.x - inventory.cam.position.x, transform.position.y - inventory.cam.position.y) * (Screen.width / 18.63f) + pixelDistance;
             if (instructionChild == 2)
             {
                 recipe.text = recipe2;
