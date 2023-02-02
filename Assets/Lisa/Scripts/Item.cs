@@ -16,6 +16,11 @@ public class Item : Interactive
         base.Start();
     }
 
+    private void OnEnable()
+    {
+        Start();
+    }
+
     public override void Update()
     {
         if (Input.GetKeyDown(inventory.pickUp) && interactable) // if you pick it up while you're close enough

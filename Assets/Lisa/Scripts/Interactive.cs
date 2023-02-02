@@ -13,7 +13,7 @@ public class Interactive : BaseMostThings
 
     public int instructionChild;
     static int amount;
-    GameObject instructions;
+    public GameObject instructions;
     Text recipe;
     public string recipe2 = ":0";
 

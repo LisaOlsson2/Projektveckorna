@@ -101,6 +101,11 @@ public class Crafting : Interactive
         }
     }
 
+    void UpdateText()
+    {
+
+    }
+
     void Craft1() // thingy before craft to check if it's the last craftable item
     {
         Craft();
