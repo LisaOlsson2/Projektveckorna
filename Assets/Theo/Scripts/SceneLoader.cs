@@ -9,6 +9,10 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("Save1");   //laddar scenen efter den som är aktiv
     }
+    public void NewGame()
+    {
+        SceneManager.LoadScene("Cutscene");   //laddar scenen efter den som är aktiv
+    }
     public void QuitGame()
     {
         Application.Quit();     //stänger spelet

@@ -18,7 +18,7 @@ public class MoreCrafting : Interactive
         animator = GetComponent<Animator>();
     }
 
-    private void Update()
+    public override void Update()
     {
         if (interactable && Input.GetKeyDown(inventory.use)) // if you're close enough and click use
         {

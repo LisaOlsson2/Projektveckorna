@@ -16,6 +16,6 @@ public class Cutscene : MonoBehaviour
     IEnumerator Wait()
     {
         yield return new WaitForSeconds(duration);
-        SceneManager.LoadScene("StartScene");
+        SceneManager.LoadScene("Save1");
     }
 }

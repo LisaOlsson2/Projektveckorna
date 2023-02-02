@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-
 // Lisa
 public class Item : Interactive
 {
@@ -18,7 +16,7 @@ public class Item : Interactive
         instructionChild = 0;
     }
 
-    void Update()
+    public override void Update()
     {
         if (Input.GetKeyDown(inventory.pickUp) && interactable) // if you pick it up while you're close enough
         {

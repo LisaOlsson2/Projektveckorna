@@ -25,7 +25,7 @@ public class Cooking : Interactive
         instructionChild = 2;
     }
 
-    private void Update()
+    public override void Update()
     {
         if (interactable) // if you're close enough and you have at least one of the materials in your inventory
         {

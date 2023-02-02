@@ -31,7 +31,7 @@ public class Crafting : Interactive
         instructionChild = 1;
     }
 
-    void Update()
+    public override void Update()
     {
         if (interactable) // if you're close enough and you have at least one of the materials in your inventory
         {
