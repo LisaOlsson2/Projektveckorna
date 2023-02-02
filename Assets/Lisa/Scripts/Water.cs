@@ -14,8 +14,8 @@ public class Water : Interactive
 
     public override void Start()
     {
-        base.Start();
         instructionChild = 3;
+        base.Start();
     }
 
     public override void Update()

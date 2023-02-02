@@ -14,9 +14,9 @@ public class MoreCrafting : Interactive
 
     public override void Start()
     {
+        instructionChild = 2;
         base.Start();
         animator = GetComponent<Animator>();
-        instructionChild = 2;
     }
 
     public override void Update()

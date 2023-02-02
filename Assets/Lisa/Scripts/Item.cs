@@ -12,8 +12,8 @@ public class Item : Interactive
 
     public override void Start()
     {
-        base.Start();
         instructionChild = 0;
+        base.Start();
     }
 
     public override void Update()
