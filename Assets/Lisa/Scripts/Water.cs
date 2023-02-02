@@ -12,6 +12,12 @@ public class Water : Interactive
 
     public int current;
 
+    public override void Start()
+    {
+        base.Start();
+        instructionChild = 3;
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(inventory.pickUp) && interactable && inventory.square.gameObject.activeSelf && inventory.CurrentSprite() == inventory.empty)

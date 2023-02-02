@@ -25,6 +25,12 @@ public class Crafting : Interactive
     [SerializeField]
     Sprite otherIfMore; // the change of sprite for when it's been crafted further
 
+    public override void Start()
+    {
+        base.Start();
+        instructionChild = 1;
+    }
+
     void Update()
     {
         if (interactable) // if you're close enough and you have at least one of the materials in your inventory
