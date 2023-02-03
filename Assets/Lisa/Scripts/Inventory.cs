@@ -39,7 +39,7 @@ public class Inventory : BaseMostThings
 
     public RectTransform instructions;
 
-    public Transform cam;
+    public Backgrounds cam;
 
     public Image[][] renderers;
 

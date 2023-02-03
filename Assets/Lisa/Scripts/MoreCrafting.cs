@@ -71,6 +71,22 @@ public class MoreCrafting : Materials
         transform.GetChild(i).gameObject.SetActive(true); // set the child with the same index as the icon active
         inventory.UseItem(inventory.FindSprite(icons[i])); // use the object in the inventory
         spriteRenderer.sprite = other;
+
+        if (i == 0)
+        {
+            materials = new Sprite[2];
+            materials[0] = icons[1];
+            materials[1] = icons[2];
+        }
+        else if (i == 1)
+        {
+            materials = new Sprite[1];
+            materials[0] = icons[icons.Length - 1];
+        }
+        else if (i == 2)
+        {
+            materials = new Sprite[3];
+        }
     }
 
     public void StartCooking(int a, int b)

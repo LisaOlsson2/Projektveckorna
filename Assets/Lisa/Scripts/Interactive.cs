@@ -12,10 +12,11 @@ public class Interactive : BaseMostThings
     public bool interactable;
 
     public int instructionChild;
-    static int amount;
     public GameObject instructions;
     [SerializeField]
     Vector2 pixelDistance;
+
+    static string currentName;
 
     // Start is called before the first frame update
     public override void Start()
@@ -29,7 +30,7 @@ public class Interactive : BaseMostThings
 
     public virtual void Update()
     {
-        if (instructions.activeSelf && interactable && amount < 2)
+        if (instructions.activeSelf && interactable && currentName != gameObject.name)
         {
             InactivateOthers(true);
         }
@@ -37,32 +38,36 @@ public class Interactive : BaseMostThings
 
     void InactivateOthers(bool mine)
     {
-        for (int i = 0; i < inventory.instructions.childCount; i++)
+        if ((instructionChild == 0 && Backgrounds.currentArea == 0) || instructionChild > 0)
         {
-            if (inventory.instructions.GetChild(i).gameObject.activeSelf)
+            for (int i = 0; i < inventory.instructions.childCount; i++)
             {
-                if (i == 2)
+                if (inventory.instructions.GetChild(i).gameObject.activeSelf)
                 {
-                    for (int i2 = 0; i2 < inventory.instructions.GetChild(i).childCount; i2++)
+                    if (i == 2)
                     {
-                        if (inventory.instructions.GetChild(i).GetChild(i2).gameObject.activeSelf)
+                        for (int i2 = 0; i2 < inventory.instructions.GetChild(i).childCount; i2++)
                         {
-                            inventory.instructions.GetChild(i).GetChild(i2).gameObject.SetActive(false);
+                            if (inventory.instructions.GetChild(i).GetChild(i2).gameObject.activeSelf)
+                            {
+                                inventory.instructions.GetChild(i).GetChild(i2).gameObject.SetActive(false);
+                            }
                         }
                     }
+                    inventory.instructions.GetChild(i).gameObject.SetActive(false);
                 }
-                inventory.instructions.GetChild(i).gameObject.SetActive(false);
             }
-        }
-        instructions.SetActive(mine);
+            instructions.SetActive(mine);
 
 
-        if (mine)
-        {
-            inventory.instructions.anchoredPosition = new Vector2(transform.position.x - inventory.cam.position.x, transform.position.y - inventory.cam.position.y) * (Screen.width / 18.63f) + pixelDistance;
-            if (instructionChild == 2)
+            if (mine)
             {
-                GetComponent<Materials>().UpdateText(true);
+                currentName = gameObject.name;
+                inventory.instructions.anchoredPosition = new Vector2(transform.position.x - inventory.cam.transform.position.x, transform.position.y - inventory.cam.transform.position.y) * (Screen.width / 18.63f) + pixelDistance;
+                if (instructionChild == 2)
+                {
+                    GetComponent<Materials>().UpdateText(true);
+                }
             }
         }
     }
@@ -74,7 +79,6 @@ public class Interactive : BaseMostThings
         {
             interactable = true;
             InactivateOthers(true);
-            amount++;
         }
     }
     public virtual void OnTriggerExit2D(Collider2D collision)
@@ -82,10 +86,8 @@ public class Interactive : BaseMostThings
         if (interactable)
         {
             interactable = false;
-            amount--;
-            if (amount <= 0)
+            if (currentName == gameObject.name)
             {
-                amount = 0;
                 InactivateOthers(false);
             }
         }

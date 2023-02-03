@@ -11,7 +11,7 @@ public class Backgrounds : BaseMostThings
     MusicManager musicManager;
 
     readonly float borderDistance = 18.63f; // distance between areas, pretty much the same as the width of the background, this is also added to the cams position when the player moves to a new area
-    static int currentArea; // this is static so that the cam can be positioned where it was before the game scene was left
+    public static int currentArea; // this is static so that the cam can be positioned where it was before the game scene was left
 
     readonly float distanceToChange = 1; // how far the player has to walk outside the frame to change area
 
