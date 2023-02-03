@@ -206,6 +206,7 @@ public class ItKnows : MonoBehaviour
         }
         if (blueberrys > 0)
         {
+            berry.Start();
             berry.spriteRenderer.sprite = berry.sprites[blueberrys - 1];
             if (blueberrys < berry.sprites.Length)
             {

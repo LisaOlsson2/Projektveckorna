@@ -14,8 +14,6 @@ public class Interactive : BaseMostThings
     public int instructionChild;
     static int amount;
     public GameObject instructions;
-    Text recipe;
-    public string recipe2 = ":0";
     [SerializeField]
     Vector2 pixelDistance;
 
@@ -27,7 +25,6 @@ public class Interactive : BaseMostThings
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         instructions = inventory.instructions.GetChild(instructionChild).gameObject;
-        recipe = instructions.GetComponent<Text>();
     }
 
     public virtual void Update()
@@ -44,20 +41,32 @@ public class Interactive : BaseMostThings
         {
             if (inventory.instructions.GetChild(i).gameObject.activeSelf)
             {
+                if (i == 2)
+                {
+                    for (int i2 = 0; i2 < inventory.instructions.GetChild(i).childCount; i2++)
+                    {
+                        if (inventory.instructions.GetChild(i).GetChild(i2).gameObject.activeSelf)
+                        {
+                            inventory.instructions.GetChild(i).GetChild(i2).gameObject.SetActive(false);
+                        }
+                    }
+                }
                 inventory.instructions.GetChild(i).gameObject.SetActive(false);
             }
         }
         instructions.SetActive(mine);
+
 
         if (mine)
         {
             inventory.instructions.anchoredPosition = new Vector2(transform.position.x - inventory.cam.position.x, transform.position.y - inventory.cam.position.y) * (Screen.width / 18.63f) + pixelDistance;
             if (instructionChild == 2)
             {
-                recipe.text = recipe2;
+                GetComponent<Materials>().UpdateText(true);
             }
         }
     }
+
 
     public virtual void OnTriggerEnter2D(Collider2D collision)
     {

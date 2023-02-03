@@ -4,15 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 
 // Lisa
-public class Crafting : Interactive
+public class Crafting : Materials
 {
     // 0.2 = not close
     // 0.4 = close no item
     // 0.6 = close item
     // 0.8 = close item selected
     // 1 = built
-
-    public Sprite[] materials; // inventory icons representing the materials needed
 
     public int[] amounts; // how many of the material at the same place in the array above that are needed
 
@@ -77,7 +75,6 @@ public class Crafting : Interactive
                             amounts = ints; // save the new array as the usual array
                             materials = sprites;
                         }
-
                         bool craft = true;
                         foreach(int amount in amounts)
                         {
@@ -85,6 +82,7 @@ public class Crafting : Interactive
                             {
                                 craft = false;
                                 inventory.PlayCraftingAnimation(1); // play the animation once
+                                OnTriggerEnter2D(null);
                                 break;
                             }
                         }
@@ -94,16 +92,12 @@ public class Crafting : Interactive
                             inventory.PlayCraftingAnimation(3); // play the animation thrice
                             Craft1(); // craft the item
                         }
+
                     }
                     break;
                 }
             }
         }
-    }
-
-    void UpdateText()
-    {
-
     }
 
     void Craft1() // thingy before craft to check if it's the last craftable item

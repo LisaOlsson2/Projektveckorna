@@ -4,15 +4,13 @@ using UnityEngine;
 
 // Lisa
 // Almost the same as crafting, i'll fix that later
-public class Cooking : Interactive
+public class Cooking : Materials
 {
     [SerializeField]
     Sprite[] sprites;
 
     [SerializeField]
     int[] ints;
-
-    public Sprite[] materials;
 
     public int[] amounts;
 

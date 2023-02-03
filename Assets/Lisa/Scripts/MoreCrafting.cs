@@ -3,20 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Lisa
-public class MoreCrafting : Interactive
+public class MoreCrafting : Materials
 {
     public Sprite[] icons;
     public Sprite other;
     public Sprite usual;
     Animator animator;
 
-
-
     public override void Start()
     {
         instructionChild = 2;
         base.Start();
         animator = GetComponent<Animator>();
+
+        materials = new Sprite[3];
+        for (int i = 0; i < materials.Length; i++)
+        {
+            materials[i] = icons[i];
+        }
     }
 
     public override void Update()

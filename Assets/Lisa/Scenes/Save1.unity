@@ -333,7 +333,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   materials:
   - {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
@@ -513,7 +512,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: fa9cb78b08db06f49a7eb615060c89b7, type: 3}
   water: {fileID: 0}
@@ -658,7 +656,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 5187f65931f457d408dd41212318c97d, type: 3}
   water: {fileID: 0}
@@ -1082,7 +1079,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 9f1eb4757ab0dac41acc1c67852ec544, type: 3}
   water: {fileID: 0}
@@ -1250,7 +1246,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: fa9cb78b08db06f49a7eb615060c89b7, type: 3}
   water: {fileID: 0}
@@ -1305,6 +1300,83 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &134182199
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 134182200}
+  - component: {fileID: 134182202}
+  - component: {fileID: 134182201}
+  m_Layer: 5
+  m_Name: click 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &134182200
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134182199}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.13, y: 0.13, z: 1}
+  m_Children:
+  - {fileID: 415613823}
+  - {fileID: 2084814439}
+  m_Father: {fileID: 2119462379}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 90, y: 0}
+  m_SizeDelta: {x: 608, y: 608}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &134182201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134182199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6784314}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: a1fb99cd1d56aa4409345503fc1ce0d6, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &134182202
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134182199}
+  m_CullTransparentMesh: 1
 --- !u!1 &151374731
 GameObject:
   m_ObjectHideFlags: 0
@@ -1356,7 +1428,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
@@ -1759,7 +1830,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 3a3d95a9c5d81024ba2a4e692a9708bd, type: 3}
   water: {fileID: 0}
@@ -2106,7 +2176,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 100}
   icon: {fileID: 21300000, guid: 8a7f2dc289ed9cb40b5dba8ffd994332, type: 3}
   water: {fileID: 21300000, guid: cc6653f3d79925f47914d53923c232ba, type: 3}
@@ -2128,15 +2197,14 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 100}
+  materials:
+  - {fileID: 21300000, guid: 3a3d95a9c5d81024ba2a4e692a9708bd, type: 3}
+  - {fileID: 21300000, guid: 9f1eb4757ab0dac41acc1c67852ec544, type: 3}
   sprites:
   - {fileID: 21300000, guid: 3a3d95a9c5d81024ba2a4e692a9708bd, type: 3}
   - {fileID: 21300000, guid: 9f1eb4757ab0dac41acc1c67852ec544, type: 3}
   ints: 0200000003000000
-  materials:
-  - {fileID: 21300000, guid: 3a3d95a9c5d81024ba2a4e692a9708bd, type: 3}
-  - {fileID: 21300000, guid: 9f1eb4757ab0dac41acc1c67852ec544, type: 3}
   amounts: 0200000003000000
   sprite: {fileID: 21300000, guid: 81760c0cc2e3de24d9cae1d688d8d16f, type: 3}
 --- !u!1 &194713390
@@ -2274,7 +2342,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
@@ -2433,15 +2500,14 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 100}
+  materials:
+  - {fileID: 21300000, guid: 3a3d95a9c5d81024ba2a4e692a9708bd, type: 3}
+  - {fileID: 21300000, guid: 9f1eb4757ab0dac41acc1c67852ec544, type: 3}
   sprites:
   - {fileID: 21300000, guid: 3a3d95a9c5d81024ba2a4e692a9708bd, type: 3}
   - {fileID: 21300000, guid: 9f1eb4757ab0dac41acc1c67852ec544, type: 3}
   ints: 0300000002000000
-  materials:
-  - {fileID: 21300000, guid: 3a3d95a9c5d81024ba2a4e692a9708bd, type: 3}
-  - {fileID: 21300000, guid: 9f1eb4757ab0dac41acc1c67852ec544, type: 3}
   amounts: 0300000002000000
   sprite: {fileID: 21300000, guid: 81760c0cc2e3de24d9cae1d688d8d16f, type: 3}
 --- !u!61 &202575637
@@ -2488,7 +2554,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 100}
   icon: {fileID: 21300000, guid: 8a7f2dc289ed9cb40b5dba8ffd994332, type: 3}
   water: {fileID: 21300000, guid: cc6653f3d79925f47914d53923c232ba, type: 3}
@@ -2694,7 +2759,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 5187f65931f457d408dd41212318c97d, type: 3}
   water: {fileID: 0}
@@ -2919,7 +2983,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 7c3346a1cb2e9764cafe31e03def01f5, type: 3}
   water: {fileID: 0}
@@ -3070,7 +3133,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
@@ -3295,7 +3357,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 100}
   icon: {fileID: 21300000, guid: 6d4d0e1c8fad93340a61b3d8ef813c8b, type: 3}
   water: {fileID: 0}
@@ -3427,7 +3488,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   materials:
   - {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
@@ -3665,7 +3725,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 3a3d95a9c5d81024ba2a4e692a9708bd, type: 3}
   water: {fileID: 0}
@@ -3949,7 +4008,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 100}
   icon: {fileID: 21300000, guid: 5187f65931f457d408dd41212318c97d, type: 3}
   water: {fileID: 0}
@@ -4004,7 +4062,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 9f1eb4757ab0dac41acc1c67852ec544, type: 3}
   water: {fileID: 0}
@@ -4350,7 +4407,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
@@ -4532,7 +4588,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &402747584
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4590,6 +4646,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 402747583}
+  m_CullTransparentMesh: 1
+--- !u!1 &415613822
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 415613823}
+  - component: {fileID: 415613825}
+  - component: {fileID: 415613824}
+  m_Layer: 5
+  m_Name: 1 (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &415613823
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415613822}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 134182200}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -388.4616, y: -156.92343}
+  m_SizeDelta: {x: 6400, y: 3200}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &415613824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415613822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6784314}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 5187f65931f457d408dd41212318c97d, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &415613825
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415613822}
   m_CullTransparentMesh: 1
 --- !u!1 &428170788
 GameObject:
@@ -4719,7 +4850,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   materials:
   - {fileID: 21300000, guid: 1e128230d5919424998244d432d949bc, type: 3}
@@ -4766,7 +4896,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 7d2b2ebbd9b9fb444b8b6bd2d9b9e773, type: 3}
   water: {fileID: 0}
@@ -4993,6 +5122,84 @@ RectTransform:
   m_AnchoredPosition: {x: -2.099987, y: 30.999985}
   m_SizeDelta: {x: 131.2, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &445005450
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 445005451}
+  - component: {fileID: 445005453}
+  - component: {fileID: 445005452}
+  m_Layer: 5
+  m_Name: click 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &445005451
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445005450}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.13, y: 0.13, z: 1}
+  m_Children:
+  - {fileID: 1829042013}
+  - {fileID: 769376509}
+  - {fileID: 2054400206}
+  m_Father: {fileID: 2119462379}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 135, y: 0}
+  m_SizeDelta: {x: 608, y: 608}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &445005452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445005450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6784314}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: a1fb99cd1d56aa4409345503fc1ce0d6, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &445005453
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445005450}
+  m_CullTransparentMesh: 1
 --- !u!1 &509647060
 GameObject:
   m_ObjectHideFlags: 0
@@ -5121,7 +5328,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 9f1eb4757ab0dac41acc1c67852ec544, type: 3}
   water: {fileID: 0}
@@ -5307,7 +5513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.45882353}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6784314}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5689,7 +5895,7 @@ GameObject:
   - component: {fileID: 553949980}
   - component: {fileID: 553949979}
   m_Layer: 5
-  m_Name: 1 (1)
+  m_Name: click
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5727,7 +5933,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.45882353}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6784314}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6031,7 +6237,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 5187f65931f457d408dd41212318c97d, type: 3}
   water: {fileID: 0}
@@ -6086,7 +6291,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
@@ -6788,7 +6992,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
@@ -7025,7 +7228,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 3a3d95a9c5d81024ba2a4e692a9708bd, type: 3}
   water: {fileID: 0}
@@ -7157,7 +7359,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 9f1eb4757ab0dac41acc1c67852ec544, type: 3}
   water: {fileID: 0}
@@ -7238,6 +7439,81 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &769376508
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 769376509}
+  - component: {fileID: 769376511}
+  - component: {fileID: 769376510}
+  m_Layer: 5
+  m_Name: 1 (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &769376509
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769376508}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 445005451}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -1080.7694, y: -156.92343}
+  m_SizeDelta: {x: 6400, y: 3200}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &769376510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769376508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6784314}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 5187f65931f457d408dd41212318c97d, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &769376511
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769376508}
+  m_CullTransparentMesh: 1
 --- !u!1 &783603820
 GameObject:
   m_ObjectHideFlags: 0
@@ -7357,7 +7633,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 7d2b2ebbd9b9fb444b8b6bd2d9b9e773, type: 3}
   water: {fileID: 0}
@@ -7580,7 +7855,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 100}
   materials:
   - {fileID: 21300000, guid: 7d2b2ebbd9b9fb444b8b6bd2d9b9e773, type: 3}
@@ -7634,7 +7908,7 @@ GameObject:
   - component: {fileID: 808005588}
   - component: {fileID: 808005587}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Thingy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7912,7 +8186,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
@@ -8193,7 +8466,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 7d2b2ebbd9b9fb444b8b6bd2d9b9e773, type: 3}
   water: {fileID: 0}
@@ -8433,7 +8705,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 7c3346a1cb2e9764cafe31e03def01f5, type: 3}
   water: {fileID: 0}
@@ -8697,7 +8968,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 7d2b2ebbd9b9fb444b8b6bd2d9b9e773, type: 3}
   water: {fileID: 0}
@@ -8752,7 +9022,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
@@ -9184,7 +9453,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   materials:
   - {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
@@ -9243,7 +9511,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
@@ -9377,7 +9644,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 7d2b2ebbd9b9fb444b8b6bd2d9b9e773, type: 3}
   water: {fileID: 0}
@@ -10188,7 +10454,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 100}
   icon: {fileID: 21300000, guid: f03829bb7cbc025438c9ee961e7d9531, type: 3}
   water: {fileID: 21300000, guid: cc6653f3d79925f47914d53923c232ba, type: 3}
@@ -10210,13 +10475,12 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 100}
+  materials:
+  - {fileID: 21300000, guid: fa9cb78b08db06f49a7eb615060c89b7, type: 3}
   sprites:
   - {fileID: 21300000, guid: fa9cb78b08db06f49a7eb615060c89b7, type: 3}
   ints: 04000000
-  materials:
-  - {fileID: 21300000, guid: fa9cb78b08db06f49a7eb615060c89b7, type: 3}
   amounts: 04000000
   sprite: {fileID: 21300000, guid: 67fc7241d54bac84dbb6718a03aa796c, type: 3}
 --- !u!1 &1070715696
@@ -10347,7 +10611,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
@@ -10744,6 +11007,81 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1116587765
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1116587766}
+  - component: {fileID: 1116587768}
+  - component: {fileID: 1116587767}
+  m_Layer: 5
+  m_Name: 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1116587766
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1116587765}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1603661298}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -388.46133, y: -156.92343}
+  m_SizeDelta: {x: 6400, y: 3200}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1116587767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1116587765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6784314}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 5187f65931f457d408dd41212318c97d, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1116587768
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1116587765}
+  m_CullTransparentMesh: 1
 --- !u!1 &1118230049
 GameObject:
   m_ObjectHideFlags: 0
@@ -10794,7 +11132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.45882353}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6784314}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -11413,7 +11751,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   filled: {fileID: 21300000, guid: 6d4d0e1c8fad93340a61b3d8ef813c8b, type: 3}
   sprites: []
@@ -11469,7 +11806,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
@@ -11780,7 +12116,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 100}
   icon: {fileID: 21300000, guid: 15c2f566ddf53034cbbe555629a4d7a0, type: 3}
   water: {fileID: 0}
@@ -11835,7 +12170,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
@@ -12120,7 +12454,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: b31e3b74740c1864897a36f5ca9857bb, type: 3}
   water: {fileID: 0}
@@ -12590,7 +12923,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   filled: {fileID: 21300000, guid: 9148dd6130c53244eb9d3f8f6573bd31, type: 3}
   sprites:
@@ -12889,7 +13221,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: fa9cb78b08db06f49a7eb615060c89b7, type: 3}
   water: {fileID: 0}
@@ -13294,7 +13625,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.45882353}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6784314}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -13502,7 +13833,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
@@ -14041,7 +14371,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: fa9cb78b08db06f49a7eb615060c89b7, type: 3}
   water: {fileID: 0}
@@ -14147,7 +14476,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 3a3d95a9c5d81024ba2a4e692a9708bd, type: 3}
   water: {fileID: 0}
@@ -14330,7 +14658,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 02b4df752cec8414fa061a6ee55f8eec, type: 3}
   water: {fileID: 0}
@@ -14451,7 +14778,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: fa9cb78b08db06f49a7eb615060c89b7, type: 3}
   water: {fileID: 0}
@@ -14543,7 +14869,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 7d2b2ebbd9b9fb444b8b6bd2d9b9e773, type: 3}
   water: {fileID: 0}
@@ -15593,7 +15918,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 1e128230d5919424998244d432d949bc, type: 3}
   water: {fileID: 0}
@@ -15648,7 +15972,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
@@ -16165,7 +16488,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: f07938f29666fee4eb0c85d655bbfea2, type: 3}
   water: {fileID: 0}
@@ -16420,7 +16742,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: fa9cb78b08db06f49a7eb615060c89b7, type: 3}
   water: {fileID: 0}
@@ -16794,6 +17115,82 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1603661297
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1603661298}
+  - component: {fileID: 1603661300}
+  - component: {fileID: 1603661299}
+  m_Layer: 5
+  m_Name: click 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1603661298
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603661297}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.13, y: 0.13, z: 1}
+  m_Children:
+  - {fileID: 1116587766}
+  m_Father: {fileID: 2119462379}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 45, y: 0}
+  m_SizeDelta: {x: 608, y: 608}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1603661299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603661297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6784314}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: a1fb99cd1d56aa4409345503fc1ce0d6, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1603661300
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603661297}
+  m_CullTransparentMesh: 1
 --- !u!1 &1638908355
 GameObject:
   m_ObjectHideFlags: 0
@@ -17736,6 +18133,81 @@ Transform:
   m_Father: {fileID: 194713392}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1829042012
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1829042013}
+  - component: {fileID: 1829042015}
+  - component: {fileID: 1829042014}
+  m_Layer: 5
+  m_Name: 1 (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1829042013
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829042012}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 445005451}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -388.46143, y: -156.92343}
+  m_SizeDelta: {x: 6400, y: 3200}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1829042014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829042012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6784314}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 5187f65931f457d408dd41212318c97d, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1829042015
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829042012}
+  m_CullTransparentMesh: 1
 --- !u!1 &1831560083
 GameObject:
   m_ObjectHideFlags: 0
@@ -18052,7 +18524,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: b31e3b74740c1864897a36f5ca9857bb, type: 3}
   water: {fileID: 0}
@@ -18718,7 +19189,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   materials:
   - {fileID: 21300000, guid: f07938f29666fee4eb0c85d655bbfea2, type: 3}
@@ -18739,7 +19209,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.25037384, y: -13.406711}
+  m_Offset: {x: -0.25037384, y: -6.1446147}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -18750,7 +19220,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 42.713783, y: 25.999079}
+  m_Size: {x: 42.713783, y: 11.474887}
   m_EdgeRadius: 0
 --- !u!1 &1998092662
 GameObject:
@@ -19235,7 +19705,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 7c3346a1cb2e9764cafe31e03def01f5, type: 3}
   water: {fileID: 0}
@@ -19371,6 +19840,156 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2053117887}
   m_CullTransparentMesh: 1
+--- !u!1 &2054400205
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2054400206}
+  - component: {fileID: 2054400208}
+  - component: {fileID: 2054400207}
+  m_Layer: 5
+  m_Name: 1 (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2054400206
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054400205}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 445005451}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -1773.0765, y: -156.92343}
+  m_SizeDelta: {x: 6400, y: 3200}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2054400207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054400205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6784314}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 5187f65931f457d408dd41212318c97d, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2054400208
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054400205}
+  m_CullTransparentMesh: 1
+--- !u!1 &2084814438
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2084814439}
+  - component: {fileID: 2084814441}
+  - component: {fileID: 2084814440}
+  m_Layer: 5
+  m_Name: 1 (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2084814439
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084814438}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 134182200}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -1080.7697, y: -156.92343}
+  m_SizeDelta: {x: 6400, y: 3200}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2084814440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084814438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6784314}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 5187f65931f457d408dd41212318c97d, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2084814441
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084814438}
+  m_CullTransparentMesh: 1
 --- !u!1 &2093668853
 GameObject:
   m_ObjectHideFlags: 0
@@ -19422,7 +20041,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
@@ -19529,14 +20147,13 @@ GameObject:
   m_Component:
   - component: {fileID: 2119462379}
   - component: {fileID: 2119462381}
-  - component: {fileID: 2119462380}
   m_Layer: 5
   m_Name: Text (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2119462379
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19547,7 +20164,10 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1603661298}
+  - {fileID: 134182200}
+  - {fileID: 445005451}
   m_Father: {fileID: 808005586}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19556,40 +20176,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2119462380
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2119462378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.7843138, g: 0.67058825, b: 0.5882353, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: 88bbf10cf17a82f44ab079ae09f008f5, type: 3}
-    m_FontSize: 30
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 50
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 1
-    m_VerticalOverflow: 1
-    m_LineSpacing: 1
-  m_Text: Ingredients
 --- !u!222 &2119462381
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19689,7 +20275,6 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  recipe2: :0
   pixelDistance: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: fa9cb78b08db06f49a7eb615060c89b7, type: 3}
   water: {fileID: 0}

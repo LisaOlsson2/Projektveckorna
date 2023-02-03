@@ -41,6 +41,7 @@ public class Inventory : BaseMostThings
 
     public Transform cam;
 
+    public Image[][] renderers;
 
     public override void Start()
     {
@@ -50,6 +51,15 @@ public class Inventory : BaseMostThings
             numbers[i - 1] = i + "";
         }
         numbers[9] = "0";
+
+        renderers = new Image[instructions.GetChild(2).childCount][];
+        for (int i = 0; i < instructions.GetChild(2).childCount; i++)
+        {
+            renderers[i] = instructions.GetChild(2).GetChild(i).GetComponentsInChildren<Image>();
+
+            instructions.GetChild(2).GetChild(i).gameObject.SetActive(false);
+        }
+        instructions.GetChild(2).gameObject.SetActive(false);
     }
 
     void Update()
