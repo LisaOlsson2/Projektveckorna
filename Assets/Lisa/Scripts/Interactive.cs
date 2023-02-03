@@ -75,7 +75,7 @@ public class Interactive : BaseMostThings
 
     public virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!interactable)
+        if (!interactable && collision.gameObject.name == "Player")
         {
             interactable = true;
             InactivateOthers(true);
@@ -88,7 +88,7 @@ public class Interactive : BaseMostThings
     }
     public virtual void OnTriggerExit2D(Collider2D collision)
     {
-        if (interactable)
+        if (interactable && collision.gameObject.name == "Player")
         {
             interactable = false;
             if (currentName == gameObject.name)
