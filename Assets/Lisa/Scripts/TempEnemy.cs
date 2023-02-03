@@ -27,7 +27,7 @@ public class TempEnemy : MonoBehaviour
         gameObject.tag = "Untagged"; // it has the tag danger otherwise, but it changes here so it won't make the player take damage on colission
         yield return new WaitForSeconds(deathDuration);
         transform.GetChild(0).gameObject.SetActive(true); // activate the cheese
-        transform.DetachChildren(); // unparent the cheese
+        //transform.DetachChildren(); // unparent the cheese
         Destroy(gameObject);
     }
 

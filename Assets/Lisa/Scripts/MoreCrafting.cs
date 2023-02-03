@@ -87,6 +87,9 @@ public class MoreCrafting : Materials
         else if (i == 2)
         {
             materials = new Sprite[3];
+            materials[0] = icons[4];
+            materials[1] = icons[5];
+            materials[2] = icons[6];
         }
     }
 
