@@ -36,7 +36,7 @@ public class Interactive : BaseMostThings
         }
     }
 
-    void InactivateOthers(bool mine)
+    public void InactivateOthers(bool mine)
     {
         if ((instructionChild == 0 && Backgrounds.currentArea == 0) || instructionChild > 0)
         {

@@ -16,5 +16,9 @@ public class Materials : Interactive
                 inventory.renderers[materials.Length - 1][i].sprite = materials[i - 1];
             }
         }
+        else
+        {
+            InactivateOthers(false);
+        }
     }
 }
