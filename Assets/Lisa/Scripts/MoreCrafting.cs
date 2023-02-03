@@ -37,6 +37,17 @@ public class MoreCrafting : Materials
                         inventory.ChangeSprite(inventory.FindSprite(icons[i]), inventory.empty);
                         transform.GetChild(0).gameObject.SetActive(false);
                         transform.GetChild(i).gameObject.SetActive(true);
+                        if (i == 0)
+                        {
+                            materials = new Sprite[2];
+                            materials[0] = icons[1];
+                            materials[1] = icons[2];
+                        }
+                        else if (i == 1)
+                        {
+                            materials = new Sprite[1];
+                            materials[0] = icons[icons.Length - 1];
+                        }
                     }
                     else if (transform.GetChild(2).gameObject.activeSelf && i > 2)
                     {
@@ -55,6 +66,10 @@ public class MoreCrafting : Materials
             if (inventory.CurrentSprite() == icons[icons.Length - 1] && transform.GetChild(1).gameObject.activeSelf) // if the stone is selected in the inventory and the dirty water child is active
             {
                 StartCoroutine(Cook(1, 2));
+                materials = new Sprite[3];
+                materials[0] = icons[3];
+                materials[1] = icons[4];
+                materials[2] = icons[5];
             }
         }
     }
@@ -87,9 +102,9 @@ public class MoreCrafting : Materials
         else if (i == 2)
         {
             materials = new Sprite[3];
-            materials[0] = icons[4];
-            materials[1] = icons[5];
-            materials[2] = icons[6];
+            materials[0] = icons[3];
+            materials[1] = icons[4];
+            materials[2] = icons[5];
         }
     }
 
