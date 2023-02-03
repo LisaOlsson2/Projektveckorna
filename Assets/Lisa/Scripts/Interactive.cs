@@ -79,6 +79,11 @@ public class Interactive : BaseMostThings
         {
             interactable = true;
             InactivateOthers(true);
+
+            if (transform.childCount > 0)
+            {
+                transform.GetChild(0).gameObject.SetActive(true);
+            }
         }
     }
     public virtual void OnTriggerExit2D(Collider2D collision)
@@ -89,6 +94,10 @@ public class Interactive : BaseMostThings
             if (currentName == gameObject.name)
             {
                 InactivateOthers(false);
+            }
+            if (this.GetType() == typeof(Item) && transform.childCount > 0)
+            {
+                transform.GetChild(0).gameObject.SetActive(false);
             }
         }
     }
