@@ -25,6 +25,7 @@ public class Cooking : Materials
 
     public override void Update()
     {
+        base.Update();
         if (interactable && inventory.square.gameObject.activeSelf) // if you're close enough
         {
             for (int i = 0; i < materials.Length; i++) // go through the materials needed and check if one is selected

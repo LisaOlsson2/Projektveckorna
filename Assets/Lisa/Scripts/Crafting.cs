@@ -31,6 +31,7 @@ public class Crafting : Materials
 
     public override void Update()
     {
+        base.Update();
         if (interactable) // if you're close enough and you have at least one of the materials in your inventory
         {
             for (int i = 0; i < materials.Length; i++) // go through the materials needed and check if one is selected

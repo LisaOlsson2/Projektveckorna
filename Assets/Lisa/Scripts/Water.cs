@@ -20,6 +20,7 @@ public class Water : Interactive
 
     public override void Update()
     {
+        base.Update();
         if (Input.GetKeyDown(inventory.pickUp) && interactable && inventory.square.gameObject.activeSelf && inventory.CurrentSprite() == inventory.empty)
         {
             inventory.ChangeSprite(inventory.FindSprite(inventory.empty), filled);

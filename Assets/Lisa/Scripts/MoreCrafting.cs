@@ -25,6 +25,7 @@ public class MoreCrafting : Materials
 
     public override void Update()
     {
+        base.Update();
         if (interactable && Input.GetKeyDown(inventory.use)) // if you're close enough and click use
         {
             for (int i = 0; i < icons.Length - 1; i++)

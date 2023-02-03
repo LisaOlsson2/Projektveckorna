@@ -30,7 +30,7 @@ public class Interactive : BaseMostThings
 
     public virtual void Update()
     {
-        if (instructions.activeSelf && interactable && currentName != gameObject.name)
+        if (interactable && currentName != gameObject.name)
         {
             InactivateOthers(true);
         }

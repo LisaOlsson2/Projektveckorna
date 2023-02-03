@@ -23,6 +23,7 @@ public class Item : Interactive
 
     public override void Update()
     {
+        base.Update();
         if (Input.GetKeyDown(inventory.pickUp) && interactable) // if you pick it up while you're close enough
         {
             if (inventory.inventory.Count == 0) // if the inventory is empty
