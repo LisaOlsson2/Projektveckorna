@@ -82,6 +82,7 @@ public class Crafting : Materials
                             {
                                 craft = false;
                                 inventory.PlayCraftingAnimation(1); // play the animation once
+                                OnTriggerExit2D(null);
                                 OnTriggerEnter2D(null);
                                 break;
                             }
@@ -92,7 +93,7 @@ public class Crafting : Materials
                             inventory.PlayCraftingAnimation(3); // play the animation thrice
                             Craft1(); // craft the item
                         }
-
+                        UpdateText(craft);
                     }
                     break;
                 }
