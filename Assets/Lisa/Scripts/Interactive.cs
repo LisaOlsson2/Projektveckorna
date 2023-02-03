@@ -80,7 +80,7 @@ public class Interactive : BaseMostThings
             interactable = true;
             InactivateOthers(true);
 
-            if (transform.childCount > 0)
+            if (this.GetType() == typeof(Item) && transform.childCount > 0)
             {
                 transform.GetChild(0).gameObject.SetActive(true);
             }
