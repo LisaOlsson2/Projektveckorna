@@ -51,7 +51,7 @@ public class Patroling : MonoBehaviour
     {
         if (moving)
         {
-            rollingD = true; 
+            rollingD = true;
             transform.Translate(Vector2.right * speed * Time.deltaTime);
             startRollTimer = false;
             rollTimer = 0;
@@ -66,25 +66,25 @@ public class Patroling : MonoBehaviour
         {
             playerPositionRight = false;
         }
-            
+
         RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, distance);
         //Använder raycast för att kolla om den kollidar med något under sig, om detta händer vänder objectet och raycasten till höger eller vänster - Elliot
-     
 
-            if (transform.position.x  >= startPostiton + 8)
-            {
-                Debug.Log("flip");
-                transform.eulerAngles = new Vector3(0, -180, 0);
-                movingRight = false;
-              
-            }
-            else if (transform.position.x <= startPostiton - 8)
-            {
-                transform.eulerAngles = new Vector3(0, 0, 0);
-                movingRight = true;
-                
-            }
-        
+
+        if (transform.position.x >= startPostiton + 8)
+        {
+            Debug.Log("flip");
+            transform.eulerAngles = new Vector3(0, -180, 0);
+            movingRight = false;
+
+        }
+        else if (transform.position.x <= startPostiton - 8)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
+            movingRight = true;
+
+        }
+
 
         if (startRollTimer)
         {
@@ -106,7 +106,7 @@ public class Patroling : MonoBehaviour
             {
                 if (playerPositionRight)        //fienden rör sig åt höger i 1 sekund ifall playerPositionRight är sant, Theo
                 {
-                    rb.AddForce(new Vector2(rollSpeed*Time.deltaTime, 0), ForceMode2D.Impulse);
+                    rb.AddForce(new Vector2(rollSpeed * Time.deltaTime, 0), ForceMode2D.Impulse);
                     Debug.Log("rullar höger");
 
 
@@ -146,8 +146,21 @@ public class Patroling : MonoBehaviour
 
             }
         }
-    }
   
+
+    }
+    public  void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player"  && transform.position.x > startPostiton + 1)
+        {
+            transform.eulerAngles = new Vector3(0, -180, 0);
+        }
+        if (collision.gameObject.tag == "Player" && transform.position.x < startPostiton + -1)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        }
+
+    }
 }
     
 

@@ -702,7 +702,7 @@ GameObject:
   - component: {fileID: 56279779}
   m_Layer: 0
   m_Name: Bottle Cap (1)
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2029,8 +2029,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 152209048}
   m_LocalRotation: {x: -0, y: -0, z: 0.38051417, w: 0.9247751}
-  m_LocalPosition: {x: 7.14, y: 2.86, z: -1}
-  m_LocalScale: {x: 5.4047008, y: 1.5367001, z: 1}
+  m_LocalPosition: {x: 7.7, y: 2.502, z: -1}
+  m_LocalScale: {x: 14.057627, y: 1.7610584, z: 1}
   m_Children: []
   m_Father: {fileID: 1905663503}
   m_RootOrder: 0
@@ -4090,7 +4090,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2078036819312884657, guid: 399d8a47b33d0e34a9d37bfaae003576, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2078036819312884659, guid: 399d8a47b33d0e34a9d37bfaae003576, type: 3}
       propertyPath: m_RootOrder
@@ -4149,12 +4149,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2078036819312884670, guid: 399d8a47b33d0e34a9d37bfaae003576, type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2078036819312884670, guid: 399d8a47b33d0e34a9d37bfaae003576, type: 3}
       propertyPath: Player
       value: 
       objectReference: {fileID: 1905663500}
     - target: {fileID: 2078036819312884670, guid: 399d8a47b33d0e34a9d37bfaae003576, type: 3}
       propertyPath: distance
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2078036819312884670, guid: 399d8a47b33d0e34a9d37bfaae003576, type: 3}
+      propertyPath: rollSpeed
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2078036819312884671, guid: 399d8a47b33d0e34a9d37bfaae003576, type: 3}
       propertyPath: m_Size.x
@@ -4163,6 +4171,22 @@ PrefabInstance:
     - target: {fileID: 2078036819312884671, guid: 399d8a47b33d0e34a9d37bfaae003576, type: 3}
       propertyPath: m_Offset.x
       value: -0.0384098
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762238339579008099, guid: 399d8a47b33d0e34a9d37bfaae003576, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.8073976
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762238339579008099, guid: 399d8a47b33d0e34a9d37bfaae003576, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.0625
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762238339579008099, guid: 399d8a47b33d0e34a9d37bfaae003576, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.4912
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762238339579008099, guid: 399d8a47b33d0e34a9d37bfaae003576, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 5762238339579008124, guid: 399d8a47b33d0e34a9d37bfaae003576, type: 3}
       propertyPath: m_Layer
@@ -14056,7 +14080,7 @@ GameObject:
   - component: {fileID: 1246382267}
   m_Layer: 0
   m_Name: Rock (1)
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16272,7 +16296,7 @@ GameObject:
   - component: {fileID: 1386118436}
   m_Layer: 0
   m_Name: carrot (2)
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21396,7 +21420,7 @@ GameObject:
   - component: {fileID: 1852561784}
   m_Layer: 0
   m_Name: Rock
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
