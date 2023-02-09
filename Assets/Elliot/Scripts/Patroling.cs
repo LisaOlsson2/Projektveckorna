@@ -149,7 +149,7 @@ public class Patroling : MonoBehaviour
   
 
     }
-    public  void OnCollisionEnter2D(Collision2D collision)
+    public  void OnCollisionEnter2D(Collision2D collision) // Om Monstret kolliderar med playern så kommer den veta vart den är och vända sig 180 grader från playern - Elliot
     {
         if (collision.gameObject.tag == "Player"  && transform.position.x > startPostiton + 1)
         {
