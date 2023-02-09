@@ -20,7 +20,7 @@ public class PlayerMovement : PlayerBase
     readonly int normalSpeed = 2;
 
     readonly float rightWorldBorder = //18.63f * 3 + 9.315f;
-        800;
+        180;
     readonly float leftWorldBorder = -9.315f;
 
     [SerializeField]
