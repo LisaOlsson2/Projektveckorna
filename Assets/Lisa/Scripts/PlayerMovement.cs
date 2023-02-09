@@ -238,4 +238,16 @@ public class PlayerMovement : PlayerBase
         }
     }
 
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        int direction = (int)(Mathf.Abs(transform.position.x - collision.transform.position.x)/ (transform.position.x - collision.transform.position.x));
+        print(collision.transform.position.x + direction * collision.gameObject.GetComponent<BoxCollider2D>().size.x * collision.transform.lossyScale.x / 2f);
+
+
+        //if (collision.transform.position.x + direction * collision.gameObject.GetComponent<BoxCollider2D>().size.x * collision.transform.lossyScale.x / 2f < transform.position.x + (direction * ))
+        {
+
+        }
+
+    }
 }
