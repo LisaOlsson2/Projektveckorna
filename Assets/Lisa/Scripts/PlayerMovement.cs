@@ -83,8 +83,6 @@ public class PlayerMovement : PlayerBase
 
     void Update()
     {
-        print(test);
-
         slider.value = Mathf.Abs(staminaTimer); // makes the slider show the stamina
 
         if (staminaTimer > 0) // if you have stamina
@@ -188,14 +186,13 @@ public class PlayerMovement : PlayerBase
 
     public override void OnCollisionEnter2D(Collision2D collision)
     {
-        test = true;
-
         if (dont) // this bool exists for when you jump while you're sprinting, because the collider is switched then
         {
             dont = false;
         }
-        else if (collision.gameObject.tag == "Ground" && !grounded)
+        else if (collision.gameObject.tag == "Ground" && (!grounded || !test))
         {
+            test = true;
             grounded = true;
             groundY = collision.gameObject.GetComponent<BoxCollider2D>().size.y * collision.transform.lossyScale.y / 2f + collision.transform.position.y;
             valueKeeper.audioController.Play("Landing");
@@ -246,21 +243,23 @@ public class PlayerMovement : PlayerBase
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        int direction = (int)(Mathf.Abs(transform.position.x - collision.transform.position.x)/ (transform.position.x - collision.transform.position.x));
-        if (direction > 0)
+        if (grounded)
         {
-            if (collision.transform.position.x + direction * collision.gameObject.GetComponent<BoxCollider2D>().size.x * collision.transform.lossyScale.x / 2f < transform.position.x + (0.13f * colliders[currentCollider].points[0].x))
+            int direction = (int)(Mathf.Abs(transform.position.x - collision.transform.position.x) / (transform.position.x - collision.transform.position.x));
+            if (direction > 0)
             {
-                test = false;
+                if (collision.transform.position.x + direction * collision.gameObject.GetComponent<BoxCollider2D>().size.x * collision.transform.lossyScale.x / 2f < transform.position.x + (0.13f * colliders[currentCollider].points[0].x))
+                {
+                    test = false;
+                }
+            }
+            else
+            {
+                if (collision.transform.position.x + direction * collision.gameObject.GetComponent<BoxCollider2D>().size.x * collision.transform.lossyScale.x / 2f > transform.position.x + 0.13f * colliders[currentCollider].points[colliders[currentCollider].points.Length - 1].x)
+                {
+                    test = false;
+                }
             }
         }
-        else
-        {
-            if (collision.transform.position.x + direction * collision.gameObject.GetComponent<BoxCollider2D>().size.x * collision.transform.lossyScale.x / 2f < 0.13f * colliders[currentCollider].points[colliders[currentCollider].points.Length - 1].x)
-            {
-                test = false;
-            }
-        }
-
     }
 }
