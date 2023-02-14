@@ -105,6 +105,7 @@ public class Crafting : Materials
     void Craft1() // thingy before craft to check if it's the last craftable item
     {
         Craft();
+        valueKeeper.audioController.Play("CraftingFinish");
         foreach (Crafting craftingGhost in valueKeeper.allCraftingGhosts)
         {
             if (craftingGhost != null && craftingGhost != this)

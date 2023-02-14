@@ -302,6 +302,7 @@ public class ItKnows : MonoBehaviour
         done = true;
         inventoryParent.parent.gameObject.SetActive(false); // inactivate the usual canvas
         theEnd.SetActive(true); // activate the canvas with the congratulationscreen
+        audioController.Play("ClearDemo");
     }
 
     public IEnumerator Death()
