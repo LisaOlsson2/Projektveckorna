@@ -186,15 +186,17 @@ public class PlayerMovement : PlayerBase
 
     public override void OnCollisionEnter2D(Collision2D collision)
     {
+        float groundYTemp = collision.gameObject.GetComponent<BoxCollider2D>().size.y * collision.transform.lossyScale.y / 2f + collision.transform.position.y;
+
         if (dont) // this bool exists for when you jump while you're sprinting, because the collider is switched then
         {
             dont = false;
         }
-        else if (collision.gameObject.tag == "Ground" && (!grounded || !test))
+        else if (collision.gameObject.tag == "Ground" && (!grounded || !test) && groundYTemp < transform.position.y - (0.13f * 9))
         {
             test = true;
             grounded = true;
-            groundY = collision.gameObject.GetComponent<BoxCollider2D>().size.y * collision.transform.lossyScale.y / 2f + collision.transform.position.y;
+            groundY = groundYTemp;
             valueKeeper.audioController.Play("Landing");
 
             if (this.enabled) // if you hit the ground after jumping
@@ -246,16 +248,18 @@ public class PlayerMovement : PlayerBase
         if (grounded)
         {
             int direction = (int)(Mathf.Abs(transform.position.x - collision.transform.position.x) / (transform.position.x - collision.transform.position.x));
+            float edge = collision.transform.position.x + direction * collision.gameObject.GetComponent<BoxCollider2D>().size.x * collision.transform.lossyScale.x / 2f;
+            
             if (direction > 0)
             {
-                if (collision.transform.position.x + direction * collision.gameObject.GetComponent<BoxCollider2D>().size.x * collision.transform.lossyScale.x / 2f < transform.position.x + (0.13f * colliders[currentCollider].points[0].x))
+                if (edge < transform.position.x + (0.13f * colliders[currentCollider].points[0].x))
                 {
                     test = false;
                 }
             }
-            else
+            else if (direction < 0)
             {
-                if (collision.transform.position.x + direction * collision.gameObject.GetComponent<BoxCollider2D>().size.x * collision.transform.lossyScale.x / 2f > transform.position.x + 0.13f * colliders[currentCollider].points[colliders[currentCollider].points.Length - 1].x)
+                if (edge > transform.position.x + 0.13f * colliders[currentCollider].points[colliders[currentCollider].points.Length - 1].x)
                 {
                     test = false;
                 }
