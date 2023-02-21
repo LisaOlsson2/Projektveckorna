@@ -14500,6 +14500,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 1235815507}
   settingsMenuIG: {fileID: 63897722}
   background: {fileID: 1367945946}
+  gameUICanvas: {fileID: 1112828648}
   paused: 0
 --- !u!4 &1080201914
 Transform:
