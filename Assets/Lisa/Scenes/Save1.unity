@@ -442,7 +442,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   materials:
   - {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   amounts: 05000000
@@ -626,7 +626,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: fa9cb78b08db06f49a7eb615060c89b7, type: 3}
   water: {fileID: 0}
 --- !u!1 &27345804
@@ -1259,7 +1259,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 5187f65931f457d408dd41212318c97d, type: 3}
   water: {fileID: 0}
 --- !u!61 &56279780
@@ -2369,7 +2369,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 9f1eb4757ab0dac41acc1c67852ec544, type: 3}
   water: {fileID: 0}
 --- !u!61 &127475987
@@ -2538,7 +2538,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: fa9cb78b08db06f49a7eb615060c89b7, type: 3}
   water: {fileID: 0}
 --- !u!212 &131188622
@@ -3049,7 +3049,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
 --- !u!60 &151374734
@@ -3543,7 +3543,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 3a3d95a9c5d81024ba2a4e692a9708bd, type: 3}
   water: {fileID: 0}
 --- !u!61 &162798832
@@ -4125,7 +4125,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 100}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 8a7f2dc289ed9cb40b5dba8ffd994332, type: 3}
   water: {fileID: 21300000, guid: cc6653f3d79925f47914d53923c232ba, type: 3}
 --- !u!114 &192938911
@@ -4146,7 +4146,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 100}
+  positionThingy: {x: 0, y: 0}
   materials:
   - {fileID: 21300000, guid: 3a3d95a9c5d81024ba2a4e692a9708bd, type: 3}
   - {fileID: 21300000, guid: 9f1eb4757ab0dac41acc1c67852ec544, type: 3}
@@ -4296,7 +4296,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
 --- !u!60 &201111258
@@ -4454,7 +4454,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 100}
+  positionThingy: {x: 0, y: 0}
   materials:
   - {fileID: 21300000, guid: 3a3d95a9c5d81024ba2a4e692a9708bd, type: 3}
   - {fileID: 21300000, guid: 9f1eb4757ab0dac41acc1c67852ec544, type: 3}
@@ -4508,7 +4508,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 100}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 8a7f2dc289ed9cb40b5dba8ffd994332, type: 3}
   water: {fileID: 21300000, guid: cc6653f3d79925f47914d53923c232ba, type: 3}
 --- !u!212 &202575639
@@ -4759,7 +4759,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 5187f65931f457d408dd41212318c97d, type: 3}
   water: {fileID: 0}
 --- !u!60 &211899239
@@ -4989,7 +4989,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 7c3346a1cb2e9764cafe31e03def01f5, type: 3}
   water: {fileID: 0}
 --- !u!1 &217515996
@@ -5359,7 +5359,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
 --- !u!60 &230318292
@@ -5923,7 +5923,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 100}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 6d4d0e1c8fad93340a61b3d8ef813c8b, type: 3}
   water: {fileID: 0}
 --- !u!1 &269453709
@@ -6054,7 +6054,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   materials:
   - {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   amounts: 05000000
@@ -6796,7 +6796,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 3a3d95a9c5d81024ba2a4e692a9708bd, type: 3}
   water: {fileID: 0}
 --- !u!61 &323711931
@@ -7079,7 +7079,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 100}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 5187f65931f457d408dd41212318c97d, type: 3}
   water: {fileID: 0}
 --- !u!1 &347267509
@@ -7261,7 +7261,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 9f1eb4757ab0dac41acc1c67852ec544, type: 3}
   water: {fileID: 0}
 --- !u!61 &369126742
@@ -7608,7 +7608,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
 --- !u!60 &383508250
@@ -8330,7 +8330,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   materials:
   - {fileID: 21300000, guid: 1e128230d5919424998244d432d949bc, type: 3}
   - {fileID: 21300000, guid: 15c2f566ddf53034cbbe555629a4d7a0, type: 3}
@@ -8376,7 +8376,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 7d2b2ebbd9b9fb444b8b6bd2d9b9e773, type: 3}
   water: {fileID: 0}
 --- !u!61 &437261939
@@ -9266,7 +9266,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 9f1eb4757ab0dac41acc1c67852ec544, type: 3}
   water: {fileID: 0}
 --- !u!1 &511570857
@@ -10884,7 +10884,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 5187f65931f457d408dd41212318c97d, type: 3}
   water: {fileID: 0}
 --- !u!1 &623950315
@@ -10987,7 +10987,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
 --- !u!60 &640704716
@@ -12225,7 +12225,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
 --- !u!60 &735799474
@@ -12591,7 +12591,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 3a3d95a9c5d81024ba2a4e692a9708bd, type: 3}
   water: {fileID: 0}
 --- !u!61 &759623521
@@ -12768,7 +12768,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 9f1eb4757ab0dac41acc1c67852ec544, type: 3}
   water: {fileID: 0}
 --- !u!61 &761807654
@@ -13086,7 +13086,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 7d2b2ebbd9b9fb444b8b6bd2d9b9e773, type: 3}
   water: {fileID: 0}
 --- !u!61 &786060221
@@ -13310,7 +13310,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 100}
+  positionThingy: {x: 0, y: 0}
   materials:
   - {fileID: 21300000, guid: 7d2b2ebbd9b9fb444b8b6bd2d9b9e773, type: 3}
   - {fileID: 21300000, guid: 02b4df752cec8414fa061a6ee55f8eec, type: 3}
@@ -13799,7 +13799,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
 --- !u!60 &818682636
@@ -14079,7 +14079,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 7d2b2ebbd9b9fb444b8b6bd2d9b9e773, type: 3}
   water: {fileID: 0}
 --- !u!60 &818916386
@@ -14325,7 +14325,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 7c3346a1cb2e9764cafe31e03def01f5, type: 3}
   water: {fileID: 0}
 --- !u!1 &830945473
@@ -14634,7 +14634,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 7d2b2ebbd9b9fb444b8b6bd2d9b9e773, type: 3}
   water: {fileID: 0}
 --- !u!1 &870671439
@@ -15008,7 +15008,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
 --- !u!60 &883533971
@@ -15609,7 +15609,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   materials:
   - {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   amounts: 05000000
@@ -15669,7 +15669,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
 --- !u!60 &941287929
@@ -15802,7 +15802,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 7d2b2ebbd9b9fb444b8b6bd2d9b9e773, type: 3}
   water: {fileID: 0}
 --- !u!60 &951561675
@@ -17292,7 +17292,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 100}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: f03829bb7cbc025438c9ee961e7d9531, type: 3}
   water: {fileID: 21300000, guid: cc6653f3d79925f47914d53923c232ba, type: 3}
 --- !u!114 &1033022189
@@ -17313,7 +17313,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 100}
+  positionThingy: {x: 0, y: 0}
   materials:
   - {fileID: 21300000, guid: fa9cb78b08db06f49a7eb615060c89b7, type: 3}
   sprites:
@@ -17734,7 +17734,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
 --- !u!1 &1071925394
@@ -20129,7 +20129,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   filled: {fileID: 21300000, guid: 6d4d0e1c8fad93340a61b3d8ef813c8b, type: 3}
   sprites: []
   current: 0
@@ -20189,7 +20189,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
 --- !u!60 &1205393402
@@ -20499,7 +20499,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 100}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 15c2f566ddf53034cbbe555629a4d7a0, type: 3}
   water: {fileID: 0}
 --- !u!1 &1226572144
@@ -20555,7 +20555,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
 --- !u!60 &1226572147
@@ -20923,7 +20923,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: b31e3b74740c1864897a36f5ca9857bb, type: 3}
   water: {fileID: 0}
 --- !u!212 &1246382269
@@ -21392,7 +21392,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   filled: {fileID: 21300000, guid: 9148dd6130c53244eb9d3f8f6573bd31, type: 3}
   sprites:
   - {fileID: 21300000, guid: 87a87f6131cc25c4492fdeb3dd22849c, type: 3}
@@ -21774,7 +21774,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: fa9cb78b08db06f49a7eb615060c89b7, type: 3}
   water: {fileID: 0}
 --- !u!212 &1267805817
@@ -22780,7 +22780,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
 --- !u!60 &1350598551
@@ -23320,7 +23320,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: fa9cb78b08db06f49a7eb615060c89b7, type: 3}
   water: {fileID: 0}
 --- !u!212 &1372984685
@@ -23511,7 +23511,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 3a3d95a9c5d81024ba2a4e692a9708bd, type: 3}
   water: {fileID: 0}
 --- !u!61 &1386118437
@@ -23695,7 +23695,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 02b4df752cec8414fa061a6ee55f8eec, type: 3}
   water: {fileID: 0}
 --- !u!61 &1387693367
@@ -23817,7 +23817,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: fa9cb78b08db06f49a7eb615060c89b7, type: 3}
   water: {fileID: 0}
 --- !u!212 &1388030284
@@ -23908,7 +23908,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 7d2b2ebbd9b9fb444b8b6bd2d9b9e773, type: 3}
   water: {fileID: 0}
 --- !u!61 &1403770238
@@ -24626,7 +24626,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 812ace22f84a5764db839570b8a7bac1, type: 3}
   water: {fileID: 0}
 --- !u!212 &1456266402
@@ -26378,7 +26378,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 1e128230d5919424998244d432d949bc, type: 3}
   water: {fileID: 0}
 --- !u!1 &1518391970
@@ -26481,7 +26481,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
 --- !u!60 &1521649382
@@ -26999,7 +26999,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: f07938f29666fee4eb0c85d655bbfea2, type: 3}
   water: {fileID: 0}
 --- !u!1 &1535499433
@@ -27299,7 +27299,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: fa9cb78b08db06f49a7eb615060c89b7, type: 3}
   water: {fileID: 0}
 --- !u!212 &1540886805
@@ -30257,6 +30257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   valueKeeper: {fileID: 0}
   player: {fileID: 1905663500}
+  mickaelsCam: {fileID: 1769955241}
 --- !u!1 &1732042519
 GameObject:
   m_ObjectHideFlags: 0
@@ -31067,7 +31068,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1769955245}
   - component: {fileID: 1769955244}
-  - component: {fileID: 1769955243}
   - component: {fileID: 1769955242}
   m_Layer: 0
   m_Name: CameraCM
@@ -31075,7 +31075,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1769955242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31110,14 +31110,6 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!81 &1769955243
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1769955241}
-  m_Enabled: 1
 --- !u!20 &1769955244
 Camera:
   m_ObjectHideFlags: 0
@@ -31169,7 +31161,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1769955241}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 74.52, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -32383,7 +32375,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: b31e3b74740c1864897a36f5ca9857bb, type: 3}
   water: {fileID: 0}
 --- !u!61 &1852561784
@@ -33777,7 +33769,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   materials:
   - {fileID: 21300000, guid: f07938f29666fee4eb0c85d655bbfea2, type: 3}
   amounts: 01000000
@@ -34660,7 +34652,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: 7c3346a1cb2e9764cafe31e03def01f5, type: 3}
   water: {fileID: 0}
 --- !u!1 &2053117887
@@ -35294,7 +35286,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: c8f4e5fffdb3a304ca7d7d7a1c093632, type: 3}
   water: {fileID: 0}
 --- !u!60 &2093668856
@@ -35979,7 +35971,7 @@ MonoBehaviour:
   interactable: 0
   instructionChild: 0
   instructions: {fileID: 0}
-  pixelDistance: {x: 0, y: 0}
+  positionThingy: {x: 0, y: 0}
   icon: {fileID: 21300000, guid: fa9cb78b08db06f49a7eb615060c89b7, type: 3}
   water: {fileID: 0}
 --- !u!212 &2137174811

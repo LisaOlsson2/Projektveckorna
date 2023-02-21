@@ -28,7 +28,10 @@ public class MusicManager : MusicAndSound
     public void Stop(string name)
     {
         MusicSound s = Array.Find(musicsound, musicsound => musicsound.name == name);
-        s.source.Stop();
+        if (s != null)
+        {
+            s.source.Stop();
+        }
     }
 
     public void Play(string name)
@@ -36,7 +39,10 @@ public class MusicManager : MusicAndSound
         if (play)
         {
             MusicSound s = Array.Find(musicsound, musicsound => musicsound.name == name);
-            s.source.Play();
+            if (s != null)
+            {
+                s.source.Play();
+            }
         }
     }
 }

@@ -15,6 +15,9 @@ public class Backgrounds : BaseMostThings
 
     readonly float distanceToChange = 1; // how far the player has to walk outside the frame to change area
 
+    [SerializeField]
+    GameObject mickaelsCam;
+
     public override void Start()
     {
         base.Start(); // makes a reference to the valueKeeper
@@ -22,7 +25,16 @@ public class Backgrounds : BaseMostThings
         musicManager = FindObjectOfType<MusicManager>(); // reference to Enricos musicManager
 
         musicManager.Play("music" + (currentArea + 1)); // plays the music for the current area
-        transform.position += borderDistance * currentArea * Vector3.right; // positions the cam in the area it was in last time
+        
+        if (currentArea < 4)
+        {
+            transform.position += borderDistance * currentArea * Vector3.right; // positions the cam in the area it was in last time
+        }
+        else
+        {
+            mickaelsCam.SetActive(true);
+        }
+
     }
 
     private void Update()
@@ -37,7 +49,20 @@ public class Backgrounds : BaseMostThings
     {
         musicManager.Stop("music" + (currentArea + 1)); // stops the current music
         currentArea += direction; // updates the current area
-        transform.position += direction * borderDistance * Vector3.right; // moves the cam
+
+        if (currentArea < 5)
+        {
+            transform.position += direction * borderDistance * Vector3.right; // moves the cam
+
+            if (currentArea == 4 && !mickaelsCam.activeSelf)
+            {
+                mickaelsCam.SetActive(true);
+            }
+            else if (currentArea == 3 && mickaelsCam.activeSelf)
+            {
+                mickaelsCam.SetActive(false);
+            }
+        }
         musicManager.Play("music" + (currentArea + 1)); // plays the new current music
     }
 }

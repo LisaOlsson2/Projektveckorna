@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 // Lisa
 // things you can interact with, currently just things you can pick up and craft
@@ -13,10 +12,10 @@ public class Interactive : BaseMostThings
 
     public int instructionChild;
     public GameObject instructions;
-    [SerializeField]
-    Vector2 pixelDistance;
-
     static string currentName;
+
+    [SerializeField]
+    Vector2 positionThingy;
 
     // Start is called before the first frame update
     public override void Start()
@@ -63,7 +62,16 @@ public class Interactive : BaseMostThings
             if (mine)
             {
                 currentName = gameObject.name;
-                inventory.instructions.anchoredPosition = new Vector2(transform.position.x - inventory.cam.transform.position.x, transform.position.y - inventory.cam.transform.position.y) * (Screen.width / 18.63f) + pixelDistance;
+
+                if (positionThingy == Vector2.zero)
+                {
+                    inventory.instructions.anchoredPosition = new Vector2(transform.position.x - inventory.cam.transform.position.x, transform.position.y - inventory.cam.transform.position.y) * (Screen.width / 18.63f);
+                }
+                else
+                {
+                    inventory.instructions.anchoredPosition = positionThingy;
+                }
+                
                 if (instructionChild == 2)
                 {
                     GetComponent<Materials>().UpdateText(true);
