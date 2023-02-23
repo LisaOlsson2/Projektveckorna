@@ -10,6 +10,8 @@ public class Combat : PlayerBase
     [SerializeField]
     Sprite weapon; // stick inventory icon
 
+    CameraShake cameraShake;
+
     readonly float attackDelay = 0.25f;
     readonly float attackTime = 0.25f;
     readonly float knockback = 170;
@@ -18,6 +20,7 @@ public class Combat : PlayerBase
     {
         base.Start();
         inventory = GetComponent<Inventory>();
+        cameraShake = FindObjectOfType<CameraShake>();
     }
 
     void Update()
@@ -55,6 +58,7 @@ public class Combat : PlayerBase
     {
         if (collision.gameObject.tag == "Danger" && valueKeeper.health > 0)
         {
+            cameraShake.StartShake();
             valueKeeper.health--;
             inventory.cheese[valueKeeper.health].SetActive(false);
             Knockback(collision.transform.position.x);

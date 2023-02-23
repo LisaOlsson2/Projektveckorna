@@ -4,39 +4,28 @@ using UnityEngine;
 
 public class CameraShake : MonoBehaviour
 {   //Theo
-    public Vector2 amplitude;
-    public Vector2 frequency;
-    Vector2 time = Vector2.zero;
-    static bool shouldShake;
-    public static float shakeTime;
-    // Start is called before the first frame update
-    void Start()
-    {
 
+    public void StartShake()
+    {
+        StartCoroutine(Shake());
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator Shake()
     {
-        if (false) //take damage
+        Camera cam = GetComponent<Camera>();
+        float size = cam.orthographicSize;
+
+        Vector3 pos = transform.position;
+        cam.orthographicSize = 4.5f;
+
+        for (int i = 0; i < 6; i++)
         {
-            shakeTime = 0.25f;
+            transform.position += Vector3.right * Random.Range(-1f, 1f) + Vector3.up * Random.Range(-1f, 1f);
+            yield return new WaitForSeconds(0.07f);
+            transform.position = pos;
+            yield return new WaitForSeconds(0.07f);
         }
-        Vector3 shakePos = transform.localPosition;     //shakePos är kamerans position
-        if (shakeTime > 0)
-        {
-            shouldShake = true;
-            shakeTime -= Time.deltaTime;    //skak tiden blir mindre medans shaketime är mer än 0
-        }
-        else
-        {
-            shouldShake = false;
-        }
-        if (shouldShake == true)
-        {
-            time.x += frequency.x * Time.deltaTime;     //destå mer tid som går destå mer skakar det
-            shakePos.x = Mathf.Sin(time.x) * amplitude.x;   //skakar med hjälp av sinus kurvan skapad med time.x
-        }
-        transform.localPosition = shakePos;
+
+        cam.orthographicSize = size;
     }
 }

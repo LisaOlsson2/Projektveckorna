@@ -6633,7 +6633,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2078036819312884657, guid: 399d8a47b33d0e34a9d37bfaae003576, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2078036819312884659, guid: 399d8a47b33d0e34a9d37bfaae003576, type: 3}
       propertyPath: m_RootOrder
@@ -30171,6 +30171,7 @@ GameObject:
   - component: {fileID: 1728503748}
   - component: {fileID: 1728503747}
   - component: {fileID: 1728503750}
+  - component: {fileID: 1728503751}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -30258,6 +30259,21 @@ MonoBehaviour:
   valueKeeper: {fileID: 0}
   player: {fileID: 1905663500}
   mickaelsCam: {fileID: 1769955241}
+--- !u!114 &1728503751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728503746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe482e4de65d27346a4480aaf8f725ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: {x: 0, y: 0}
+  frequency: {x: 0, y: 0}
+  shouldShake: 0
 --- !u!1 &1732042519
 GameObject:
   m_ObjectHideFlags: 0
