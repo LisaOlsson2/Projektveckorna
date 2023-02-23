@@ -2,6 +2,7 @@ using UnityEngine.Audio;
 using System;
 using UnityEngine;
 //Mickael
+/* Den här koden funkar som en lista med ljud. */
 [System.Serializable]
 public class AudioController : MusicAndSound
 {
@@ -9,6 +10,7 @@ public class AudioController : MusicAndSound
 
     void Awake()
     {
+        // den här koden låter mig döpa, välja ljud clip, ändra volym, ändra pitch eller bestämma om ljudet loopar.
         foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
@@ -25,6 +27,7 @@ public class AudioController : MusicAndSound
     }
 
     // Update is called once per frame
+    // Den här koden om ljudet ska spelas letar den efter namnet på ljudet i listan och spelar den.
     public void Play (string name)
     {
         if (play)
@@ -33,6 +36,7 @@ public class AudioController : MusicAndSound
             s.source.Play();
         }
     }
+    // Den här koden om ljudet ska spelas så letar den efter namnet på ljudet i listan och stoppar den.
     public void Stop(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
