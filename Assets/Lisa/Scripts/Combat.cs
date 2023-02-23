@@ -14,7 +14,7 @@ public class Combat : PlayerBase
 
     readonly float attackDelay = 0.25f;
     readonly float attackTime = 0.25f;
-    readonly float knockback = 170;
+    readonly float knockback = 260;
 
     public override void Start()
     {
@@ -56,8 +56,9 @@ public class Combat : PlayerBase
 
     public override void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Danger" && valueKeeper.health > 0)
+        if (collision.gameObject.tag == "Danger" && valueKeeper.health > 0 && !damageDelay)
         {
+            damageDelay = true;
             cameraShake.StartShake();
             valueKeeper.health--;
             inventory.cheese[valueKeeper.health].SetActive(false);

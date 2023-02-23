@@ -19,6 +19,7 @@ public class PlayerBase : BaseMostThings
     public static int currentCollider;
     public static bool attacking;
     public static bool dont; // don't do ground stuff when you change to the jumping animation from the sprinting
+    public static bool damageDelay;
 
     static string currentState;
 
@@ -29,6 +30,7 @@ public class PlayerBase : BaseMostThings
         grounded = false;
         attacking = false;
         dont = false;
+        damageDelay = false;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
@@ -83,7 +85,7 @@ public class PlayerBase : BaseMostThings
             }
             else if (animation != "Run") // if the current collider is the running collider and the new animation isn't the running animation
             {
-                if (animation == "Jump") // if the new animation is the jumping animation
+                if (animation == "Jump" ||animation == "Damage") // if the new animation is the jumping or damage animation
                 {
                     dont = true; // don't make the hit the ground stuff happen
                 }

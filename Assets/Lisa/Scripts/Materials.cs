@@ -6,18 +6,31 @@ public class Materials : Interactive
 {
     public Sprite[] materials;
 
+    public override void Start()
+    {
+        instructionChild = 2;
+        base.Start();
+    }
     public void UpdateText(bool mine)
     {
-        instructions.transform.GetChild(materials.Length - 1).gameObject.SetActive(mine);
-        if (mine)
+        if (materials.Length > 0)
         {
-            for (int i = 1; i < inventory.renderers[materials.Length - 1].Length; i++)
+            instructions.transform.GetChild(materials.Length - 1).gameObject.SetActive(mine);
+            if (mine)
             {
-                inventory.renderers[materials.Length - 1][i].sprite = materials[i - 1];
+                for (int i = 1; i < inventory.renderers[materials.Length - 1].Length; i++)
+                {
+                    inventory.renderers[materials.Length - 1][i].sprite = materials[i - 1];
+                }
+            }
+            else
+            {
+                InactivateOthers(false);
             }
         }
         else
         {
+            instructions.transform.GetChild(materials.Length).gameObject.SetActive(false);
             InactivateOthers(false);
         }
     }

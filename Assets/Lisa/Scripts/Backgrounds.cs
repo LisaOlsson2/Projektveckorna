@@ -50,6 +50,7 @@ public class Backgrounds : BaseMostThings
         musicManager.Stop("music" + (currentArea + 1)); // stops the current music
         currentArea += direction; // updates the current area
 
+        // mickael made an area where the cam works differently
         if (currentArea < 5)
         {
             transform.position += direction * borderDistance * Vector3.right; // moves the cam

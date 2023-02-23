@@ -19,8 +19,7 @@ public class PlayerMovement : PlayerBase
     readonly int tiredSpeed = 2; // added because mickael didn't want the player to be slow when it's tired
     readonly int normalSpeed = 2;
 
-    readonly float rightWorldBorder = //18.63f * 3 + 9.315f;
-        180;
+    readonly float rightWorldBorder = 18.63f * 3 + 9.315f;
     readonly float leftWorldBorder = -9.315f;
 
     [SerializeField]
@@ -52,10 +51,9 @@ public class PlayerMovement : PlayerBase
             {
                 speedMultiplier /= sprintSpeed; // stop sprinting
             }
-
-            ChangeAnimation("Damage");
         }
 
+        ChangeAnimation("Damage");
     }
     private void OnEnable() // it gets enabled again when the player hits the ground
     {
@@ -202,6 +200,7 @@ public class PlayerMovement : PlayerBase
             }
             else if (rb != null) // if you hit the ground after taking damage
             {
+                damageDelay = false;
                 rb.velocity = Vector3.zero;
                 if (valueKeeper.dead)
                 {
@@ -242,7 +241,7 @@ public class PlayerMovement : PlayerBase
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (grounded)
+        if (grounded && collision.gameObject.tag == "Ground")
         {
             test = false;
         }

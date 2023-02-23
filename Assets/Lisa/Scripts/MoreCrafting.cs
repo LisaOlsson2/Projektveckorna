@@ -1,8 +1,8 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 // Lisa
+// This can be improved a lot
 public class MoreCrafting : Materials
 {
     public Sprite[] icons;
@@ -12,15 +12,20 @@ public class MoreCrafting : Materials
 
     public override void Start()
     {
-        instructionChild = 2;
         base.Start();
         animator = GetComponent<Animator>();
+        ResetMaterials();
+    }
 
+    void ResetMaterials()
+    {
         materials = new Sprite[3];
         for (int i = 0; i < materials.Length; i++)
         {
             materials[i] = icons[i];
         }
+        OnTriggerExit2D(null);
+        OnTriggerEnter2D(null);
     }
 
     public override void Update()
@@ -59,6 +64,8 @@ public class MoreCrafting : Materials
                     {
                         CheckChildren(i);
                     }
+                    OnTriggerExit2D(null);
+                    OnTriggerEnter2D(null);
                 }
             }
 
@@ -70,9 +77,12 @@ public class MoreCrafting : Materials
                 materials[0] = icons[3];
                 materials[1] = icons[4];
                 materials[2] = icons[5];
+                OnTriggerExit2D(null);
+                OnTriggerEnter2D(null);
             }
         }
     }
+
 
     void CheckChildren(int i)
     {
@@ -110,6 +120,7 @@ public class MoreCrafting : Materials
 
     public void StartCooking(int a, int b)
     {
+        materials = new Sprite[0];
         StartCoroutine(Cook(a, b));
     }
 
@@ -135,6 +146,7 @@ public class MoreCrafting : Materials
 
     public void ChangeSprite()
     {
+        ResetMaterials();
         spriteRenderer.sprite = usual;
     }
 }

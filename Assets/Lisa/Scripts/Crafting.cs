@@ -23,12 +23,6 @@ public class Crafting : Materials
     [SerializeField]
     Sprite otherIfMore; // the change of sprite for when it's been crafted further
 
-    public override void Start()
-    {
-        instructionChild = 2;
-        base.Start();
-    }
-
     public override void Update()
     {
         base.Update();
@@ -89,12 +83,13 @@ public class Crafting : Materials
                             }
                         }
 
+                        UpdateText(!craft);
+
                         if (craft)
                         {
                             inventory.PlayCraftingAnimation(3); // play the animation thrice
                             Craft1(); // craft the item
                         }
-                        UpdateText(craft);
                     }
                     break;
                 }

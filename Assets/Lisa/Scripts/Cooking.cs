@@ -17,11 +17,6 @@ public class Cooking : Materials
     [SerializeField]
     Sprite sprite;
 
-    public override void Start()
-    {
-        instructionChild = 2;
-        base.Start();
-    }
 
     public override void Update()
     {
