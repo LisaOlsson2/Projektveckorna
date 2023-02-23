@@ -9,7 +9,7 @@ public class MusicManager : MusicAndSound
     // Start is called before the first frame update
     void Awake()
     {
-        foreach (MusicSound s in musicsound)
+        foreach (MusicSound s in musicsound)//This is a music controller, voume, pitch and if it should loop
         {
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
@@ -25,7 +25,7 @@ public class MusicManager : MusicAndSound
         }
     }
 
-    public void Stop(string name)
+    public void Stop(string name)//this is to stop the music
     {
         MusicSound s = Array.Find(musicsound, musicsound => musicsound.name == name);
         if (s != null)
@@ -34,7 +34,7 @@ public class MusicManager : MusicAndSound
         }
     }
 
-    public void Play(string name)
+    public void Play(string name)//this is to start playing one of the musics
     {
         if (play)
         {
